@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-01 19:08 UTC",
+  "generated": "2026-08-01 19:38 UTC",
   "npm": [
     {
       "name": "chrome-devtools-mcp",
@@ -16,7 +16,7 @@
     {
       "name": "@modelcontextprotocol/server-filesystem",
       "downloads": 2202385,
-      "ageDays": 617,
+      "ageDays": 618,
       "findings": []
     },
     {
@@ -279,7 +279,7 @@
     },
     {
       "name": "mcp-server-time",
-      "downloads": null,
+      "downloads": 443378,
       "ageDays": 610,
       "findings": []
     },
