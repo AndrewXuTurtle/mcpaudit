@@ -202,3 +202,51 @@ A negative result is still a result. "We looked and found nothing" is only worth
 when you can say precisely how hard you looked — 278 names, six targets, four variant
 classes — and when the tool doing the looking has had its false positives published rather
 than buried.
+
+---
+
+## Update, 2026-08-02: two corrections, one of them to my own credit claim
+
+### The typosquat was already known
+
+I searched GitHub for other code referencing `@modelcontextprotoco1` and found two independent
+trackers:
+
+- **Microsoft Defender** ships a signature (`ALFTrojanAIAgentMCPSupplyChainA`) that reads MCP
+  config files — `mcp.json`, `claude_desktop_config.json`, `settings.json`, `openclaw.json` —
+  and matches the lookalike scope string, returning a detection.
+- **mcpshield** lists it in its vulnerability database as a critical scope typosquat.
+
+My write-up implied discovery. It was an independent rediscovery, and the README and advisory now
+say so.
+
+Losing the "found it first" line costs less than it looks. Microsoft detecting on the *identifier
+in a config file*, rather than on anything inside the package, is the same conclusion this project
+reached from the other direction: there is nothing in the payload to detect, because the payload
+is the official implementation. Independent corroboration is worth more than a novelty claim, and
+a novelty claim that does not survive a search is worth less than nothing.
+
+### The accusation I nearly published
+
+While reading mcpshield's database I noticed it lists `@anthropic-ai/mcp-server-git` as a *"fake
+`@anthropic-ai` scope"*. `@anthropic-ai` is Anthropic's real scope — `@anthropic-ai/sdk` alone
+does 113 million downloads a month. Four other entries named typosquats that returned 404 on npm,
+and one carried `verified: true` alongside a CVE ID.
+
+The obvious reading was a security tool shipping fabricated vulnerability data, and I was one step
+from opening an issue saying so.
+
+I checked first. **CVE-2025-68145 is real** — it resolves in NVD and in GitHub's advisory
+database, a genuine path-validation bypass in `mcp-server-git`. And the packages returned 404
+because `mcp-server-git` lives on **PyPI**, not npm. I had queried the wrong registry and read the
+result as evidence of fabrication.
+
+So the database is not fabricated, the issue does not get filed, and the naming inconsistency is
+sloppiness rather than invention. Worth recording plainly: I was about to publish a public
+accusation against a six-star project, on the strength of 404s from a registry the packages were
+never on — while shipping a competing scanner. Being right about the typosquat earlier does not
+make the next hypothesis right.
+
+Three false-positive classes found in this tool now, and this one was in the operator rather than
+the code. It is the same failure as the other two: a signal read without the context that explains
+it.

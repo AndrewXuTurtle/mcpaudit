@@ -78,6 +78,17 @@ npx github:AndrewXuTurtle/mcpaudit
 
 Found while building fixtures for `mcpaudit`: the name was invented as a hypothetical example and turned out to exist. A systematic follow-up probed **790** homoglyph, deletion, doubling and transposition variants of the official scope across ten common server suffixes, and found exactly one live impersonation.
 
+## Prior art — this was an independent rediscovery, not a first report
+
+This package was already known before I found it, and saying otherwise would misrepresent the work. Two independent sources track it:
+
+- **Microsoft Defender** ships a signature (`ALFTrojanAIAgentMCPSupplyChainA`) that reads MCP configuration files — `mcp.json`, `claude_desktop_config.json`, `settings.json`, `openclaw.json` — and matches on `@modelcontextprotoco1` among other lookalike strings, returning a detection rather than a warning.
+- **[mcpshield](https://github.com/mcpshield/mcpshield)** lists `@modelcontextprotoco1/server-filesystem` in its vulnerability database as a critical scope typosquat.
+
+I arrived at it independently, but it is not a discovery and this advisory is not a first disclosure.
+
+The corroboration is worth more than the credit. Microsoft detecting on the *identifier* inside a config file — rather than on anything in the package payload — is exactly the argument this advisory makes: there is nothing in the bytes to find, because the bytes are the official implementation. Two other parties reaching the same conclusion by the same route is stronger evidence than one tool reporting it alone.
+
 It does not appear in npm search results for `mcp server`, `modelcontextprotocol`, or related queries — a sweep of 1,070 distinct packages returned it zero times. It is reachable only by typo or by copied configuration.
 
 ## Disclosure

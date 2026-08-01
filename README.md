@@ -38,6 +38,13 @@ A content scanner cannot catch this. There is nothing bad in the content; the co
 
 I probed 790 homoglyph variants of the official scope and found exactly one live impersonation. One is enough.
 
+**This was an independent rediscovery, not a first report.** Microsoft Defender already ships a
+signature that matches `@modelcontextprotoco1` inside MCP config files, and
+[mcpshield](https://github.com/mcpshield/mcpshield) already lists it. I found it on my own, but I
+did not find it first, and the corroboration matters more than the credit — Microsoft detecting on
+the *identifier in your config* rather than on anything in the payload is precisely the argument
+above. There is nothing in the bytes to find.
+
 ---
 
 ## Why another scanner
