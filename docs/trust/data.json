@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-01 19:38 UTC",
+  "generated": "2026-08-01 19:57 UTC",
   "npm": [
     {
       "name": "chrome-devtools-mcp",
@@ -116,7 +116,7 @@
     {
       "name": "@transcend-io/mcp-server-preferences",
       "downloads": 218507,
-      "ageDays": 100,
+      "ageDays": 101,
       "findings": []
     },
     {
@@ -134,7 +134,7 @@
     {
       "name": "@transcend-io/mcp-server-workflows",
       "downloads": 196091,
-      "ageDays": 100,
+      "ageDays": 101,
       "findings": []
     },
     {
@@ -267,7 +267,7 @@
     },
     {
       "name": "mcp-server-fetch",
-      "downloads": 1057869,
+      "downloads": null,
       "ageDays": 617,
       "findings": []
     },
@@ -279,7 +279,7 @@
     },
     {
       "name": "mcp-server-time",
-      "downloads": 443378,
+      "downloads": null,
       "ageDays": 610,
       "findings": []
     },
