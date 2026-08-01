@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-01 21:14 UTC",
+  "generated": "2026-08-01 21:39 UTC",
   "npm": [
     {
       "name": "chrome-devtools-mcp",
@@ -54,6 +54,22 @@
       "downloads": 494079,
       "ageDays": 332,
       "findings": []
+    },
+    {
+      "name": "@azure/mcp",
+      "downloads": 470773,
+      "ageDays": 472,
+      "findings": [
+        {
+          "confidence": "certain",
+          "id": "MCP-SUP-005",
+          "severity": "high",
+          "title": "Package runs a postinstall script",
+          "evidence": "\"postinstall\": node ./scripts/post-install-script.js",
+          "why": "Install hooks execute the moment the package is fetched — before the server is ever started and before any tool description is reviewed. With npx and an unpinned version, this runs on every launch.",
+          "fix": "Read the script. To install without running it, use `npm install --ignore-scripts`."
+        }
+      ]
     },
     {
       "name": "@sentry/mcp-server",
@@ -220,7 +236,7 @@
     {
       "name": "@hubspot/mcp-server",
       "downloads": 64671,
-      "ageDays": 462,
+      "ageDays": 463,
       "findings": []
     },
     {
@@ -230,15 +246,9 @@
       "findings": []
     },
     {
-      "name": "@browserstack/mcp-server",
-      "downloads": 41044,
-      "ageDays": 466,
-      "findings": []
-    },
-    {
-      "name": "@heroku/mcp-server",
-      "downloads": 29848,
-      "ageDays": 481,
+      "name": "@benborla29/mcp-server-mysql",
+      "downloads": 48880,
+      "ageDays": 600,
       "findings": []
     }
   ],
@@ -251,7 +261,7 @@
     },
     {
       "name": "fastmcp",
-      "downloads": null,
+      "downloads": 85198061,
       "ageDays": 609,
       "findings": []
     },
@@ -281,7 +291,7 @@
     }
   ],
   "sweep": {
-    "probed": 316,
+    "probed": 322,
     "hits": [
       {
         "name": "@modelcontextprotoco1/server-filesystem",
