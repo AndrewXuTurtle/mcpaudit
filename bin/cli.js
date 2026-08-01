@@ -38,7 +38,8 @@ function parseArgs(argv) {
   const opts = { deep: false, paranoid: false, json: false, markdown: false, out: null, failOn: 'high', path: null };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
-    if (a === '--deep') opts.deep = true;
+    if (a === '--mcp') opts.mcp = true;
+    else if (a === '--deep') opts.deep = true;
     else if (a === '--paranoid') opts.paranoid = true;
     else if (a === '--json') opts.json = true;
     else if (a === '--markdown' || a === '--md') opts.markdown = true;

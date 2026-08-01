@@ -44,3 +44,19 @@ test('an unknown tool name is an in-band error too', async () => {
   const r = await handle({ jsonrpc: '2.0', id: 5, method: 'tools/call', params: { name: 'not_a_tool', arguments: {} } });
   assert.equal(r.result.isError, true);
 });
+
+/**
+ * Regression: the CLI silently ignored --mcp and ran a normal audit, printing
+ * human-readable text to stdout. stdout IS the JSON-RPC transport, so every
+ * client would have failed on the first byte — and the documented install
+ * command would have been broken for anyone who copied it from a listing.
+ */
+test('the CLI recognises --mcp rather than treating it as an unknown flag', async () => {
+  const { readFileSync } = await import('node:fs');
+  const src = readFileSync(new URL('../bin/cli.js', import.meta.url), 'utf8');
+  assert.match(src, /a === '--mcp'/, '--mcp must be parsed');
+  assert.match(src, /if \(opts\.mcp\)/, '--mcp must be dispatched before any audit runs');
+  // The dispatch has to precede --help/--version handling, or a bare flag order
+  // could print help to the transport.
+  assert.ok(src.indexOf('if (opts.mcp)') < src.indexOf('if (opts.help)'), 'mcp dispatch must come first');
+});
