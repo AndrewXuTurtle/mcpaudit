@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-01 19:57 UTC",
+  "generated": "2026-08-01 20:26 UTC",
   "npm": [
     {
       "name": "chrome-devtools-mcp",
@@ -34,7 +34,7 @@
     {
       "name": "@notionhq/notion-mcp-server",
       "downloads": 705744,
-      "ageDays": 484,
+      "ageDays": 485,
       "findings": []
     },
     {
@@ -110,7 +110,7 @@
     {
       "name": "@transcend-io/mcp-server-discovery",
       "downloads": 218716,
-      "ageDays": 100,
+      "ageDays": 101,
       "findings": []
     },
     {
@@ -122,13 +122,13 @@
     {
       "name": "@transcend-io/mcp-server-consent",
       "downloads": 200753,
-      "ageDays": 100,
+      "ageDays": 101,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-admin",
       "downloads": 200251,
-      "ageDays": 100,
+      "ageDays": 101,
       "findings": []
     },
     {
@@ -246,9 +246,9 @@
       "findings": []
     },
     {
-      "name": "@browserstack/mcp-server",
-      "downloads": 41044,
-      "ageDays": 466,
+      "name": "@benborla29/mcp-server-mysql",
+      "downloads": 48880,
+      "ageDays": 600,
       "findings": []
     }
   ],
@@ -261,7 +261,7 @@
     },
     {
       "name": "fastmcp",
-      "downloads": null,
+      "downloads": 85198061,
       "ageDays": 609,
       "findings": []
     },
@@ -302,5 +302,10 @@
         "author": "Anthropic, PBC"
       }
     ]
+  },
+  "malware": {
+    "scanned": 0,
+    "capped": false,
+    "list": []
   }
 }
