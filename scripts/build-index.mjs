@@ -15,8 +15,21 @@ import { auditPypiPackage } from '../src/pypi.js';
 const OUT = 'docs/trust';
 const TOP_N = 40;
 
-/** Publishers npm will not let anyone else publish under. */
-const OFFICIAL_SCOPES = ['@modelcontextprotocol/', '@anthropic-ai/'];
+/**
+ * Publishers npm will not let anyone else publish under.
+ *
+ * The sweep is deliberately restricted to SCOPES. Scope ownership is enforced by
+ * npm, so a homoglyph scope can only ever be deliberate — there is no innocent
+ * reason to publish under `@modelcontextprotoco1/`. Unscoped name collisions are
+ * not decidable the same way: `cp-remote` sits one deletion from `mcp-remote`
+ * and is an entirely unrelated package from 2014. Sweeping unscoped names would
+ * mean this job publishing accusations against uninvolved maintainers every
+ * night, unattended. Scope-only keeps every published claim defensible.
+ */
+const OFFICIAL_SCOPES = [
+  '@modelcontextprotocol/', '@anthropic-ai/', '@notionhq/', '@upstash/', '@supabase/',
+  '@sentry/', '@cloudflare/', '@playwright/', '@azure/', '@github/', '@stripe/', '@eslint/',
+];
 
 const SUBS = [['l', '1'], ['l', 'I'], ['o', '0'], ['i', '1'], ['e', '3'], ['m', 'rn'], ['rn', 'm'], ['s', '5']];
 
@@ -68,18 +81,37 @@ async function topNpmPackages() {
   return withDownloads.filter(Boolean).sort((a, b) => b.downloads - a.downloads).slice(0, TOP_N);
 }
 
-/** Look for packages impersonating an official scope. */
-async function sweepImpersonations() {
-  const candidates = [];
+/**
+ * Look for packages impersonating an official scope.
+ *
+ * Targets the real package names people actually install, rather than a guessed
+ * suffix list, so coverage tracks what is popular this week.
+ */
+async function sweepImpersonations(topPackages) {
+  const targets = new Set();
   for (const scope of OFFICIAL_SCOPES) {
-    const bare = scope.slice(1, -1);
-    for (const v of scopeVariants(bare)) {
-      for (const suffix of ['server-filesystem', 'server-github', 'server-memory', 'sdk']) {
-        candidates.push({ name: `@${v}/${suffix}`, impersonates: `${scope}${suffix}` });
-      }
+    for (const p of topPackages) {
+      if (p.name.startsWith(scope)) targets.add(p.name);
     }
   }
-  const hits = await pool(candidates, 10, async (c) => {
+  // Ensure the well-known first-party servers are covered even if a given
+  // week's download ranking does not surface them.
+  for (const n of [
+    '@modelcontextprotocol/server-filesystem', '@modelcontextprotocol/server-github',
+    '@modelcontextprotocol/server-memory', '@modelcontextprotocol/sdk',
+  ]) targets.add(n);
+
+  const candidates = [];
+  for (const original of targets) {
+    const slash = original.indexOf('/');
+    const bare = original.slice(1, slash);
+    const suffix = original.slice(slash + 1);
+    for (const v of scopeVariants(bare)) {
+      candidates.push({ name: `@${v}/${suffix}`, impersonates: original });
+    }
+  }
+
+  const raw = await pool(candidates, 10, async (c) => {
     const j = await getJSON(`https://registry.npmjs.org/${encodeURIComponent(c.name).replace(/^%40/, '@')}`);
     if (!j?.['dist-tags']) return null;
     const latest = j['dist-tags'].latest;
@@ -87,11 +119,26 @@ async function sweepImpersonations() {
       ...c,
       version: latest,
       created: (j.time?.created || '').slice(0, 10),
+      createdRaw: j.time?.created || null,
       maintainers: (j.maintainers || []).map((m) => m.name).join(', '),
       author: j.versions?.[latest]?.author?.name || '',
     };
   });
-  return { probed: candidates.length, hits: hits.filter(Boolean) };
+
+  // Belt and braces: even under a lookalike scope, a package that predates the
+  // one it resembles cannot be imitating it.
+  const hits = [];
+  for (const h of raw.filter(Boolean)) {
+    const orig = await getJSON(`https://registry.npmjs.org/${encodeURIComponent(h.impersonates).replace(/^%40/, '@')}`);
+    const origCreated = orig?.time?.created;
+    if (origCreated && h.createdRaw && new Date(h.createdRaw) < new Date(origCreated)) {
+      console.log(`  refuted (predates target): ${h.name}`);
+      continue;
+    }
+    delete h.createdRaw;
+    hits.push(h);
+  }
+  return { probed: candidates.length, hits };
 }
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -189,7 +236,7 @@ async function main() {
   });
 
   console.log('sweeping for impersonations…');
-  const sweep = await sweepImpersonations();
+  const sweep = await sweepImpersonations(top);
 
   await mkdir(OUT, { recursive: true });
   const data = { generated, npm, pypi, sweep };
