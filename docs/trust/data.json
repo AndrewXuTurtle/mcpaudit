@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-01 18:53 UTC",
+  "generated": "2026-08-01 19:08 UTC",
   "npm": [
     {
       "name": "chrome-devtools-mcp",
@@ -279,7 +279,7 @@
     },
     {
       "name": "mcp-server-time",
-      "downloads": 443378,
+      "downloads": null,
       "ageDays": 610,
       "findings": []
     },
