@@ -102,6 +102,34 @@ than buried in log output. Or call it directly:
 - run: npx github:AndrewXuTurtle/mcpaudit .mcp.json --fail-on critical
 ```
 
+## Use it as an MCP server
+
+Point your agent at mcpaudit and it can audit its own configuration on request — "is anything
+I'm connected to unsafe?" answered in the session, instead of relying on someone remembering to
+run a CLI.
+
+```json
+{
+  "mcpServers": {
+    "mcpaudit": {
+      "command": "npx",
+      "args": ["-y", "github:AndrewXuTurtle/mcpaudit", "--mcp"]
+    }
+  }
+}
+```
+
+| Tool | Does |
+| --- | --- |
+| `audit_mcp_configs` | Audits every MCP server configured on this machine |
+| `check_package` | Checks one package *before* you install it as a server |
+| `check_advisories` | Looks up advisories for a package at a specific version |
+
+The protocol is implemented directly against the JSON-RPC spec rather than through the official
+SDK, because taking on a dependency tree in order to report on dependency trees would undermine
+the point. It remains zero-dependency, and read-only: it never installs a package or starts a
+server, including its own subjects.
+
 ## The MCP Package Trust Index
 
 **[andrewxuturtle.github.io/mcpaudit/trust/](https://andrewxuturtle.github.io/mcpaudit/trust/)**

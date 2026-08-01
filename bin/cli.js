@@ -10,6 +10,8 @@ const HELP = `
     npx mcpaudit [config-path] [options]
 
   Options
+    --mcp           Run as an MCP server over stdio, so an agent can audit its
+                    own configuration. See README for client setup.
     --deep          Download each package from the registry and read its source.
                     Nothing is installed and nothing is executed.
     --paranoid      Include lower-confidence findings (more noise, fewer misses).
@@ -53,6 +55,13 @@ const SEVERITY_ORDER = ['critical', 'high', 'medium', 'low', 'info'];
 
 async function main() {
   const opts = parseArgs(process.argv.slice(2));
+
+  if (opts.mcp) {
+    // Serve MCP over stdio. Never write to stdout here — it is the transport.
+    const { serve } = await import('../src/mcp-server.js');
+    serve();
+    return new Promise(() => {});
+  }
 
   if (opts.help) {
     process.stdout.write(HELP);

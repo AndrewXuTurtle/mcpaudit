@@ -4,7 +4,8 @@
   "description": "Audit your MCP servers for tool poisoning, credential exposure, and supply-chain risk. Zero dependencies. Built for precision, not noise.",
   "type": "module",
   "bin": {
-    "mcpaudit": "./bin/cli.js"
+    "mcpaudit": "./bin/cli.js",
+    "mcpaudit-server": "./bin/mcp.js"
   },
   "exports": "./src/index.js",
   "files": [
@@ -30,7 +31,10 @@
     "supply-chain",
     "ai-agent",
     "claude",
-    "cursor"
+    "cursor",
+    "mcp-server",
+    "model-context-protocol-server",
+    "agent-security"
   ],
   "author": "AndrewXuTurtle",
   "license": "MIT",
