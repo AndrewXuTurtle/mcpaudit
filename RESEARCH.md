@@ -250,3 +250,44 @@ make the next hypothesis right.
 Three false-positive classes found in this tool now, and this one was in the operator rather than
 the code. It is the same failure as the other two: a signal read without the context that explains
 it.
+
+---
+
+## Update, 2026-08-02: two confirmed-malware Claude Code typosquats, and the check I was missing
+
+Reading Microsoft's Defender signature paid off in a way I did not expect. Besides the scope
+typosquat I already knew about, it matches two other strings: `cloude-code` and `cloude`.
+
+Both exist on npm. Both resolve to version `0.0.1-security` with **zero maintainers**, and the
+package contents are a two-file placeholder whose README says, verbatim:
+
+> This package contained malicious code and was removed from the registry by the npm security
+> team. A placeholder was published to ensure users are not affected in the future.
+
+So these were live typosquats of `@anthropic-ai/claude-code` — 38 and 42 downloads a month even
+now, as tombstones — and npm has already taken them down.
+
+**mcpaudit could not detect this at all.** That is a worse gap than it first appears, because it
+is the single highest-confidence signal available anywhere in this problem space. Every other
+check in this tool is an inference: *this looks over-scoped*, *this name looks close to that one*,
+*this code could exfiltrate*. A security-holding placeholder is not an inference. It is the
+registry stating that the package you configured contained malicious code.
+
+`MCP-SUP-007` now reports it as `CRITICAL` / `certain`, and says the thing that actually matters:
+if it ever ran, treat it as a compromise and rotate every credential it could reach — the
+environment it was handed, plus anything readable from the directories it was given.
+
+The detection is npm-controlled and unambiguous — version `0.0.1-security`, or the description
+`security holding package` — so it carries no false-positive risk. Verified against real
+takedowns, with the legitimate `@anthropic-ai/claude-code` asserted clean in the same test.
+
+Two lessons worth keeping:
+
+**Threat intelligence beats cleverness.** I spent two cycles generating thousands of homoglyph
+permutations and found nothing new. Reading one vendor's published indicator list took minutes and
+produced two confirmed-malware packages plus a missing check. The permutations were guessing what
+an attacker *might* do; the signature recorded what one *did*.
+
+**A removed package is still in configs.** npm's takedown protects installs, not the configuration
+files pointing at it. Anyone who added `cloude-code` in February still has that line, and still
+has whatever credentials it saw. Nothing tells them — which is exactly the job of a config auditor.

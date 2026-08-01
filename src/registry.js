@@ -239,6 +239,25 @@ export async function auditPackage(spec, { deep = false } = {}) {
     }));
   }
 
+  // When npm's security team removes a package for malware, it republishes a
+  // placeholder in its place: version 0.0.1-security, description "security
+  // holding package", maintainers stripped. Finding one of these in a config is
+  // not a heuristic — it is npm stating that this package contained malicious
+  // code. Nothing else this tool reports carries that weight.
+  const heldByVersion = resolved === '0.0.1-security';
+  const heldByDescription = /security holding package/i.test(vmeta?.description || '');
+  if (heldByVersion || heldByDescription) {
+    findings.push(finding({
+      id: 'MCP-SUP-007',
+      severity: 'critical',
+      confidence: CERTAIN,
+      title: 'npm removed this package for containing malicious code',
+      evidence: `${name}@${resolved} — ${vmeta?.description || 'security holding package'}`,
+      why: 'npm replaces packages its security team removes with a placeholder release, which is what is published under this name now. The package you configured contained malicious code and was taken down. If it ever ran on this machine, treat it as a compromise rather than a scare.',
+      fix: `Remove ${name} from every MCP config, and check each client separately. Rotate every credential that was in reach of it — the environment it was given, plus anything readable from the directories it could access. See https://www.npmjs.com/advisories?search=${encodeURIComponent(name)} for the advisory.`,
+    }));
+  }
+
   if (vmeta?.deprecated) {
     findings.push(finding({
       id: 'MCP-SUP-004',
