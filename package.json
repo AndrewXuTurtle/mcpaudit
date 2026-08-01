@@ -1,0 +1,45 @@
+{
+  "name": "mcpaudit",
+  "version": "0.1.0",
+  "description": "Audit your MCP servers for tool poisoning, credential exposure, and supply-chain risk. Zero dependencies. Built for precision, not noise.",
+  "type": "module",
+  "bin": {
+    "mcpaudit": "./bin/cli.js"
+  },
+  "exports": "./src/index.js",
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\""
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "security",
+    "audit",
+    "scanner",
+    "prompt-injection",
+    "tool-poisoning",
+    "supply-chain",
+    "ai-agent",
+    "claude",
+    "cursor"
+  ],
+  "author": "AndrewXuTurtle",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrewXuTurtle/mcpaudit.git"
+  },
+  "homepage": "https://andrewxuturtle.github.io/mcpaudit/",
+  "bugs": {
+    "url": "https://github.com/AndrewXuTurtle/mcpaudit/issues"
+  }
+}

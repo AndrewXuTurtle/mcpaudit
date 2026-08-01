@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "official-looking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotoco1/server-filesystem@1.0.2", "~/code"]
+    },
+    "legit-pinned": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory@2025.9.25"]
+    }
+  }
+}
