@@ -62,21 +62,46 @@ function untar(buf) {
   return files;
 }
 
-/** Source patterns that indicate exfiltration or execution rather than ordinary work. */
+/**
+ * Anything that moves data off the machine. Reading the environment is only
+ * alarming if the result can leave, so several patterns below are gated on one
+ * of these appearing nearby.
+ */
+const EGRESS = /\bfetch\s*\(|https?\.request|axios|node-fetch|XMLHttpRequest|WebSocket|net\.(connect|Socket)|dgram|\.post\s*\(|\.send\s*\(|sendBeacon/;
+
+/** How far around a match to look when testing context. */
+const WINDOW = 600;
+
+/**
+ * Source patterns that indicate exfiltration or execution rather than ordinary work.
+ *
+ * `refute` suppresses a match outright when a known-benign idiom explains it.
+ * `needsEgress` demands that data actually have somewhere to go before the
+ * finding is raised. Both exist because the first version of this file flagged
+ * the `debug` package — vendored into thousands of dependency trees — as
+ * critical environment exfiltration in two of the thirty most-installed MCP
+ * servers. Pattern matching without context is how scanners end up at a 78%
+ * false-positive rate.
+ */
 const SOURCE_PATTERNS = [
   {
     id: 'env-sweep',
     severity: 'critical',
     confidence: LIKELY,
     re: /(JSON\.stringify\s*\(\s*process\.env|Object\.(entries|keys|assign)\s*\(\s*process\.env\s*\)|\{\s*\.\.\.process\.env\s*\})/,
-    title: 'Code serializes the entire environment',
-    why: 'Reading one named variable is normal; capturing the whole environment as a blob is how every credential in the process gets packaged for sending somewhere.',
+    // `Object.keys(process.env).filter(...)` is config lookup, not a sweep.
+    refute: /Object\.(keys|entries)\s*\(\s*process\.env\s*\)\s*\.\s*(filter|find|some|every|forEach|includes)/,
+    needsEgress: true,
+    title: 'Code serializes the entire environment and can transmit it',
+    why: 'Reading one named variable is normal; capturing the whole environment as a blob within reach of a network call is how every credential in the process gets packaged for sending somewhere.',
   },
   {
     id: 'credential-paths',
     severity: 'critical',
     confidence: LIKELY,
     re: /(\.ssh\/id_[rd]sa|\.aws\/credentials|\.config\/gcloud|Login Data|Local State|key3\.db|logins\.json|wallet\.dat)/,
+    // A denylist naming these paths is protecting them, not harvesting them.
+    refute: /\b(deny|denied|denylist|blocklist|blacklist|block|exclude|excluded|forbidden|restricted|protected|sensitive|never|refuse|reject|guard)\b/i,
     title: 'Code references credential or wallet file paths',
     why: 'These exact paths are the target list used by infostealers: SSH private keys, cloud credentials, browser password stores and crypto wallets.',
   },
@@ -105,6 +130,39 @@ const SOURCE_PATTERNS = [
     why: 'A long encoded literal is a common way to keep a payload out of casual reading and out of naive scanners.',
   },
 ];
+
+/**
+ * Apply the source patterns to one file's text, with context gating.
+ *
+ * Exported so the refutation rules are directly testable: the regressions this
+ * guards against are false positives, which are invisible unless asserted on.
+ */
+export function scanSource(text, path = 'source') {
+  const out = [];
+  for (const p of SOURCE_PATTERNS) {
+    const m = text.match(p.re);
+    if (!m) continue;
+
+    const context = text.slice(Math.max(0, m.index - WINDOW), m.index + m[0].length + WINDOW);
+
+    // A known-benign idiom in range explains the match away entirely.
+    if (p.refute && p.refute.test(context)) continue;
+
+    // Captured data that cannot leave the process is not exfiltration.
+    if (p.needsEgress && !EGRESS.test(context)) continue;
+
+    out.push(finding({
+      id: `MCP-SRC-${p.id}`,
+      severity: p.severity,
+      confidence: p.confidence,
+      title: p.title,
+      evidence: `${path}: …${text.slice(Math.max(0, m.index - 30), m.index + m[0].length + 30).replace(/\s+/g, ' ').trim().slice(0, 160)}…`,
+      why: p.why,
+      fix: 'Read this file before running the server. If the behaviour is not explained by the package documentation, do not run it.',
+    }));
+  }
+  return out;
+}
 
 /** Files worth reading. Skips maps and vendored bundles that produce only noise. */
 const isScannable = (p) =>
@@ -187,20 +245,7 @@ export async function auditPackage(spec, { deep = false } = {}) {
           if (!isScannable(file.path) || file.data.length > 2_000_000) continue;
           const text = file.data.toString('utf8');
 
-          for (const p of SOURCE_PATTERNS) {
-            const m = text.match(p.re);
-            if (m) {
-              findings.push(finding({
-                id: `MCP-SRC-${p.id}`,
-                severity: p.severity,
-                confidence: p.confidence,
-                title: p.title,
-                evidence: `${file.path}: …${text.slice(Math.max(0, m.index - 30), m.index + m[0].length + 30).replace(/\s+/g, ' ').trim().slice(0, 160)}…`,
-                why: p.why,
-                fix: 'Read this file before running the server. If the behaviour is not explained by the package documentation, do not run it.',
-              }));
-            }
-          }
+          findings.push(...scanSource(text, file.path));
 
           // Tool descriptions are the payload surface for poisoning attacks.
           for (const m of text.matchAll(/description\s*[:=]\s*(['"`])([\s\S]{12,1200}?)\1/g)) {
