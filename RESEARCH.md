@@ -291,3 +291,52 @@ an attacker *might* do; the signature recorded what one *did*.
 **A removed package is still in configs.** npm's takedown protects installs, not the configuration
 files pointing at it. Anyone who added `cloude-code` in February still has that line, and still
 has whatever credentials it saw. Nothing tells them — which is exactly the job of a config auditor.
+
+---
+
+## Update, 2026-08-02: I checked whether a 91k-star list recommends malware. The answer changed what I publish.
+
+Having assembled 220 MCP-named packages carrying malware advisories, the obvious use was to
+cross-reference them against the lists people actually read. If a popular list points at a package
+a registry removed for malware, that is urgent and worth telling the maintainer.
+
+I extracted every package reference from five `awesome-mcp-*` lists — 548 of them in
+`punkpeye/awesome-mcp-servers` alone, at 91,684 stars — and got exactly one match: `lokal-mcp`,
+installed by that list as `npx lokal-mcp`.
+
+The advisory looked damning. **GHSA-9rg3-p529-qp32**, severity critical, "Malicious code in
+lokal-mcp (npm)", published 2026-07-27, **not withdrawn**, affected range `= 0.4.0` with no patched
+version — and `0.4.0` is exactly what npm serves today.
+
+Then I read the package.
+
+18 KB. Three files. No install hooks. No `child_process`, no `eval`, no `new Function`, no `atob`,
+no base64 blobs. One use of `process.env`, reading its own `LOKAL_URL` setting. One outbound host:
+`rettfrabonden.com`, its own documented API. A tidy MCP server for finding Norwegian farm shops.
+
+I cannot prove a negative from static reading, but there is nothing here that resembles the
+advisory. It looks like a false positive, and I am not going to tell a 91,000-star repository that
+an innocent developer's package is malware on the strength of an automated flag my own inspection
+contradicts.
+
+### The part that mattered was about my own page
+
+The Trust Index was publishing those 220 names under the heading **"Confirmed-malicious MCP
+packages"**, with the line *"each was examined by a registry security team and removed"*.
+
+For `lokal-mcp` that is false. It was not removed — it is live, maintained, and by all appearances
+fine. I had automated the exact failure this project keeps documenting in other tools: taking a
+signal as a verdict, at scale, on a public page, about named people.
+
+Fixed in three ways. The heading now reads *"MCP packages with published malware advisories"*. The
+section leads with the caveat and names `lokal-mcp` as a worked example of why a row here is a
+prompt to look rather than a conclusion. And withdrawn advisories are now filtered out, so a
+retraction by GitHub removes the entry instead of preserving an accusation its author took back.
+
+Note the asymmetry that makes this worth writing down. Where npm has replaced a package with a
+`0.0.1-security` placeholder, the registry has *acted* — that is a fact, and `MCP-SUP-007` reports
+it as certain. An advisory alone is a *claim*, and claims from automated systems are wrong
+sometimes. Those two things had been flattened into one table under one confident heading.
+
+Four false-positive classes found in this project now. This is the first one I shipped to
+production before catching it.

@@ -195,6 +195,9 @@ async function fetchMcpMalware(token) {
       scanned += batch.length;
 
       for (const a of batch) {
+        // A withdrawn advisory has been retracted by GitHub. Republishing it
+        // would keep an accusation alive after its author took it back.
+        if (a.withdrawn_at) continue;
         const names = [...new Set((a.vulnerabilities || []).map((v) => v?.package?.name).filter(Boolean))];
         const hit = names.filter((n) => MCP_NAME.test(n));
         if (!hit.length) continue;
@@ -280,14 +283,15 @@ ${sweep.hits.length
 </div>
 
 <div class="card${malware.list.length ? ' alert' : ''}">
-<h2 style="margin-top:0">Confirmed-malicious MCP packages</h2>
-<p><strong>${malware.list.length}</strong> package name(s) on the MCP / AI-agent surface carry a published malware advisory. Each was examined by a registry security team and removed &mdash; these are not heuristics, and the advisories are public.</p>
+<h2 style="margin-top:0">MCP packages with published malware advisories</h2>
+<p><strong>${malware.list.length}</strong> package name(s) on the MCP / AI-agent surface have an open, non-withdrawn malware advisory in the GitHub Advisory Database.</p>
+<p><strong>Read this as "check before you install", not as a verdict.</strong> These advisories are largely automated, and automation produces false positives. I inspected one entry on this list &mdash; <code>lokal-mcp</code>, flagged critical &mdash; and found an 18&nbsp;KB single-file server with no install hooks, no <code>child_process</code>, no obfuscation, and one outbound host that is its own documented API. It looks entirely legitimate. Its advisory is still open. Treat every row here as a prompt to look, and follow the advisory link before drawing a conclusion about anyone's package.</p>
 <p class="sub">Scanned ${(malware.scanned || 0).toLocaleString()} malware advisories across npm and PyPI in the GitHub Advisory Database.${malware.capped ? ' <strong>Result truncated by a request cap &mdash; treat as a lower bound.</strong>' : ''}${malware.failed ? ` <strong>This run could not complete the scan (${esc(malware.failed)})${malware.stale ? ', so the list below is from the last successful run and may be out of date' : ''}.</strong>` : ''}</p>
 <div class="scroll"><table>
 <tr><th>Package</th><th>Ecosystem</th><th>Advisory</th><th>Published</th></tr>
 ${malware.list.map((m) => `<tr><td><code>${esc(m.package)}</code></td><td>${esc(m.ecosystem)}</td><td><a href="https://github.com/advisories/${esc(m.ghsa)}">${esc(m.ghsa)}</a></td><td>${esc(m.published)}</td></tr>`).join('\n')}
 </table></div>
-<p>If any of these appears in one of your MCP configs, treat it as a compromise rather than a warning: remove it, then rotate every credential it could reach.</p>
+<p>If one of these appears in your MCP config, read its advisory first. Where the advisory holds up &mdash; and especially where npm has replaced the package with a security placeholder &mdash; treat it as a compromise rather than a warning: remove it, then rotate every credential it could reach.</p>
 </div>
 
 <h2>npm packages</h2>
