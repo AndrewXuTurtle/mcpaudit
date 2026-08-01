@@ -8,7 +8,7 @@
  *
  * Read-only. Registry metadata only — nothing is installed or executed.
  */
-import { writeFile, mkdir } from 'node:fs/promises';
+import { writeFile, readFile, mkdir } from 'node:fs/promises';
 import { auditPackage } from '../src/registry.js';
 import { auditPypiPackage } from '../src/pypi.js';
 
@@ -167,6 +167,7 @@ async function fetchMcpMalware(token) {
   const found = [];
   let scanned = 0;
   let capped = false;
+  let failed = null;
 
   for (const ecosystem of ['npm', 'pip']) {
     let url = `https://api.github.com/advisories?ecosystem=${ecosystem}&type=malware&per_page=100&sort=published&direction=desc`;
@@ -176,8 +177,17 @@ async function fetchMcpMalware(token) {
       let res;
       try {
         res = await fetch(url, { headers });
-      } catch { break; }
-      if (!res.ok) break;
+      } catch (e) {
+        failed = `${ecosystem}: request failed (${e.message})`;
+        break;
+      }
+      // Unauthenticated callers get 60 requests an hour, so a rate-limited run
+      // returns nothing. Reporting that as "scanned 0, found 0" would be
+      // indistinguishable from a clean result — the failure has to be loud.
+      if (!res.ok) {
+        failed = `${ecosystem}: HTTP ${res.status}${res.status === 403 ? ' (rate limited — is GITHUB_TOKEN set?)' : ''}`;
+        break;
+      }
       requests++;
 
       const batch = await res.json();
@@ -214,8 +224,9 @@ async function fetchMcpMalware(token) {
   }
 
   const list = [...byPackage.values()].sort((a, b) => (b.published || '').localeCompare(a.published || ''));
-  if (capped) console.log(`  NOTE: advisory scan hit the ${MAX_PAGES}-page cap; the list may be incomplete`);
-  return { scanned, capped, list };
+  if (capped) console.log(`  NOTE: advisory scan hit the ${MAX_REQUESTS}-request cap; the list may be incomplete`);
+  if (failed) console.log(`  WARNING: advisory scan incomplete — ${failed}`);
+  return { scanned, capped, failed, list };
 }
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -271,7 +282,7 @@ ${sweep.hits.length
 <div class="card${malware.list.length ? ' alert' : ''}">
 <h2 style="margin-top:0">Confirmed-malicious MCP packages</h2>
 <p><strong>${malware.list.length}</strong> package name(s) on the MCP / AI-agent surface carry a published malware advisory. Each was examined by a registry security team and removed &mdash; these are not heuristics, and the advisories are public.</p>
-<p class="sub">Scanned ${malware.scanned.toLocaleString()} malware advisories across npm and PyPI in the GitHub Advisory Database.${malware.capped ? ' <strong>Result truncated by a page cap &mdash; treat as a lower bound.</strong>' : ''}</p>
+<p class="sub">Scanned ${(malware.scanned || 0).toLocaleString()} malware advisories across npm and PyPI in the GitHub Advisory Database.${malware.capped ? ' <strong>Result truncated by a request cap &mdash; treat as a lower bound.</strong>' : ''}${malware.failed ? ` <strong>This run could not complete the scan (${esc(malware.failed)})${malware.stale ? ', so the list below is from the last successful run and may be out of date' : ''}.</strong>` : ''}</p>
 <div class="scroll"><table>
 <tr><th>Package</th><th>Ecosystem</th><th>Advisory</th><th>Published</th></tr>
 ${malware.list.map((m) => `<tr><td><code>${esc(m.package)}</code></td><td>${esc(m.ecosystem)}</td><td><a href="https://github.com/advisories/${esc(m.ghsa)}">${esc(m.ghsa)}</a></td><td>${esc(m.published)}</td></tr>`).join('\n')}
@@ -327,7 +338,20 @@ async function main() {
   const sweep = await sweepImpersonations(top);
 
   console.log('collecting published malware advisories…');
-  const malware = await fetchMcpMalware(process.env.GITHUB_TOKEN);
+  let malware = await fetchMcpMalware(process.env.GITHUB_TOKEN);
+
+  // A rate limit or outage must not silently replace a published list of known
+  // malicious packages with an empty one. Keep the last good result and say it
+  // is stale instead.
+  if (malware.failed && !malware.list.length) {
+    try {
+      const previous = JSON.parse(await readFile(`${OUT}/data.json`, 'utf8'));
+      if (previous?.malware?.list?.length) {
+        console.log(`  keeping previous list of ${previous.malware.list.length} (marked stale)`);
+        malware = { ...previous.malware, stale: true, failed: malware.failed };
+      }
+    } catch { /* no previous run to fall back on */ }
+  }
   console.log(`  ${malware.list.length} malicious MCP-named packages from ${malware.scanned.toLocaleString()} advisories`);
 
   await mkdir(OUT, { recursive: true });

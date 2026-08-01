@@ -36,6 +36,10 @@ jobs:
           node-version: '20'
 
       - name: Build the trust index
+        env:
+          # Without a token the advisories API allows 60 requests an hour, which
+          # is far short of a full malware-feed scan.
+          GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/build-index.mjs
 
       - name: Commit the refreshed index
@@ -46,10 +50,22 @@ jobs:
           git add docs/trust
           if git diff --staged --quiet; then
             echo "index unchanged"
-          else
-            git commit -m "Trust index: automated refresh"
-            git push
+            exit 0
           fi
+          git commit -m "Trust index: automated refresh"
+
+          # A human push can land between checkout and here; rebase rather than
+          # failing the run, which previously left the published index stale.
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "pushed on attempt $attempt"
+              exit 0
+            fi
+            echo "push rejected, rebasing (attempt $attempt)"
+            git pull --rebase --autostash origin main || true
+          done
+          echo "::error::could not push the refreshed index after 3 attempts"
+          exit 1
 
       - name: Raise an issue if an impersonation appeared
         if: success()
