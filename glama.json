@@ -1,0 +1,9 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "maintainers": ["AndrewXuTurtle"],
+  "name": "mcpaudit",
+  "description": "Audits the MCP servers you have already installed for tool poisoning, credential exposure, over-broad privilege, and supply-chain impersonation. Zero dependencies; nothing is installed or executed.",
+  "type": "mcp_server",
+  "status": "stable",
+  "keywords": ["mcp", "security", "audit", "supply-chain", "tool-poisoning", "prompt-injection", "typosquatting", "agent-security"]
+}
