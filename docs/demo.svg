@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="981" height="1111" viewBox="0 0 981 1111" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13">
+  <rect width="981" height="1111" rx="10" fill="#16150f"/>
+  <rect width="981" height="30" rx="10" fill="#211f1a"/>
+  <rect y="20" width="981" height="10" fill="#211f1a"/>
+  <circle cx="19" cy="15" r="5" fill="#e8785c"/>
+  <circle cx="37" cy="15" r="5" fill="#d9a441"/>
+  <circle cx="55" cy="15" r="5" fill="#7fbf8f"/>
+  <text x="490.5" y="19.5" fill="#8a887f" font-size="11" text-anchor="middle">mcpaudit</text>
+
+<text x="20.0" y="65" fill="#d8d5cc" font-weight="600">  mcpaudit</text><text x="104.0" y="65" fill="#d8d5cc" opacity="0.55">  ·  2 servers across 1 config</text>
+<text x="20.0" y="84" fill="#d8d5cc" opacity="0.55">    explicit  /Users/infovegetarian/Documents/Money_making_challange/mcpaudit/test/fixtures/demo.json</text>
+
+<text x="20.0" y="122" fill="#d8d5cc">  </text><rect x="36.8" y="109.0" width="84.0" height="17" fill="#a3341f" rx="2"/><text x="36.8" y="122" fill="#ffffff" font-weight="600"> CRITICAL </text><text x="120.8" y="122" fill="#d8d5cc"> </text><text x="129.2" y="122" fill="#d8d5cc" font-weight="600">filesystem</text><text x="213.2" y="122" fill="#d8d5cc" opacity="0.55">  @modelcontextprotoco1/server-filesystem</text>
+<text x="20.0" y="141" fill="#d8d5cc" opacity="0.55">         stdio · npx -y @modelcontextprotoco1/server-filesystem /</text>
+<text x="20.0" y="160" fill="#d8d5cc" opacity="0.55">         21 downloads/mo · 110 days old</text>
+
+<text x="20.0" y="198" fill="#d8d5cc">         </text><rect x="95.6" y="185.0" width="84.0" height="17" fill="#a3341f" rx="2"/><text x="95.6" y="198" fill="#ffffff" font-weight="600"> CRITICAL </text><text x="179.6" y="198" fill="#d8d5cc"> </text><text x="188.0" y="198" fill="#d8d5cc" font-weight="600">Publisher scope impersonates "@modelcontextprotocol/"</text><text x="633.2" y="198" fill="#d8d5cc">  </text><text x="650.0" y="198" fill="#d8d5cc" opacity="0.55">MCP-SUP-006</text>
+<text x="20.0" y="217" fill="#d8d5cc" opacity="0.55">         evidence: configured scope: @modelcontextprotoco1/</text>
+<text x="20.0" y="236" fill="#d8d5cc">         The scope is not the official one but is visually near-identical to it.</text>
+<text x="20.0" y="255" fill="#d8d5cc">         Because npm will not let anyone else publish under the real scope, imitating</text>
+<text x="20.0" y="274" fill="#d8d5cc">         it is the only way to make a hostile package look first-party — and a</text>
+<text x="20.0" y="293" fill="#d8d5cc">         lookalike scope is far more convincing than a misspelled package name.</text>
+<text x="20.0" y="312" fill="#7fbf8f">         → This is almost certainly not the publisher you intended. Reinstall from</text>
+<text x="20.0" y="331" fill="#d8d5cc">         the official docs, and treat every credential this server held as</text>
+<text x="20.0" y="350" fill="#d8d5cc">         compromised.</text>
+
+<text x="20.0" y="388" fill="#d8d5cc">         </text><rect x="95.6" y="375.0" width="84.0" height="17" fill="#a3341f" rx="2"/><text x="95.6" y="388" fill="#ffffff" font-weight="600"> CRITICAL </text><text x="179.6" y="388" fill="#d8d5cc"> </text><text x="188.0" y="388" fill="#d8d5cc" font-weight="600">Package name is visually identical to "@modelcontextprotocol/server-filesystem"</text><text x="851.6" y="388" fill="#d8d5cc">  </text><text x="868.4" y="388" fill="#d8d5cc" opacity="0.55">MCP-SUP-002</text>
+<text x="20.0" y="407" fill="#d8d5cc" opacity="0.55">         evidence: configured: @modelcontextprotoco1/server-filesystem</text>
+<text x="20.0" y="426" fill="#d8d5cc">         Near-identical names are the standard delivery route for trojanized MCP</text>
+<text x="20.0" y="445" fill="#d8d5cc">         packages — the 2026 SmartLoader campaign built a whole fake developer</text>
+<text x="20.0" y="464" fill="#d8d5cc">         ecosystem, complete with five GitHub accounts, to make one look legitimate</text>
+<text x="20.0" y="483" fill="#d8d5cc">         before shipping an infostealer.</text>
+<text x="20.0" y="502" fill="#7fbf8f">         → Confirm character by character that you meant</text>
+<text x="20.0" y="521" fill="#d8d5cc">         @modelcontextprotoco1/server-filesystem and not</text>
+<text x="20.0" y="540" fill="#d8d5cc">         @modelcontextprotocol/server-filesystem. If in doubt, uninstall and</text>
+<text x="20.0" y="559" fill="#d8d5cc">         reinstall from the publisher's own documentation.</text>
+
+<text x="20.0" y="597" fill="#d8d5cc">         </text><text x="95.6" y="597" fill="#e8785c" font-weight="600"> HIGH </text><text x="146.0" y="597" fill="#d8d5cc"> </text><text x="154.4" y="597" fill="#d8d5cc" font-weight="600">Server is granted the entire filesystem</text><text x="482.0" y="597" fill="#d8d5cc">  </text><text x="498.8" y="597" fill="#d8d5cc" opacity="0.55">MCP-PRIV-001</text>
+<text x="20.0" y="616" fill="#d8d5cc" opacity="0.55">         evidence: argument: /</text>
+<text x="20.0" y="635" fill="#d8d5cc">         That scope includes ~/.ssh, ~/.aws/credentials, browser profiles, and every</text>
+<text x="20.0" y="654" fill="#d8d5cc">         .env file you own. Any prompt injection reaching this server — from a web</text>
+<text x="20.0" y="673" fill="#d8d5cc">         page it fetches, a file it reads, or another server's tool description — can</text>
+<text x="20.0" y="692" fill="#d8d5cc">         read all of it.</text>
+<text x="20.0" y="711" fill="#7fbf8f">         → Scope the server to the specific project directories it needs, e.g.</text>
+<text x="20.0" y="730" fill="#d8d5cc">         ~/code/my-project instead of the whole home directory.</text>
+
+<text x="20.0" y="768" fill="#d8d5cc">         </text><text x="95.6" y="768" fill="#d9a441" font-weight="600"> MEDIUM </text><text x="162.8" y="768" fill="#d8d5cc"> </text><text x="171.2" y="768" fill="#d8d5cc" font-weight="600">Server runs an unpinned package version</text><text x="498.8" y="768" fill="#d8d5cc">  </text><text x="515.6" y="768" fill="#d8d5cc" opacity="0.55">MCP-SUP-001</text>
+<text x="20.0" y="787" fill="#d8d5cc" opacity="0.55">         evidence: npx -y @modelcontextprotoco1/server-filesystem /</text>
+<text x="20.0" y="806" fill="#d8d5cc">         Every launch fetches whatever the registry serves at that moment. A</text>
+<text x="20.0" y="825" fill="#d8d5cc">         maintainer change, an account takeover, or a deliberate "rug pull" —</text>
+<text x="20.0" y="844" fill="#d8d5cc">         publishing benign code, waiting for adoption, then shipping a malicious</text>
+<text x="20.0" y="863" fill="#d8d5cc">         version — lands on your machine automatically and with no review.</text>
+<text x="20.0" y="882" fill="#7fbf8f">         → Pin the version, e.g. @modelcontextprotoco1/server-filesystem@1.2.3, and</text>
+<text x="20.0" y="901" fill="#d8d5cc">         update deliberately.</text>
+
+<text x="20.0" y="939" fill="#d8d5cc">  </text><text x="36.8" y="939" fill="#7fbf8f"> CLEAN </text><text x="95.6" y="939" fill="#d8d5cc"> </text><text x="104.0" y="939" fill="#d8d5cc" font-weight="600">notion</text><text x="154.4" y="939" fill="#d8d5cc" opacity="0.55">  @notionhq/notion-mcp-server@1.9.0</text>
+<text x="20.0" y="958" fill="#d8d5cc" opacity="0.55">         stdio · npx -y @notionhq/notion-mcp-server@1.9.0</text>
+<text x="20.0" y="977" fill="#d8d5cc" opacity="0.55">         705,744 downloads/mo · 484 days old</text>
+
+<text x="20.0" y="1015" fill="#d8d5cc">  ────────────────────────────────────────────────────────────────────────────────────</text>
+<text x="20.0" y="1034" fill="#d8d5cc">  </text><text x="36.8" y="1034" fill="#d8d5cc" font-weight="600">2 critical, 1 high, 1 medium</text>
+<text x="20.0" y="1053" fill="#d8d5cc" opacity="0.55">  Run with --deep to download and inspect each package source (nothing is executed).</text>
+<text x="20.0" y="1072" fill="#d8d5cc" opacity="0.55">  Run with --paranoid to include lower-confidence findings.</text>
+</svg>

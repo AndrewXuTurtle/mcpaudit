@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotoco1/server-filesystem", "/"]
+    },
+    "notion": {
+      "command": "npx",
+      "args": ["-y", "@notionhq/notion-mcp-server@1.9.0"],
+      "env": { "NOTION_TOKEN": "${NOTION_TOKEN}" }
+    }
+  }
+}

@@ -1,6 +1,11 @@
 import { SEVERITY_ORDER } from './index.js';
 
-const useColor = process.stdout.isTTY && !process.env.NO_COLOR;
+// FORCE_COLOR keeps output readable when stdout is a pipe — CI logs (GitHub
+// Actions renders ANSI) and the demo renderer both need colour without a TTY.
+const useColor =
+  process.env.NO_COLOR
+    ? false
+    : (process.env.FORCE_COLOR && process.env.FORCE_COLOR !== '0') || Boolean(process.stdout.isTTY);
 const c = (code, s) => (useColor ? `[${code}m${s}[0m` : s);
 const bold = (s) => c('1', s);
 const dim = (s) => c('2', s);

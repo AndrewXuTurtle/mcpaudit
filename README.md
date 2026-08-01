@@ -10,6 +10,8 @@ Zero dependencies. Nothing is installed, nothing is executed.
 npx github:AndrewXuTurtle/mcpaudit
 ```
 
+<img src="docs/demo.svg" alt="mcpaudit flagging a package published under a homoglyph of the official MCP scope as CRITICAL, while reporting a legitimate pinned server as clean" width="100%">
+
 ---
 
 ## It found a live typosquat on day one
