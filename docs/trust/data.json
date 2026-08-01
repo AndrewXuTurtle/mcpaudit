@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-01 20:57 UTC",
+  "generated": "2026-08-01 21:14 UTC",
   "npm": [
     {
       "name": "chrome-devtools-mcp",
@@ -56,22 +56,6 @@
       "findings": []
     },
     {
-      "name": "@azure/mcp",
-      "downloads": 470773,
-      "ageDays": 471,
-      "findings": [
-        {
-          "confidence": "certain",
-          "id": "MCP-SUP-005",
-          "severity": "high",
-          "title": "Package runs a postinstall script",
-          "evidence": "\"postinstall\": node ./scripts/post-install-script.js",
-          "why": "Install hooks execute the moment the package is fetched — before the server is ever started and before any tool description is reviewed. With npx and an unpinned version, this runs on every launch.",
-          "fix": "Read the script. To install without running it, use `npm install --ignore-scripts`."
-        }
-      ]
-    },
-    {
       "name": "@sentry/mcp-server",
       "downloads": 444981,
       "ageDays": 464,
@@ -80,7 +64,7 @@
     {
       "name": "@supabase/mcp-server-supabase",
       "downloads": 426948,
-      "ageDays": 490,
+      "ageDays": 491,
       "findings": []
     },
     {
@@ -250,6 +234,12 @@
       "downloads": 41044,
       "ageDays": 466,
       "findings": []
+    },
+    {
+      "name": "@heroku/mcp-server",
+      "downloads": 29848,
+      "ageDays": 481,
+      "findings": []
     }
   ],
   "pypi": [
@@ -261,7 +251,7 @@
     },
     {
       "name": "fastmcp",
-      "downloads": 85198061,
+      "downloads": null,
       "ageDays": 609,
       "findings": []
     },
@@ -285,13 +275,13 @@
     },
     {
       "name": "mcp-server-sqlite",
-      "downloads": null,
+      "downloads": 50673,
       "ageDays": 617,
       "findings": []
     }
   ],
   "sweep": {
-    "probed": 322,
+    "probed": 316,
     "hits": [
       {
         "name": "@modelcontextprotoco1/server-filesystem",
@@ -312,1321 +302,2201 @@
         "package": "refbase-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-5xcj-w4qg-g78g",
-        "published": "2026-07-31"
+        "published": "2026-07-31",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "hit-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-fmvj-j52v-97x4",
-        "published": "2026-07-31"
+        "published": "2026-07-31",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "iwomm-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-8cvf-hpjg-mf2j",
-        "published": "2026-07-31"
+        "published": "2026-07-31",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "mcp-server-boilerplate",
         "ecosystem": "npm",
         "ghsa": "GHSA-694g-9jgf-5566",
-        "published": "2026-07-31"
+        "published": "2026-07-31",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "chaos-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-8whv-6hc5-4wpr",
-        "published": "2026-07-31"
+        "published": "2026-07-31",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "gtm-mcp-auth",
         "ecosystem": "npm",
         "ghsa": "GHSA-4ch5-wcxv-58j5",
-        "published": "2026-07-31"
+        "published": "2026-07-31",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "sap-mcp-facilitator",
         "ecosystem": "npm",
         "ghsa": "GHSA-fvh4-59gv-h4qp",
-        "published": "2026-07-31"
+        "published": "2026-07-31",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "maximumsats-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-mr5v-ffrr-c4h3",
-        "published": "2026-07-31"
+        "published": "2026-07-31",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "sap-mcp-config",
         "ecosystem": "npm",
         "ghsa": "GHSA-4j2q-gh4v-v729",
-        "published": "2026-07-31"
+        "published": "2026-07-31",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "kip-mcp-http",
         "ecosystem": "npm",
         "ghsa": "GHSA-993p-762h-628r",
-        "published": "2026-07-31"
+        "published": "2026-07-31",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "pm-claude-skills-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-87v2-285p-xhrr",
-        "published": "2026-07-31"
+        "published": "2026-07-31",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "routerbase-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-rxc6-q384-2wrx",
-        "published": "2026-07-31"
+        "published": "2026-07-31",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "smart-npv-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-972c-x84x-rm4f",
-        "published": "2026-07-31"
+        "published": "2026-07-31",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "mcp-search-server",
         "ecosystem": "pip",
         "ghsa": "GHSA-3rhm-6v7p-whrg",
-        "published": "2026-07-30"
+        "published": "2026-07-30",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "mcp-echarts",
         "ecosystem": "npm",
         "ghsa": "GHSA-33m7-5xmx-p58p",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.7.1",
+        "registryState": "live",
+        "range": "= 0.8.1",
+        "verdict": "remediated"
       },
       {
         "package": "mcp-mermaid",
         "ecosystem": "npm",
         "ghsa": "GHSA-2f6m-69ww-37wv",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.4.1",
+        "registryState": "live",
+        "range": "= 0.5.1",
+        "verdict": "remediated"
       },
       {
         "package": "@antv/mcp-server-antv",
         "ecosystem": "npm",
         "ghsa": "GHSA-p6wc-j7x7-ff3v",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.1.8",
+        "registryState": "live",
+        "range": "= 0.2.8",
+        "verdict": "remediated"
       },
       {
         "package": "claude-code-base-action",
         "ecosystem": "npm",
         "ghsa": "GHSA-3x98-842h-2764",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": null,
+        "registryState": "live",
+        "range": "= 2.0.0",
+        "verdict": "unknown"
       },
       {
         "package": "polymarket-claude-code",
         "ecosystem": "npm",
         "ghsa": "GHSA-jgxh-5jvq-q9r2",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.1.1",
+        "registryState": "live",
+        "range": "= 0.1.0",
+        "verdict": "remediated"
       },
       {
         "package": "promptbook-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-vmvx-c3j5-rhw5",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.1.1",
+        "registryState": "live",
+        "range": "= 0.1.0",
+        "verdict": "remediated"
       },
       {
         "package": "lokal-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-9rg3-p529-qp32",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.4.0",
+        "registryState": "live",
+        "range": "= 0.4.0",
+        "verdict": "still-affected"
       },
       {
         "package": "local-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-9h8c-f7pm-jmvw",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "3.0.359",
+        "registryState": "live",
+        "range": "= 3.0.177",
+        "verdict": "remediated"
       },
       {
         "package": "mcp-server-iehub-proxy",
         "ecosystem": "npm",
         "ghsa": "GHSA-3x3c-57v3-ghqc",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "1.0.0",
+        "registryState": "live",
+        "range": "= 1.0.0",
+        "verdict": "still-affected"
       },
       {
         "package": "claude-all-config",
         "ecosystem": "npm",
         "ghsa": "GHSA-6353-97m9-6cpx",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "3.9.0",
+        "registryState": "live",
+        "range": "= 3.8.3",
+        "verdict": "remediated"
       },
       {
         "package": "claude-content-writer",
         "ecosystem": "npm",
         "ghsa": "GHSA-xcv7-f69m-4q6r",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "2.4.1",
+        "registryState": "live",
+        "range": "= 2.2.0",
+        "verdict": "remediated"
       },
       {
         "package": "@tmecontinue/claude",
         "ecosystem": "npm",
         "ghsa": "GHSA-vc3x-g46f-q7c5",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "atel-mcp-openclaw",
         "ecosystem": "npm",
         "ghsa": "GHSA-cj4c-g5f9-v9wf",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.6.76",
+        "registryState": "live",
+        "range": "= 0.6.44",
+        "verdict": "remediated"
       },
       {
         "package": "@wengine-ai/claude-code-router-shared",
         "ecosystem": "npm",
         "ghsa": "GHSA-jw2r-g746-x7p3",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "2.3.238",
+        "registryState": "live",
+        "range": "= 2.0.24",
+        "verdict": "remediated"
       },
       {
         "package": "@mcpassure/mcp-anvisa-bulario",
         "ecosystem": "npm",
         "ghsa": "GHSA-m8xf-qrf8-8954",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "2.1.10",
+        "registryState": "live",
+        "range": "= 2.1.7",
+        "verdict": "remediated"
       },
       {
         "package": "@rui.branco/sentry-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-h82q-jfv8-9wxm",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "1.0.6",
+        "registryState": "live",
+        "range": "= 1.0.4",
+        "verdict": "remediated"
       },
       {
         "package": "@jonusnattapong/claudecode",
         "ecosystem": "npm",
         "ghsa": "GHSA-hcwr-8fgm-38jr",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "2.1.178",
+        "registryState": "live",
+        "range": "= 2.1.163",
+        "verdict": "remediated"
       },
       {
         "package": "@mcpassure/mcp-cnes",
         "ecosystem": "npm",
         "ghsa": "GHSA-fw8x-w94j-xp65",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.3.2",
+        "registryState": "live",
+        "range": "= 0.3.1",
+        "verdict": "remediated"
       },
       {
         "package": "@euqns/nudge-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-3rjv-mr8w-hmh8",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.6.11",
+        "registryState": "live",
+        "range": "= 0.2.1",
+        "verdict": "remediated"
       },
       {
         "package": "@bonsai-ai/claude-code-win32-x64",
         "ecosystem": "npm",
         "ghsa": "GHSA-rh4j-vfg5-cggc",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "2.1.220",
+        "registryState": "live",
+        "range": "= 2.1.141",
+        "verdict": "remediated"
       },
       {
         "package": "@citely/mcp-server",
         "ecosystem": "npm",
         "ghsa": "GHSA-jgqq-q924-gxr6",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.10.0",
+        "registryState": "live",
+        "range": "= 0.9.1",
+        "verdict": "remediated"
       },
       {
         "package": "@djessicatony/folk-mcp-canary",
         "ecosystem": "npm",
         "ghsa": "GHSA-65rf-6m5c-24p5",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "@cometix/claude-code",
         "ecosystem": "npm",
         "ghsa": "GHSA-xc56-6g8x-wv94",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "2.1.219",
+        "registryState": "live",
+        "range": "= 2.1.143",
+        "verdict": "remediated"
       },
       {
         "package": "@bonsai-ai/claude-code",
         "ecosystem": "npm",
         "ghsa": "GHSA-r7ww-q4rx-v4wp",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "2.1.220",
+        "registryState": "live",
+        "range": "= 2.1.141-1",
+        "verdict": "remediated"
       },
       {
         "package": "@atlisp/mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-vxmr-xfv2-w64r",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "1.8.32",
+        "registryState": "live",
+        "range": "= 1.6.10",
+        "verdict": "remediated"
       },
       {
         "package": "@cloudplatform-single-spa/ml-ai-agents-mcp-server",
         "ecosystem": "npm",
         "ghsa": "GHSA-36cm-hj6r-x979",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.0.1-security.1",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "brave-search-mcp-server",
         "ecosystem": "npm",
         "ghsa": "GHSA-56pv-xqqh-57cf",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "t-invest-mcp-server",
         "ecosystem": "npm",
         "ghsa": "GHSA-hc7h-crvc-rj9g",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": null,
+        "registryState": "live",
+        "range": "= 9999.99.99",
+        "verdict": "unknown"
       },
       {
         "package": "screenpipe-mcp-http",
         "ecosystem": "npm",
         "ghsa": "GHSA-v653-pcmf-c253",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": null,
+        "registryState": "live",
+        "range": "= 9999.99.99",
+        "verdict": "unknown"
       },
       {
         "package": "create-docs-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-7j3w-62wc-g3qj",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": null,
+        "registryState": "live",
+        "range": "= 9999.99.99",
+        "verdict": "unknown"
       },
       {
         "package": "mcp-server-sentry",
         "ecosystem": "npm",
         "ghsa": "GHSA-28qv-2m9q-wm2p",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.0.2",
+        "registryState": "live",
+        "range": "= 0.0.1",
+        "verdict": "remediated"
       },
       {
         "package": "mcp-server-supabase",
         "ecosystem": "npm",
         "ghsa": "GHSA-48pr-c89h-69q7",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.0.2",
+        "registryState": "live",
+        "range": "= 0.0.1",
+        "verdict": "remediated"
       },
       {
         "package": "mcp-server-redis",
         "ecosystem": "npm",
         "ghsa": "GHSA-2rvc-xw64-r74h",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.0.2",
+        "registryState": "live",
+        "range": "= 0.0.1",
+        "verdict": "remediated"
       },
       {
         "package": "mcp-server-sequential-thinking",
         "ecosystem": "npm",
         "ghsa": "GHSA-w69h-vf37-j4w6",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.0.2",
+        "registryState": "live",
+        "range": "= 0.0.1",
+        "verdict": "remediated"
       },
       {
         "package": "mcp-server-git",
         "ecosystem": "npm",
         "ghsa": "GHSA-hmxw-q2gh-p268",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.0.2",
+        "registryState": "live",
+        "range": "= 0.0.1",
+        "verdict": "remediated"
       },
       {
         "package": "mcp-server-notion",
         "ecosystem": "npm",
         "ghsa": "GHSA-mx42-9xv4-vm87",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.0.2",
+        "registryState": "live",
+        "range": "= 0.0.1",
+        "verdict": "remediated"
       },
       {
         "package": "mcp-server-fetch",
         "ecosystem": "npm",
         "ghsa": "GHSA-88f3-qjxp-rpp3",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.0.2",
+        "registryState": "live",
+        "range": "= 0.0.1",
+        "verdict": "remediated"
       },
       {
         "package": "mcp-server-postgres",
         "ecosystem": "npm",
         "ghsa": "GHSA-62p7-frf5-h7p2",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.0.2",
+        "registryState": "live",
+        "range": "= 0.0.1",
+        "verdict": "remediated"
       },
       {
         "package": "mcp-server-figma",
         "ecosystem": "npm",
         "ghsa": "GHSA-cxx6-mmxm-vfm4",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.0.2",
+        "registryState": "live",
+        "range": "= 0.0.1",
+        "verdict": "remediated"
       },
       {
         "package": "mcp-server-github",
         "ecosystem": "npm",
         "ghsa": "GHSA-mmcr-x94x-c3mp",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.0.2",
+        "registryState": "live",
+        "range": "= 0.0.1",
+        "verdict": "remediated"
       },
       {
         "package": "bricks-builder-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-r88h-7778-q4r3",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "3.12.4",
+        "registryState": "live",
+        "range": "= 3.11.2",
+        "verdict": "remediated"
       },
       {
         "package": "bitrix24-tasks-mcp-server",
         "ecosystem": "npm",
         "ghsa": "GHSA-2w52-hqcr-f2x2",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "1.6.2",
+        "registryState": "live",
+        "range": "= 1.5.0",
+        "verdict": "remediated"
       },
       {
         "package": "claudechor",
         "ecosystem": "npm",
         "ghsa": "GHSA-8rqr-34rw-3fhj",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "1.0.5",
+        "registryState": "live",
+        "range": "= 1.0.5",
+        "verdict": "still-affected"
       },
       {
         "package": "claude-jar",
         "ecosystem": "npm",
         "ghsa": "GHSA-9hj3-rj27-phgx",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.2.0",
+        "registryState": "live",
+        "range": "= 0.2.0",
+        "verdict": "still-affected"
       },
       {
         "package": "zomato-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-m5cc-7f4r-p5c8",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": null,
+        "registryState": "live",
+        "range": "= 1.0.0",
+        "verdict": "unknown"
       },
       {
         "package": "cue-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-p545-gqc3-855r",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": null,
+        "registryState": "live",
+        "range": "= 9999.99.99",
+        "verdict": "unknown"
       },
       {
         "package": "anthropic-internal-tools",
         "ecosystem": "npm",
         "ghsa": "GHSA-hf34-hjvf-99ph",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": null,
+        "registryState": "live",
+        "range": "> 0",
+        "verdict": "unknown"
       },
       {
         "package": "executable-stories-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-c277-735f-mrmj",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.4.7",
+        "registryState": "live",
+        "range": "= 0.3.3",
+        "verdict": "remediated"
       },
       {
         "package": "mcp-ci-runner-poc",
         "ecosystem": "npm",
         "ghsa": "GHSA-fw9m-r33c-qgj2",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": null,
+        "registryState": "live",
+        "range": "= 1.0.0",
+        "verdict": "unknown"
       },
       {
         "package": "claude-internal-utils",
         "ecosystem": "npm",
         "ghsa": "GHSA-jxg3-fwfv-fjwf",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "anthropic-shared-logger",
         "ecosystem": "npm",
         "ghsa": "GHSA-4vj8-cm74-gcx3",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "claude-cup",
         "ecosystem": "npm",
         "ghsa": "GHSA-r663-w5qf-3552",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.9.12",
+        "registryState": "live",
+        "range": "> 0",
+        "verdict": "still-affected"
       },
       {
         "package": "checkmarx-claude-cache",
         "ecosystem": "npm",
         "ghsa": "GHSA-5j4h-g757-9wmm",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": null,
+        "registryState": "live",
+        "range": "> 0",
+        "verdict": "unknown"
       },
       {
         "package": "sidecar-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-xvjf-g3xg-g5j7",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "1.0.4",
+        "registryState": "live",
+        "range": "= 1.0.1",
+        "verdict": "remediated"
       },
       {
         "package": "claude-team-tracker",
         "ecosystem": "npm",
         "ghsa": "GHSA-wxfw-pvxf-89gr",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "1.2.2",
+        "registryState": "live",
+        "range": "= 1.2.1",
+        "verdict": "remediated"
       },
       {
         "package": "proxy-seller-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-2j85-5qpr-6h8w",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "0.1.13",
+        "registryState": "live",
+        "range": "= 0.1.7",
+        "verdict": "remediated"
       },
       {
         "package": "polymarket-mcp-v2",
         "ecosystem": "npm",
         "ghsa": "GHSA-j66f-f322-x333",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": null,
+        "registryState": "live",
+        "range": "= 2.1.6",
+        "verdict": "unknown"
       },
       {
         "package": "@vite-mcp/vite-type",
         "ecosystem": "npm",
         "ghsa": "GHSA-cf2w-h63w-wm84",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "6.44.1",
+        "registryState": "live",
+        "range": "= 6.44.1",
+        "verdict": "still-affected"
       },
       {
         "package": "sensorium-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-9388-px34-hc4h",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": "3.0.103",
+        "registryState": "live",
+        "range": "= 3.0.95",
+        "verdict": "remediated"
       },
       {
         "package": "claude-code-timer",
         "ecosystem": "npm",
         "ghsa": "GHSA-6649-vv4q-q9fw",
-        "published": "2026-07-27"
+        "published": "2026-07-27",
+        "current": null,
+        "registryState": "live",
+        "range": "= 1.0.0",
+        "verdict": "unknown"
       },
       {
         "package": "mcp-notes-server-poc-praetorian",
         "ecosystem": "npm",
         "ghsa": "GHSA-rfhm-2wfr-r9p2",
-        "published": "2026-07-23"
+        "published": "2026-07-23",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "wayspiritmcp-weather",
         "ecosystem": "pip",
         "ghsa": "GHSA-6h3x-xwcv-w9f9",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "wdt-erpmcp",
         "ecosystem": "pip",
         "ghsa": "GHSA-mfjc-6893-4m4j",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": "0.2.15",
+        "registryState": "live",
+        "range": "= 0.1.7",
+        "verdict": "remediated"
       },
       {
         "package": "wayspiritmcp-tpa",
         "ecosystem": "pip",
         "ghsa": "GHSA-wc92-rjp7-g2h3",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "wayspiritmcp-ppa",
         "ecosystem": "pip",
         "ghsa": "GHSA-65cx-x459-79g7",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "wayspiritmcp-enconly",
         "ecosystem": "pip",
         "ghsa": "GHSA-rjcm-fv9f-f2rg",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "vulndify-mcp-server",
         "ecosystem": "pip",
         "ghsa": "GHSA-v3x5-574x-8776",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": "0.3.0",
+        "registryState": "live",
+        "range": "= 0.3.0",
+        "verdict": "still-affected"
       },
       {
         "package": "tpvmcpustudy",
         "ecosystem": "pip",
         "ghsa": "GHSA-2wm5-3q9g-7g9q",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "tpreramcpu",
         "ecosystem": "pip",
         "ghsa": "GHSA-8fxp-94rp-3mg3",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "tpmcpongpaypal",
         "ecosystem": "pip",
         "ghsa": "GHSA-26vj-4966-5pq5",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "tpmaskmcpush",
         "ecosystem": "pip",
         "ghsa": "GHSA-2cv3-mmq9-rqmr",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "tpcvmcpy",
         "ecosystem": "pip",
         "ghsa": "GHSA-cwhq-gx62-5m8w",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "timingmcp",
         "ecosystem": "pip",
         "ghsa": "GHSA-r4m9-m2j9-pc96",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "timermcp",
         "ecosystem": "pip",
         "ghsa": "GHSA-q5cc-6j33-596w",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "timemcp-py",
         "ecosystem": "pip",
         "ghsa": "GHSA-6hwf-phjh-8xf6",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "timemcp-utils",
         "ecosystem": "pip",
         "ghsa": "GHSA-v3mf-rv4w-3wrj",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "timemcp",
         "ecosystem": "pip",
         "ghsa": "GHSA-g8xr-2qm9-4rvc",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "timemcplib",
         "ecosystem": "pip",
         "ghsa": "GHSA-fc22-xmvh-52gc",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "timesmcp",
         "ecosystem": "pip",
         "ghsa": "GHSA-p38x-hh3f-8m97",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "timermcplib",
         "ecosystem": "pip",
         "ghsa": "GHSA-jm7c-w9pg-m3r9",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "timesmcplib",
         "ecosystem": "pip",
         "ghsa": "GHSA-rwxf-w5g7-7v4x",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "timemcp190825790125120985125",
         "ecosystem": "pip",
         "ghsa": "GHSA-59qw-q72h-7g98",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "timemcp-client",
         "ecosystem": "pip",
         "ghsa": "GHSA-293w-f5jh-wc38",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "tiktoken-mcp",
         "ecosystem": "pip",
         "ghsa": "GHSA-wj5q-fgqm-2wv6",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "testpackage1mcpe",
         "ecosystem": "pip",
         "ghsa": "GHSA-hg9j-p4cc-6q97",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "strands-agents-anthropic",
         "ecosystem": "pip",
         "ghsa": "GHSA-vr36-grrv-xgxm",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "story-mcp-hub",
         "ecosystem": "pip",
         "ghsa": "GHSA-pxhw-g4m2-fw8r",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "selfmcpipcpu",
         "ecosystem": "pip",
         "ghsa": "GHSA-j824-jwch-j836",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "selfmcproofvisa",
         "ecosystem": "pip",
         "ghsa": "GHSA-c7gm-c92f-95hg",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "selfhackedmcpong",
         "ecosystem": "pip",
         "ghsa": "GHSA-pw74-4r53-jhf8",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "selfhttpmcpush",
         "ecosystem": "pip",
         "ghsa": "GHSA-2cqr-77mv-fcwg",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "selfccmcpush",
         "ecosystem": "pip",
         "ghsa": "GHSA-whwv-cfgr-mmw2",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "ray-mcp-server",
         "ecosystem": "pip",
         "ghsa": "GHSA-xpj9-c6mx-gfqf",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": "0.2.0",
+        "registryState": "live",
+        "range": "= 0.2.1",
+        "verdict": "remediated"
       },
       {
         "package": "ramcpu",
         "ecosystem": "pip",
         "ghsa": "GHSA-qpgc-89qw-jqr9",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "py-ultramcpyw",
         "ecosystem": "pip",
         "ghsa": "GHSA-rwrc-v842-r2v2",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "py-randomcpu",
         "ecosystem": "pip",
         "ghsa": "GHSA-3jwf-g5qm-2q74",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "py-pepmcpaypal",
         "ecosystem": "pip",
         "ghsa": "GHSA-h8gm-h4f6-hmp9",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "py-mcpyw",
         "ecosystem": "pip",
         "ghsa": "GHSA-7rrc-4g96-p2q3",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "py-mcpushmask",
         "ecosystem": "pip",
         "ghsa": "GHSA-v93m-98ch-cvrc",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "py-infomcpy",
         "ecosystem": "pip",
         "ghsa": "GHSA-mmm9-497c-w755",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "py-cpumcpyw",
         "ecosystem": "pip",
         "ghsa": "GHSA-73m3-xf5w-6766",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "openai-mcp",
         "ecosystem": "pip",
         "ghsa": "GHSA-h7rx-63j6-3w83",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "mcpsever",
         "ecosystem": "pip",
         "ghsa": "GHSA-6wf3-7v76-j8g7",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "mcpyw",
         "ecosystem": "pip",
         "ghsa": "GHSA-q667-ccgf-c2rm",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "mcp-weather-full",
         "ecosystem": "pip",
         "ghsa": "GHSA-23g4-jfwp-rv64",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "mcp-xyz",
         "ecosystem": "pip",
         "ghsa": "GHSA-mrf9-fw7v-p98g",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "mcp-runcmd-server",
         "ecosystem": "pip",
         "ghsa": "GHSA-fqxv-p3pf-c494",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "mcpip",
         "ecosystem": "pip",
         "ghsa": "GHSA-vf8x-7v6f-qj5m",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "mcpost",
         "ecosystem": "pip",
         "ghsa": "GHSA-g25w-q9c7-j7x6",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "mcpep",
         "ecosystem": "pip",
         "ghsa": "GHSA-x3j7-c7p2-q6m7",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "mcp-pdftool-plus",
         "ecosystem": "pip",
         "ghsa": "GHSA-fh2f-vcxw-gm22",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "mcp-runcommand-server",
         "ecosystem": "pip",
         "ghsa": "GHSA-22rf-pqm4-vwxw",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "mcp-runcommand-server2",
         "ecosystem": "pip",
         "ghsa": "GHSA-2cvc-xrh7-32gg",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "mcp-transport-proto",
         "ecosystem": "pip",
         "ghsa": "GHSA-q37q-c4qv-gr6h",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "libramcpuhacked",
         "ecosystem": "pip",
         "ghsa": "GHSA-995p-r3gh-pw5c",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "libmcpingstudy",
         "ecosystem": "pip",
         "ghsa": "GHSA-hr7x-4646-hr32",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "libmcpipver",
         "ecosystem": "pip",
         "ghsa": "GHSA-56gv-w36g-p92g",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "libmcpongvm",
         "ecosystem": "pip",
         "ghsa": "GHSA-mj2g-7vxx-x9p9",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "libmcpywcontrol",
         "ecosystem": "pip",
         "ghsa": "GHSA-m46c-qp7j-x3x2",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "libmcpep",
         "ecosystem": "pip",
         "ghsa": "GHSA-475f-fhrv-6m7w",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "libencoderandomcpu",
         "ecosystem": "pip",
         "ghsa": "GHSA-vp5v-v237-jcg8",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "libedmcpong",
         "ecosystem": "pip",
         "ghsa": "GHSA-5h97-vgh2-wqr9",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "latinum-wallet-mcp",
         "ecosystem": "pip",
         "ghsa": "GHSA-7fjp-p82r-q2c2",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "langchain-core-mcp",
         "ecosystem": "pip",
         "ghsa": "GHSA-f6f5-m9qw-v738",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "instructor-mcp",
         "ecosystem": "pip",
         "ghsa": "GHSA-vp83-46ch-mpvw",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "groq-mcp",
         "ecosystem": "pip",
         "ghsa": "GHSA-2544-8267-j7f9",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "esqpymcpy",
         "ecosystem": "pip",
         "ghsa": "GHSA-v5v2-xrvc-5mqg",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "esqmcpypaypal",
         "ecosystem": "pip",
         "ghsa": "GHSA-p984-mxw9-86pm",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "esqmcpepgrand",
         "ecosystem": "pip",
         "ghsa": "GHSA-hc7q-54jj-wpvc",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "esqmcpaypallgtb",
         "ecosystem": "pip",
         "ghsa": "GHSA-ccq8-3gfx-r64q",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "esqmcpullram",
         "ecosystem": "pip",
         "ghsa": "GHSA-h336-2qhc-r4f2",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "docontrol-mcp",
         "ecosystem": "pip",
         "ghsa": "GHSA-9h3c-vrq8-7p3c",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "claude-lite",
         "ecosystem": "pip",
         "ghsa": "GHSA-2x8m-pc3r-f9wx",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "anthropickit",
         "ecosystem": "pip",
         "ghsa": "GHSA-2q9v-5rq6-rmwf",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "ant-mcp-proxy-for-test",
         "ecosystem": "pip",
         "ghsa": "GHSA-jcv2-j354-7j53",
-        "published": "2026-07-21"
+        "published": "2026-07-21",
+        "current": null,
+        "registryState": "removed",
+        "range": null,
+        "verdict": "removed"
       },
       {
         "package": "anthropic-claude-latest",
         "ecosystem": "npm",
         "ghsa": "GHSA-j588-p757-86r9",
-        "published": "2026-07-17"
+        "published": "2026-07-17",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "claude-token-tracker-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-w56m-5ch4-5xjw",
-        "published": "2026-07-16"
+        "published": "2026-07-16",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "@redhat-cloud-services/hcc-kessel-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-xh7j-7gfw-g434",
-        "published": "2026-07-10"
+        "published": "2026-07-10",
+        "current": "0.3.0",
+        "registryState": "live",
+        "range": "= 0.3.4",
+        "verdict": "remediated"
       },
       {
         "package": "@redhat-cloud-services/hcc-pf-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-gw27-332x-rf3r",
-        "published": "2026-07-10"
+        "published": "2026-07-10",
+        "current": "0.6.0",
+        "registryState": "live",
+        "range": "= 0.6.4",
+        "verdict": "remediated"
       },
       {
         "package": "n8n-nodes-mcputils",
         "ecosystem": "npm",
         "ghsa": "GHSA-rxc8-p2w2-g5jg",
-        "published": "2026-07-09"
+        "published": "2026-07-09",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "myclaude-code",
         "ecosystem": "npm",
         "ghsa": "GHSA-f5r3-gf4p-pf67",
-        "published": "2026-07-09"
+        "published": "2026-07-09",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "mcp-server-pg",
         "ecosystem": "npm",
         "ghsa": "GHSA-cfv7-74pc-vmff",
-        "published": "2026-07-07"
+        "published": "2026-07-07",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "anthropic-toolkit",
         "ecosystem": "npm",
         "ghsa": "GHSA-c7v6-f7mc-9crv",
-        "published": "2026-07-07"
+        "published": "2026-07-07",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "autotel-mcp-instrumentation",
         "ecosystem": "npm",
         "ghsa": "GHSA-7cv4-gfx4-2c3v",
-        "published": "2026-06-30"
+        "published": "2026-06-30",
+        "current": "44.0.0",
+        "registryState": "live",
+        "range": "= 29.0.2",
+        "verdict": "remediated"
       },
       {
         "package": "autotel-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-3wmg-66hp-xhv9",
-        "published": "2026-06-30"
+        "published": "2026-06-30",
+        "current": "0.1.19",
+        "registryState": "live",
+        "range": "= 0.1.14",
+        "verdict": "remediated"
       },
       {
         "package": "cursorai-agent",
         "ecosystem": "npm",
         "ghsa": "GHSA-xq66-q5q9-992p",
-        "published": "2026-06-23"
+        "published": "2026-06-23",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "free-claude",
         "ecosystem": "npm",
         "ghsa": "GHSA-7qpf-5pm7-57rh",
-        "published": "2026-06-22"
+        "published": "2026-06-22",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "free-anthropic-claude",
         "ecosystem": "npm",
         "ghsa": "GHSA-3h58-8ch3-mgp3",
-        "published": "2026-06-22"
+        "published": "2026-06-22",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "@mastra/mcp-registry-registry",
         "ecosystem": "npm",
         "ghsa": "GHSA-5w62-p653-57mf",
-        "published": "2026-06-17"
+        "published": "2026-06-17",
+        "current": "1.1.1",
+        "registryState": "live",
+        "range": "= 1.0.2",
+        "verdict": "remediated"
       },
       {
         "package": "@mastra/cursor",
         "ecosystem": "npm",
         "ghsa": "GHSA-cp3h-358p-m8h2",
-        "published": "2026-06-17"
+        "published": "2026-06-17",
+        "current": "0.3.0",
+        "registryState": "live",
+        "range": "= 0.2.1",
+        "verdict": "remediated"
       },
       {
         "package": "@mastra/claude",
         "ecosystem": "npm",
         "ghsa": "GHSA-jp56-69xj-c3rq",
-        "published": "2026-06-17"
+        "published": "2026-06-17",
+        "current": "0.3.0",
+        "registryState": "live",
+        "range": "= 1.0.3",
+        "verdict": "remediated"
       },
       {
         "package": "@mastra/mcp-docs-server",
         "ecosystem": "npm",
         "ghsa": "GHSA-wxp6-9hmr-928g",
-        "published": "2026-06-17"
+        "published": "2026-06-17",
+        "current": "1.2.12",
+        "registryState": "live",
+        "range": "= 1.1.47",
+        "verdict": "remediated"
       },
       {
         "package": "@mastra/mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-wfr8-6x4q-hpr3",
-        "published": "2026-06-17"
+        "published": "2026-06-17",
+        "current": "1.15.0",
+        "registryState": "live",
+        "range": "= 1.10.1",
+        "verdict": "remediated"
       },
       {
         "package": "sp-api-dev-assistant-mcp-server",
         "ecosystem": "npm",
         "ghsa": "GHSA-hgm9-w4fm-65m9",
-        "published": "2026-06-16"
+        "published": "2026-06-16",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "@redhat-cloud-services/hcc-feo-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-vgm5-jmvr-cjgf",
-        "published": "2026-06-01"
+        "published": "2026-06-01",
+        "current": "0.3.0",
+        "registryState": "live",
+        "range": "= 0.3.2",
+        "verdict": "remediated"
       },
       {
         "package": "claude-channel-imessage",
         "ecosystem": "npm",
         "ghsa": "GHSA-6v88-cxrw-54h7",
-        "published": "2026-05-27"
+        "published": "2026-05-27",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "explorhub-mcp-server",
         "ecosystem": "npm",
         "ghsa": "GHSA-2qjx-pmc9-2jrj",
-        "published": "2026-05-25"
+        "published": "2026-05-25",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "explorhub-claude-bridge",
         "ecosystem": "npm",
         "ghsa": "GHSA-hgw4-f8mg-vgwf",
-        "published": "2026-05-25"
+        "published": "2026-05-25",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "mcp-dashboards-shared",
         "ecosystem": "npm",
         "ghsa": "GHSA-h2q9-x96j-55m7",
-        "published": "2026-05-25"
+        "published": "2026-05-25",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "@antv/mcp-server-chart",
         "ecosystem": "npm",
         "ghsa": "GHSA-qgmj-c898-99rq",
-        "published": "2026-05-19"
+        "published": "2026-05-19",
+        "current": "0.9.10",
+        "registryState": "live",
+        "range": "= 0.10.10",
+        "verdict": "remediated"
       },
       {
         "package": "nextmove-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-fhg4-3pg2-pvgx",
-        "published": "2026-05-12"
+        "published": "2026-05-12",
+        "current": "0.1.2",
+        "registryState": "live",
+        "range": "= 0.1.3",
+        "verdict": "remediated"
       },
       {
         "package": "cmux-agent-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-gx6p-62rj-cg4m",
-        "published": "2026-05-12"
+        "published": "2026-05-12",
+        "current": "0.1.2",
+        "registryState": "live",
+        "range": "= 0.1.3",
+        "verdict": "remediated"
       },
       {
         "package": "@squawk/mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-vcpv-j6jh-qcc2",
-        "published": "2026-05-12"
+        "published": "2026-05-12",
+        "current": "0.11.0",
+        "registryState": "live",
+        "range": "= 0.9.5",
+        "verdict": "remediated"
       },
       {
         "package": "pi-exa-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-fpc5-w8c8-3mhv",
-        "published": "2026-05-04"
+        "published": "2026-05-04",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "claudcode-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-5v3x-g9r5-vvhg",
-        "published": "2026-04-22"
+        "published": "2026-04-22",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "mcp-server-todo",
         "ecosystem": "npm",
         "ghsa": "GHSA-hppm-xxp9-54h7",
-        "published": "2026-04-01"
+        "published": "2026-04-01",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "@iflow-mcp/watercrawl-watercrawl-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-rg84-r52h-2rgw",
-        "published": "2026-03-19"
+        "published": "2026-03-19",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "hiagentevilmcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-9264-q4hp-q57g",
-        "published": "2026-03-03"
+        "published": "2026-03-03",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "anthropic-sdk",
         "ecosystem": "npm",
         "ghsa": "GHSA-j8wc-8p9m-6fm6",
-        "published": "2026-01-21"
+        "published": "2026-01-21",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "dreame-claude",
         "ecosystem": "npm",
         "ghsa": "GHSA-9vmw-qh86-x859",
-        "published": "2026-01-20"
+        "published": "2026-01-20",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "vscode-azure-mcp-server",
         "ecosystem": "npm",
         "ghsa": "GHSA-g3xg-r65r-rjp9",
-        "published": "2025-12-30"
+        "published": "2025-12-30",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "excluder-mcp-package",
         "ecosystem": "npm",
         "ghsa": "GHSA-h43q-7r78-rf73",
-        "published": "2025-12-23"
+        "published": "2025-12-23",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "excluder-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-gg9p-qcrr-r7fv",
-        "published": "2025-12-23"
+        "published": "2025-12-23",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "cursorparserfruit",
         "ecosystem": "npm",
         "ghsa": "GHSA-qqjh-v9h4-2q9f",
-        "published": "2025-12-19"
+        "published": "2025-12-19",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "mcp-polymarket",
         "ecosystem": "npm",
         "ghsa": "GHSA-f8cg-j5h4-4v2j",
-        "published": "2025-11-25"
+        "published": "2025-11-25",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "@browserbasehq/mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-j9hg-hmwf-9qx7",
-        "published": "2025-11-25"
+        "published": "2025-11-25",
+        "current": "3.0.0",
+        "registryState": "live",
+        "range": "= 2.1.1",
+        "verdict": "remediated"
       },
       {
         "package": "ts-relay-cursor-paging",
         "ecosystem": "npm",
         "ghsa": "GHSA-r9rr-c7vq-r642",
-        "published": "2025-11-24"
+        "published": "2025-11-24",
+        "current": "2.1.0",
+        "registryState": "live",
+        "range": "= 2.1.1",
+        "verdict": "remediated"
       },
       {
         "package": "@seezo/sdr-mcp-server",
         "ecosystem": "npm",
         "ghsa": "GHSA-3c5g-45xx-w65c",
-        "published": "2025-11-24"
+        "published": "2025-11-24",
+        "current": "0.0.4",
+        "registryState": "live",
+        "range": "= 0.0.5",
+        "verdict": "remediated"
       },
       {
         "package": "@relyt/mcp-server-relytone",
         "ecosystem": "npm",
         "ghsa": "GHSA-9jcv-5hcv-f23r",
-        "published": "2025-11-24"
+        "published": "2025-11-24",
+        "current": "0.0.2",
+        "registryState": "live",
+        "range": ">= 0",
+        "verdict": "still-affected"
       },
       {
         "package": "@relyt/claude-context-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-r4xp-273q-hmxr",
-        "published": "2025-11-24"
+        "published": "2025-11-24",
+        "current": "0.1.3-relyt-0",
+        "registryState": "live",
+        "range": ">= 0",
+        "verdict": "still-affected"
       },
       {
         "package": "ids-enterprise-mcp-server",
         "ecosystem": "npm",
         "ghsa": "GHSA-jj4q-9hf2-5rfx",
-        "published": "2025-11-24"
+        "published": "2025-11-24",
+        "current": "0.0.7",
+        "registryState": "live",
+        "range": "= 0.0.2",
+        "verdict": "remediated"
       },
       {
         "package": "@relyt/claude-context-core",
         "ecosystem": "npm",
         "ghsa": "GHSA-g2qf-c39v-8ph8",
-        "published": "2025-11-24"
+        "published": "2025-11-24",
+        "current": "0.1.3-relyt-0",
+        "registryState": "live",
+        "range": "= 0.1.1",
+        "verdict": "remediated"
       },
       {
         "package": "web-scraper-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-92qg-p459-45jx",
-        "published": "2025-11-24"
+        "published": "2025-11-24",
+        "current": "1.1.3",
+        "registryState": "live",
+        "range": "= 1.1.4",
+        "verdict": "remediated"
       },
       {
         "package": "lite-serper-mcp-server",
         "ecosystem": "npm",
         "ghsa": "GHSA-w7vj-jqhx-2jr7",
-        "published": "2025-11-24"
+        "published": "2025-11-24",
+        "current": "0.2.1",
+        "registryState": "live",
+        "range": "= 0.2.2",
+        "verdict": "remediated"
       },
       {
         "package": "claude-token-updater",
         "ecosystem": "npm",
         "ghsa": "GHSA-pxr9-c6pq-g38g",
-        "published": "2025-11-24"
+        "published": "2025-11-24",
+        "current": "1.0.2",
+        "registryState": "live",
+        "range": "= 1.0.3",
+        "verdict": "remediated"
       },
       {
         "package": "cursor-bypass",
         "ecosystem": "npm",
         "ghsa": "GHSA-924q-8r54-3h6w",
-        "published": "2025-11-10"
+        "published": "2025-11-10",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "rce-poc-test-honor-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-9c65-qg9h-c3gr",
-        "published": "2025-11-07"
+        "published": "2025-11-07",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "@chatclub/claude-code",
         "ecosystem": "npm",
         "ghsa": "GHSA-w7jq-xv2w-v96w",
-        "published": "2025-11-07"
+        "published": "2025-11-07",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "cursor-ai-fork",
         "ecosystem": "npm",
         "ghsa": "GHSA-wrwh-678j-xg4q",
-        "published": "2025-10-31"
+        "published": "2025-10-31",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "shiprocket-mcp",
         "ecosystem": "npm",
         "ghsa": "GHSA-qq2g-4w88-354g",
-        "published": "2025-10-30"
+        "published": "2025-10-30",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "@chatgptclaude_club/claude-code",
         "ecosystem": "npm",
         "ghsa": "GHSA-gp5h-wrq3-xgv7",
-        "published": "2025-10-27"
+        "published": "2025-10-27",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "bad-santa-claude",
         "ecosystem": "npm",
         "ghsa": "GHSA-jfm5-h6cv-4jq3",
-        "published": "2025-10-27"
+        "published": "2025-10-27",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "mcp-server-fixthis",
         "ecosystem": "npm",
         "ghsa": "GHSA-p45p-rjrm-xmh3",
-        "published": "2025-10-07"
+        "published": "2025-10-07",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "@lanyer640/mcp-runcommand-server",
         "ecosystem": "npm",
         "ghsa": "GHSA-xmqc-rm22-fxq6",
-        "published": "2025-10-02"
+        "published": "2025-10-02",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "mcp-knowledge-graph",
         "ecosystem": "npm",
         "ghsa": "GHSA-qq74-6323-3h57",
-        "published": "2025-09-16"
+        "published": "2025-09-16",
+        "current": "1.3.2",
+        "registryState": "live",
+        "range": "= 1.2.1",
+        "verdict": "remediated"
       },
       {
         "package": "mcp-knowledge-base",
         "ecosystem": "npm",
         "ghsa": "GHSA-f8qw-968c-jxpq",
-        "published": "2025-09-16"
+        "published": "2025-09-16",
+        "current": "0.0.1",
+        "registryState": "live",
+        "range": ">= 0",
+        "verdict": "still-affected"
       },
       {
         "package": "mcp-server-everything",
         "ecosystem": "npm",
         "ghsa": "GHSA-6j44-frpv-rvv9",
-        "published": "2025-09-12"
+        "published": "2025-09-12",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "mcp-chat-client",
         "ecosystem": "npm",
         "ghsa": "GHSA-r7jv-6f7p-rr8q",
-        "published": "2025-09-12"
+        "published": "2025-09-12",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "mcp-lumin",
         "ecosystem": "npm",
         "ghsa": "GHSA-h4r4-cm9c-4mcc",
-        "published": "2025-09-11"
+        "published": "2025-09-11",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "@jaswanthlanka/mcp-proxy",
         "ecosystem": "npm",
         "ghsa": "GHSA-cm3w-fxm2-349q",
-        "published": "2025-07-22"
+        "published": "2025-07-22",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "glean-mcp-server",
         "ecosystem": "npm",
         "ghsa": "GHSA-94vh-73p7-p3wc",
-        "published": "2025-07-17"
+        "published": "2025-07-17",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "rush-mcp-example-plugin",
         "ecosystem": "npm",
         "ghsa": "GHSA-h53p-7hxf-2rjc",
-        "published": "2025-06-26"
+        "published": "2025-06-26",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "claude-pr-action",
         "ecosystem": "npm",
         "ghsa": "GHSA-jmg8-82j4-hrp6",
-        "published": "2025-06-18"
+        "published": "2025-06-18",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "yaml-mcp-wrapper",
         "ecosystem": "npm",
         "ghsa": "GHSA-pchh-j24j-3v4c",
-        "published": "2025-06-02"
+        "published": "2025-06-02",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "hrdebjywvtkmcpga",
         "ecosystem": "npm",
         "ghsa": "GHSA-vxm4-w459-68hm",
-        "published": "2022-07-11"
+        "published": "2022-07-11",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       },
       {
         "package": "searchcursor",
         "ecosystem": "npm",
         "ghsa": "GHSA-r222-28vq-mvf4",
-        "published": "2022-06-20"
+        "published": "2022-06-20",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
       }
     ]
   }
