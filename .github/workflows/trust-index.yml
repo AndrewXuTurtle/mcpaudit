@@ -47,22 +47,38 @@ jobs:
           set -euo pipefail
           git config user.name  'mcpaudit-bot'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add docs/trust
-          if git diff --staged --quiet; then
-            echo "index unchanged"
-            exit 0
-          fi
-          git commit -m "Trust index: automated refresh"
+          # docs/trust is generated output, so there is nothing to merge: this
+          # run's build is authoritative by definition. Rebasing it against a
+          # concurrent human commit only produces conflicts in files neither
+          # side hand-edited, which is exactly how the previous attempt wedged
+          # itself into a detached HEAD with unmerged paths.
+          #
+          # Replay instead of merge: set aside the build, fast-forward to
+          # whatever main looks like now, put the build back, commit, push.
+          cp -R docs/trust "${RUNNER_TEMP}/trust-build"
 
-          # A human push can land between checkout and here; rebase rather than
-          # failing the run, which previously left the published index stale.
           for attempt in 1 2 3; do
-            if git push; then
+            git rebase --abort 2>/dev/null || true
+            git fetch -q origin main
+            git checkout -q -B main origin/main
+            git reset -q --hard origin/main
+
+            rm -rf docs/trust
+            mkdir -p docs
+            cp -R "${RUNNER_TEMP}/trust-build" docs/trust
+
+            git add docs/trust
+            if git diff --staged --quiet; then
+              echo "index unchanged"
+              exit 0
+            fi
+            git commit -q -m "Trust index: automated refresh"
+
+            if git push origin main; then
               echo "pushed on attempt $attempt"
               exit 0
             fi
-            echo "push rejected, rebasing (attempt $attempt)"
-            git pull --rebase --autostash origin main || true
+            echo "push rejected — main moved again, replaying (attempt $attempt)"
           done
           echo "::error::could not push the refreshed index after 3 attempts"
           exit 1
