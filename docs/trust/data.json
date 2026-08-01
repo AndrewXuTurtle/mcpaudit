@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-01 18:51 UTC",
+  "generated": "2026-08-01 18:53 UTC",
   "npm": [
     {
       "name": "chrome-devtools-mcp",
@@ -54,6 +54,22 @@
       "downloads": 494079,
       "ageDays": 332,
       "findings": []
+    },
+    {
+      "name": "@azure/mcp",
+      "downloads": 470773,
+      "ageDays": 471,
+      "findings": [
+        {
+          "confidence": "certain",
+          "id": "MCP-SUP-005",
+          "severity": "high",
+          "title": "Package runs a postinstall script",
+          "evidence": "\"postinstall\": node ./scripts/post-install-script.js",
+          "why": "Install hooks execute the moment the package is fetched — before the server is ever started and before any tool description is reviewed. With npx and an unpinned version, this runs on every launch.",
+          "fix": "Read the script. To install without running it, use `npm install --ignore-scripts`."
+        }
+      ]
     },
     {
       "name": "@sentry/mcp-server",
@@ -230,22 +246,16 @@
       "findings": []
     },
     {
-      "name": "@browserstack/mcp-server",
-      "downloads": 41044,
-      "ageDays": 466,
-      "findings": []
-    },
-    {
-      "name": "@heroku/mcp-server",
-      "downloads": 29848,
-      "ageDays": 481,
+      "name": "@benborla29/mcp-server-mysql",
+      "downloads": 48880,
+      "ageDays": 600,
       "findings": []
     }
   ],
   "pypi": [
     {
       "name": "mcp",
-      "downloads": null,
+      "downloads": 308188674,
       "ageDays": 619,
       "findings": []
     },
@@ -257,19 +267,19 @@
     },
     {
       "name": "mcp-server-fetch",
-      "downloads": null,
+      "downloads": 1057869,
       "ageDays": 617,
       "findings": []
     },
     {
       "name": "mcp-server-git",
-      "downloads": null,
+      "downloads": 738977,
       "ageDays": 617,
       "findings": []
     },
     {
       "name": "mcp-server-time",
-      "downloads": null,
+      "downloads": 443378,
       "ageDays": 610,
       "findings": []
     },
@@ -281,7 +291,7 @@
     }
   ],
   "sweep": {
-    "probed": 316,
+    "probed": 322,
     "hits": [
       {
         "name": "@modelcontextprotoco1/server-filesystem",
