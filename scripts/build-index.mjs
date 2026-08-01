@@ -232,6 +232,95 @@ async function fetchMcpMalware(token) {
   return { scanned, capped, failed, list };
 }
 
+/** Minimal semver comparison — enough for GHSA ranges, without a dependency. */
+function cmpSemver(a, b) {
+  const pa = String(a).split('-')[0].split('.').map(Number);
+  const pb = String(b).split('-')[0].split('.').map(Number);
+  for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+    const x = pa[i] || 0;
+    const y = pb[i] || 0;
+    if (x !== y) return x < y ? -1 : 1;
+  }
+  return 0;
+}
+
+/** Evaluate a GHSA `vulnerable_version_range` such as ">= 1.0.0, < 1.2.3" or "= 0.4.0". */
+function inRange(version, range) {
+  if (!version || !range) return null;
+  for (const part of range.split(',').map((s) => s.trim()).filter(Boolean)) {
+    const m = /^(=|<=|>=|<|>)\s*(.+)$/.exec(part);
+    if (!m) return null;
+    const c = cmpSemver(version, m[2].trim());
+    const ok = m[1] === '=' ? c === 0
+      : m[1] === '<' ? c < 0
+        : m[1] === '<=' ? c <= 0
+          : m[1] === '>' ? c > 0
+            : c >= 0;
+    if (!ok) return false;
+  }
+  return true;
+}
+
+/**
+ * Establish what actually became of each flagged package.
+ *
+ * A flat list of names conflates three very different situations, and the
+ * difference matters enormously to the maintainers named on it. An advisory
+ * names a *version range*; if the maintainer has since published outside that
+ * range, the package on the registry today is not the package the advisory is
+ * about. Listing it as though it were is a smear.
+ *
+ * Measured across the flagged set: most still-installable packages fall in that
+ * remediated group — the AntV visualization servers among them, where malicious
+ * releases were published and then pulled.
+ */
+async function classifyFlagged(list, token) {
+  const headers = { accept: 'application/vnd.github+json' };
+  if (token) headers.authorization = `Bearer ${token}`;
+
+  return pool(list, 8, async (r) => {
+    const npm = r.ecosystem === 'npm';
+    const regUrl = npm
+      ? `https://registry.npmjs.org/${encodeURIComponent(r.package).replace(/^%40/, '@')}`
+      : `https://pypi.org/pypi/${r.package}/json`;
+
+    let current = null;
+    let registryState = 'unknown';
+    try {
+      const resp = await fetch(regUrl, { headers: { accept: 'application/json' } });
+      if (resp.status === 404) registryState = 'removed';
+      else if (resp.ok) {
+        const j = await resp.json();
+        if (npm) {
+          current = j['dist-tags']?.latest || null;
+          const desc = j.versions?.[current]?.description || '';
+          registryState = (current === '0.0.1-security' || /security holding package/i.test(desc))
+            ? 'security-held' : 'live';
+        } else {
+          current = j.info?.version || null;
+          registryState = 'live';
+        }
+      }
+    } catch { /* leave unknown */ }
+
+    let range = null;
+    let verdict = registryState === 'live' ? 'unknown' : registryState;
+    if (registryState === 'live') {
+      try {
+        const a = await fetch(`https://api.github.com/advisories/${r.ghsa}`, { headers });
+        if (a.ok) {
+          const adv = await a.json();
+          range = (adv.vulnerabilities || []).find((v) => v.package?.name === r.package)?.vulnerable_version_range || null;
+          const still = inRange(current, range);
+          if (still === true) verdict = 'still-affected';
+          else if (still === false) verdict = 'remediated';
+        }
+      } catch { /* leave unknown */ }
+    }
+    return { ...r, current, registryState, range, verdict };
+  });
+}
+
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 function render({ generated, npm, pypi, sweep, malware }) {
@@ -285,12 +374,32 @@ ${sweep.hits.length
 <div class="card${malware.list.length ? ' alert' : ''}">
 <h2 style="margin-top:0">MCP packages with published malware advisories</h2>
 <p><strong>${malware.list.length}</strong> package name(s) on the MCP / AI-agent surface have an open, non-withdrawn malware advisory in the GitHub Advisory Database.</p>
-<p><strong>Read this as "check before you install", not as a verdict.</strong> These advisories are largely automated, and automation produces false positives. I inspected one entry on this list &mdash; <code>lokal-mcp</code>, flagged critical &mdash; and found an 18&nbsp;KB single-file server with no install hooks, no <code>child_process</code>, no obfuscation, and one outbound host that is its own documented API. It looks entirely legitimate. Its advisory is still open. Treat every row here as a prompt to look, and follow the advisory link before drawing a conclusion about anyone's package.</p>
+<p>Grouped by what actually became of each package, because a flat list of names conflates three very different situations. <strong>Read this as "check before you install", not as a verdict.</strong> These advisories are largely automated, and automation produces false positives. I inspected one entry on this list &mdash; <code>lokal-mcp</code>, flagged critical &mdash; and found an 18&nbsp;KB single-file server with no install hooks, no <code>child_process</code>, no obfuscation, and one outbound host that is its own documented API. It looks entirely legitimate. Its advisory is still open. Treat every row here as a prompt to look, and follow the advisory link before drawing a conclusion about anyone's package.</p>
 <p class="sub">Scanned ${(malware.scanned || 0).toLocaleString()} malware advisories across npm and PyPI in the GitHub Advisory Database.${malware.capped ? ' <strong>Result truncated by a request cap &mdash; treat as a lower bound.</strong>' : ''}${malware.failed ? ` <strong>This run could not complete the scan (${esc(malware.failed)})${malware.stale ? ', so the list below is from the last successful run and may be out of date' : ''}.</strong>` : ''}</p>
-<div class="scroll"><table>
-<tr><th>Package</th><th>Ecosystem</th><th>Advisory</th><th>Published</th></tr>
-${malware.list.map((m) => `<tr><td><code>${esc(m.package)}</code></td><td>${esc(m.ecosystem)}</td><td><a href="https://github.com/advisories/${esc(m.ghsa)}">${esc(m.ghsa)}</a></td><td>${esc(m.published)}</td></tr>`).join('\n')}
-</table></div>
+${(() => {
+  const g = (v) => malware.list.filter((m) => m.verdict === v);
+  const table = (rows, showRange) => `<div class="scroll"><table>
+<tr><th>Package</th><th>Published now</th>${showRange ? '<th>Advisory covers</th>' : ''}<th>Advisory</th></tr>
+${rows.map((m) => `<tr><td><code>${esc(m.package)}</code> <span class="sub">(${esc(m.ecosystem)})</span></td><td>${esc(m.current || '—')}</td>${showRange ? `<td>${esc(m.range || '—')}</td>` : ''}<td><a href="https://github.com/advisories/${esc(m.ghsa)}">${esc(m.ghsa)}</a></td></tr>`).join('\n')}
+</table></div>`;
+  const gone = [...g('removed'), ...g('security-held')];
+  const affected = g('still-affected');
+  const fixed = g('remediated');
+  const unknown = g('unknown');
+  return `
+<h3>Registry has acted &mdash; ${gone.length}</h3>
+<p class="sub">Removed from the registry, or replaced by npm with a security-holding placeholder. The registry took action; this is not an inference.</p>
+${table(gone, false)}
+
+<h3>Affected version is still published &mdash; ${affected.length}</h3>
+<p class="sub">The version the registry serves today falls inside the advisory's range. These warrant the most caution &mdash; and are also where an incorrect advisory does the most damage to an innocent maintainer, so read the advisory before concluding anything.</p>
+${table(affected, true)}
+
+<h3>Already remediated &mdash; ${fixed.length}</h3>
+<p class="sub">Listed for completeness only. The maintainer has published a version outside the advisory's range, so the package on the registry today is <em>not</em> the one the advisory describes. Several are well-known projects that were compromised and cleaned up. Do not read this section as a warning about these packages.</p>
+${table(fixed, true)}
+${unknown.length ? `<h3>Undetermined &mdash; ${unknown.length}</h3><p class="sub">The advisory range could not be parsed or the registry did not answer. No conclusion drawn.</p>${table(unknown, true)}` : ''}`;
+})()}
 <p>If one of these appears in your MCP config, read its advisory first. Where the advisory holds up &mdash; and especially where npm has replaced the package with a security placeholder &mdash; treat it as a compromise rather than a warning: remove it, then rotate every credential it could reach.</p>
 </div>
 
@@ -356,7 +465,15 @@ async function main() {
       }
     } catch { /* no previous run to fall back on */ }
   }
-  console.log(`  ${malware.list.length} malicious MCP-named packages from ${malware.scanned.toLocaleString()} advisories`);
+  console.log(`  ${malware.list.length} flagged package names from ${malware.scanned.toLocaleString()} advisories`);
+
+  if (malware.list.length) {
+    console.log('establishing what became of each flagged package…');
+    malware.list = await classifyFlagged(malware.list, process.env.GITHUB_TOKEN);
+    const tally = {};
+    for (const r of malware.list) tally[r.verdict] = (tally[r.verdict] || 0) + 1;
+    console.log(`  ${Object.entries(tally).map(([k, v]) => `${k}=${v}`).join('  ')}`);
+  }
 
   await mkdir(OUT, { recursive: true });
   const data = { generated, npm, pypi, sweep, malware };

@@ -340,3 +340,57 @@ sometimes. Those two things had been flattened into one table under one confiden
 
 Four false-positive classes found in this project now. This is the first one I shipped to
 production before catching it.
+
+---
+
+## Update, 2026-08-02: what actually became of 220 flagged MCP packages
+
+A list of package names carrying malware advisories is less useful than it looks, and more
+harmful than it looks. I resolved every one of the 220 against the registry and against its own
+advisory's version range.
+
+| Outcome | Count | Share |
+| --- | ---: | ---: |
+| Removed from the registry | 73 | 33.2% |
+| Replaced by npm with a security placeholder | 64 | 29.1% |
+| **Already remediated** — published version is outside the advisory range | **62** | **28.2%** |
+| Affected version still published | 10 | 4.5% |
+| Undetermined | 11 | 5.0% |
+
+**62% of the registry acted.** Removal or a security placeholder is a fact, not an inference — the
+registry did something, and `MCP-SUP-007` treats that as certain.
+
+**28% had already been fixed by their maintainers, and my index was misrepresenting all of them.**
+An advisory names a *version range*. Where the maintainer has since published outside it, the
+package on the registry today is not the package the advisory describes:
+
+| Package | Published now | Advisory covers |
+| --- | --- | --- |
+| `mcp-echarts` | 0.7.1 | `= 0.8.1` |
+| `mcp-mermaid` | 0.4.1 | `= 0.5.1` |
+| `@antv/mcp-server-antv` | 0.1.8 | `= 0.2.8` |
+
+Those are AntV's visualization servers. The pattern — current version *below* the flagged one — is
+a compromise handled properly: a malicious release published, then pulled, leaving the last good
+version serving. Listing those maintainers under a heading about malware, with no indication they
+had already cleaned up, was a smear produced by a cron job.
+
+**Only 10 of 220 (4.5%) still publish an affected version.** That is the set worth caution — and
+also where a wrong advisory does the most damage, which is why the page now says to read the
+advisory before concluding anything. One of those ten is `lokal-mcp`, whose code I read in the
+previous session and found unremarkable.
+
+The index is now grouped by outcome rather than presented as one flat table, and the remediated
+section states plainly that it is listed for completeness and should not be read as a warning.
+
+### The general lesson
+
+Every correction in this project has the same shape: **a signal is not a verdict, and aggregating
+signals at scale industrialises whatever error is in them.** A regex that ignores the next line.
+An edit distance that ignores publication dates. An advisory that ignores which version is
+actually being served.
+
+The difference here is the blast radius. A false positive in a CLI wastes one person's afternoon.
+A false positive on a published index, regenerated nightly and indexed by search engines, is a
+durable public claim about somebody's work. Building the automation was the easy part; deciding
+what it is entitled to assert took four corrections.
