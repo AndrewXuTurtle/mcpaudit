@@ -1,6 +1,6 @@
 import { discoverServers } from './discover.js';
 import { auditServer, packageFromServer, POSSIBLE } from './checks.js';
-import { auditPackage } from './registry.js';
+import { auditPackage, refuteBackwardsImpersonation } from './registry.js';
 
 export const SEVERITY_ORDER = ['critical', 'high', 'medium', 'low', 'info'];
 const rank = (s) => SEVERITY_ORDER.indexOf(s);
@@ -36,6 +36,9 @@ export async function runAudit({ path, deep = false, paranoid = false, onProgres
       const { findings: pkgFindings, meta } = await auditPackage(spec, { deep });
       findings = findings.concat(pkgFindings);
       pkgMeta = meta;
+
+      // An older package cannot be imitating a newer one.
+      findings = await refuteBackwardsImpersonation(findings, meta?.created);
     }
 
     if (!paranoid) findings = findings.filter((f) => f.confidence !== POSSIBLE);

@@ -168,6 +168,41 @@ export function scanSource(text, path = 'source') {
 const isScannable = (p) =>
   /\.(js|mjs|cjs|ts|json|md)$/i.test(p) && !/\.min\.js$/i.test(p) && !/(^|\/)(test|tests|__tests__)\//i.test(p);
 
+/** Look up when a package first appeared on the registry. */
+async function defaultResolveCreated(pkgName) {
+  const meta = await getJSON(`${REGISTRY}/${encodeURIComponent(pkgName).replace(/^%40/, '@')}`);
+  return meta?.time?.created ?? null;
+}
+
+/**
+ * Drop name-similarity findings where the flagged package is OLDER than the
+ * package it supposedly imitates. Impersonation cannot run backwards in time.
+ *
+ * This exists because a sweep of 1,267 lookalike names surfaced `cp-remote`
+ * (published 2014) and `mp-remote` (2020) as near-matches for `mcp-remote`.
+ * Both predate MCP itself by years — they are unrelated packages that happen to
+ * sit one deletion away. Reporting them would have accused two uninvolved
+ * maintainers of supply-chain fraud on the strength of an edit distance.
+ */
+export async function refuteBackwardsImpersonation(findings, created, resolveCreated = defaultResolveCreated) {
+  if (!created) return findings;
+  const candidateAge = new Date(created).getTime();
+  const out = [];
+
+  for (const f of findings) {
+    if (!f.impersonates || !['MCP-SUP-002', 'MCP-SUP-006'].includes(f.id)) {
+      out.push(f);
+      continue;
+    }
+    const originalCreated = await resolveCreated(f.impersonates);
+    const originalAge = originalCreated ? new Date(originalCreated).getTime() : null;
+
+    // Unknown original: keep the finding rather than silently dropping it.
+    if (originalAge === null || candidateAge >= originalAge) out.push(f);
+  }
+  return out;
+}
+
 /**
  * Fetch a package from npm and inspect it statically. Nothing is executed and
  * nothing is installed — the tarball is read in memory.
@@ -231,7 +266,7 @@ export async function auditPackage(spec, { deep = false } = {}) {
     }
   }
 
-  if (!deep) return { findings, meta: { name, resolved, ageDays, downloads, published } };
+  if (!deep) return { findings, meta: { name, resolved, ageDays, downloads, published, created } };
 
   const tarUrl = vmeta?.dist?.tarball;
   if (tarUrl) {
@@ -258,5 +293,5 @@ export async function auditPackage(spec, { deep = false } = {}) {
     }
   }
 
-  return { findings, meta: { name, resolved, ageDays, downloads, published } };
+  return { findings, meta: { name, resolved, ageDays, downloads, published, created } };
 }

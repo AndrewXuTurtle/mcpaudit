@@ -340,6 +340,7 @@ function checkSupplyChain(server) {
           confidence: LIKELY,
           title: `Publisher scope impersonates "${known}"`,
           evidence: `configured scope: ${scope}`,
+          impersonates: known + name.slice(name.indexOf('/') + 1),
           why: 'The scope is not the official one but is visually near-identical to it. Because npm will not let anyone else publish under the real scope, imitating it is the only way to make a hostile package look first-party — and a lookalike scope is far more convincing than a misspelled package name.',
           fix: `This is almost certainly not the publisher you intended. Reinstall from the official docs, and treat every credential this server held as compromised.`,
         }));
@@ -373,6 +374,7 @@ function checkSupplyChain(server) {
             ? `Package name is visually identical to "${known}"`
             : `Package name is ${d} character${d > 1 ? 's' : ''} away from "${known}"`,
           evidence: `configured: ${name}`,
+          impersonates: known,
           why: 'Near-identical names are the standard delivery route for trojanized MCP packages — the 2026 SmartLoader campaign built a whole fake developer ecosystem, complete with five GitHub accounts, to make one look legitimate before shipping an infostealer.',
           fix: `Confirm character by character that you meant ${name} and not ${known}. If in doubt, uninstall and reinstall from the publisher's own documentation.`,
         }));

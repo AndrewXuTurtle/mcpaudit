@@ -121,3 +121,41 @@ README worth less.
 ```bash
 npx github:AndrewXuTurtle/mcpaudit
 ```
+
+---
+
+## Update, 2026-08-02: the sweep that found nothing, and why that mattered
+
+I widened the impersonation sweep to **1,267 candidate names** across the fourteen
+highest-traffic MCP packages — homoglyph substitutions, deletions, doublings, transpositions
+and hyphen-stripping, against both scopes and package names.
+
+Three names existed. Only one is an impersonation.
+
+| Package | First published | Verdict |
+| --- | --- | --- |
+| `@modelcontextprotoco1/server-filesystem` | 2026-04-13 | **Impersonation** — byte-identical to official 2026.1.14 |
+| `cp-remote` | 2014-03-10 | Innocent — a `child_process` runner, twelve years old |
+| `mp-remote` | 2020-12-11 | Innocent — abandoned, predates MCP by four years |
+
+`cp-remote` and `mp-remote` are each one deletion away from `mcp-remote`. They are also
+older than the Model Context Protocol itself. They are collisions, not squats.
+
+My own scanner flagged both as `CRITICAL` typosquats.
+
+**Impersonation cannot run backwards in time.** If a package was published before the
+package it supposedly imitates, the resemblance is a coincidence — and registry creation
+dates make that decidable rather than a judgement call. mcpaudit now resolves the creation
+date of the package a name resembles and drops the finding when the accused is older.
+
+When the original cannot be resolved, the finding is kept. Unknown provenance should fail
+loud, not quiet.
+
+This is the second false-positive class this project has found in itself in two days, and
+both came from the same root cause: **matching shape while ignoring context.** The first
+ignored what happened to a value one line later. This one ignored what happened four years
+earlier.
+
+An edit distance is not evidence of intent. A scanner that treats it as such will eventually
+accuse a maintainer who did nothing, and being loudly wrong about a person is worse than
+being quietly wrong about a string.
