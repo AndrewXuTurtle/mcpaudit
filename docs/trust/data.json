@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-01 20:26 UTC",
+  "generated": "2026-08-01 20:36 UTC",
   "npm": [
     {
       "name": "chrome-devtools-mcp",
@@ -261,7 +261,7 @@
     },
     {
       "name": "fastmcp",
-      "downloads": 85198061,
+      "downloads": null,
       "ageDays": 609,
       "findings": []
     },
@@ -304,8 +304,1330 @@
     ]
   },
   "malware": {
-    "scanned": 0,
+    "scanned": 39488,
     "capped": false,
-    "list": []
+    "failed": null,
+    "list": [
+      {
+        "package": "refbase-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-5xcj-w4qg-g78g",
+        "published": "2026-07-31"
+      },
+      {
+        "package": "hit-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-fmvj-j52v-97x4",
+        "published": "2026-07-31"
+      },
+      {
+        "package": "iwomm-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-8cvf-hpjg-mf2j",
+        "published": "2026-07-31"
+      },
+      {
+        "package": "mcp-server-boilerplate",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-694g-9jgf-5566",
+        "published": "2026-07-31"
+      },
+      {
+        "package": "chaos-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-8whv-6hc5-4wpr",
+        "published": "2026-07-31"
+      },
+      {
+        "package": "gtm-mcp-auth",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-4ch5-wcxv-58j5",
+        "published": "2026-07-31"
+      },
+      {
+        "package": "sap-mcp-facilitator",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-fvh4-59gv-h4qp",
+        "published": "2026-07-31"
+      },
+      {
+        "package": "maximumsats-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-mr5v-ffrr-c4h3",
+        "published": "2026-07-31"
+      },
+      {
+        "package": "sap-mcp-config",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-4j2q-gh4v-v729",
+        "published": "2026-07-31"
+      },
+      {
+        "package": "kip-mcp-http",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-993p-762h-628r",
+        "published": "2026-07-31"
+      },
+      {
+        "package": "pm-claude-skills-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-87v2-285p-xhrr",
+        "published": "2026-07-31"
+      },
+      {
+        "package": "routerbase-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-rxc6-q384-2wrx",
+        "published": "2026-07-31"
+      },
+      {
+        "package": "smart-npv-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-972c-x84x-rm4f",
+        "published": "2026-07-31"
+      },
+      {
+        "package": "mcp-search-server",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-3rhm-6v7p-whrg",
+        "published": "2026-07-30"
+      },
+      {
+        "package": "mcp-echarts",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-33m7-5xmx-p58p",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "mcp-mermaid",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-2f6m-69ww-37wv",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "@antv/mcp-server-antv",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-p6wc-j7x7-ff3v",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "claude-code-base-action",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-3x98-842h-2764",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "polymarket-claude-code",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-jgxh-5jvq-q9r2",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "promptbook-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-vmvx-c3j5-rhw5",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "lokal-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-9rg3-p529-qp32",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "local-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-9h8c-f7pm-jmvw",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "mcp-server-iehub-proxy",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-3x3c-57v3-ghqc",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "claude-all-config",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-6353-97m9-6cpx",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "claude-content-writer",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-xcv7-f69m-4q6r",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "@tmecontinue/claude",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-vc3x-g46f-q7c5",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "atel-mcp-openclaw",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-cj4c-g5f9-v9wf",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "@wengine-ai/claude-code-router-shared",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-jw2r-g746-x7p3",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "@mcpassure/mcp-anvisa-bulario",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-m8xf-qrf8-8954",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "@rui.branco/sentry-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-h82q-jfv8-9wxm",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "@jonusnattapong/claudecode",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-hcwr-8fgm-38jr",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "@mcpassure/mcp-cnes",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-fw8x-w94j-xp65",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "@euqns/nudge-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-3rjv-mr8w-hmh8",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "@bonsai-ai/claude-code-win32-x64",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-rh4j-vfg5-cggc",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "@citely/mcp-server",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-jgqq-q924-gxr6",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "@djessicatony/folk-mcp-canary",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-65rf-6m5c-24p5",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "@cometix/claude-code",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-xc56-6g8x-wv94",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "@bonsai-ai/claude-code",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-r7ww-q4rx-v4wp",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "@atlisp/mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-vxmr-xfv2-w64r",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "@cloudplatform-single-spa/ml-ai-agents-mcp-server",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-36cm-hj6r-x979",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "brave-search-mcp-server",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-56pv-xqqh-57cf",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "t-invest-mcp-server",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-hc7h-crvc-rj9g",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "screenpipe-mcp-http",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-v653-pcmf-c253",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "create-docs-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-7j3w-62wc-g3qj",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "mcp-server-sentry",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-28qv-2m9q-wm2p",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "mcp-server-supabase",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-48pr-c89h-69q7",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "mcp-server-redis",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-2rvc-xw64-r74h",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "mcp-server-sequential-thinking",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-w69h-vf37-j4w6",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "mcp-server-git",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-hmxw-q2gh-p268",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "mcp-server-notion",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-mx42-9xv4-vm87",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "mcp-server-fetch",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-88f3-qjxp-rpp3",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "mcp-server-postgres",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-62p7-frf5-h7p2",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "mcp-server-figma",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-cxx6-mmxm-vfm4",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "mcp-server-github",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-mmcr-x94x-c3mp",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "bricks-builder-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-r88h-7778-q4r3",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "bitrix24-tasks-mcp-server",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-2w52-hqcr-f2x2",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "claudechor",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-8rqr-34rw-3fhj",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "claude-jar",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-9hj3-rj27-phgx",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "zomato-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-m5cc-7f4r-p5c8",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "cue-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-p545-gqc3-855r",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "anthropic-internal-tools",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-hf34-hjvf-99ph",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "executable-stories-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-c277-735f-mrmj",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "mcp-ci-runner-poc",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-fw9m-r33c-qgj2",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "claude-internal-utils",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-jxg3-fwfv-fjwf",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "anthropic-shared-logger",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-4vj8-cm74-gcx3",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "claude-cup",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-r663-w5qf-3552",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "checkmarx-claude-cache",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-5j4h-g757-9wmm",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "sidecar-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-xvjf-g3xg-g5j7",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "claude-team-tracker",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-wxfw-pvxf-89gr",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "proxy-seller-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-2j85-5qpr-6h8w",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "polymarket-mcp-v2",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-j66f-f322-x333",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "@vite-mcp/vite-type",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-cf2w-h63w-wm84",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "sensorium-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-9388-px34-hc4h",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "claude-code-timer",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-6649-vv4q-q9fw",
+        "published": "2026-07-27"
+      },
+      {
+        "package": "mcp-notes-server-poc-praetorian",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-rfhm-2wfr-r9p2",
+        "published": "2026-07-23"
+      },
+      {
+        "package": "wayspiritmcp-weather",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-6h3x-xwcv-w9f9",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "wdt-erpmcp",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-mfjc-6893-4m4j",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "wayspiritmcp-tpa",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-wc92-rjp7-g2h3",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "wayspiritmcp-ppa",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-65cx-x459-79g7",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "wayspiritmcp-enconly",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-rjcm-fv9f-f2rg",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "vulndify-mcp-server",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-v3x5-574x-8776",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "tpvmcpustudy",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-2wm5-3q9g-7g9q",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "tpreramcpu",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-8fxp-94rp-3mg3",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "tpmcpongpaypal",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-26vj-4966-5pq5",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "tpmaskmcpush",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-2cv3-mmq9-rqmr",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "tpcvmcpy",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-cwhq-gx62-5m8w",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "timingmcp",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-r4m9-m2j9-pc96",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "timermcp",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-q5cc-6j33-596w",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "timemcp-py",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-6hwf-phjh-8xf6",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "timemcp-utils",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-v3mf-rv4w-3wrj",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "timemcp",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-g8xr-2qm9-4rvc",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "timemcplib",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-fc22-xmvh-52gc",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "timesmcp",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-p38x-hh3f-8m97",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "timermcplib",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-jm7c-w9pg-m3r9",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "timesmcplib",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-rwxf-w5g7-7v4x",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "timemcp190825790125120985125",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-59qw-q72h-7g98",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "timemcp-client",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-293w-f5jh-wc38",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "tiktoken-mcp",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-wj5q-fgqm-2wv6",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "testpackage1mcpe",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-hg9j-p4cc-6q97",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "strands-agents-anthropic",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-vr36-grrv-xgxm",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "story-mcp-hub",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-pxhw-g4m2-fw8r",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "selfmcpipcpu",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-j824-jwch-j836",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "selfmcproofvisa",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-c7gm-c92f-95hg",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "selfhackedmcpong",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-pw74-4r53-jhf8",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "selfhttpmcpush",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-2cqr-77mv-fcwg",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "selfccmcpush",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-whwv-cfgr-mmw2",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "ray-mcp-server",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-xpj9-c6mx-gfqf",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "ramcpu",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-qpgc-89qw-jqr9",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "py-ultramcpyw",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-rwrc-v842-r2v2",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "py-randomcpu",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-3jwf-g5qm-2q74",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "py-pepmcpaypal",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-h8gm-h4f6-hmp9",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "py-mcpyw",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-7rrc-4g96-p2q3",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "py-mcpushmask",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-v93m-98ch-cvrc",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "py-infomcpy",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-mmm9-497c-w755",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "py-cpumcpyw",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-73m3-xf5w-6766",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "openai-mcp",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-h7rx-63j6-3w83",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "mcpsever",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-6wf3-7v76-j8g7",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "mcpyw",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-q667-ccgf-c2rm",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "mcp-weather-full",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-23g4-jfwp-rv64",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "mcp-xyz",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-mrf9-fw7v-p98g",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "mcp-runcmd-server",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-fqxv-p3pf-c494",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "mcpip",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-vf8x-7v6f-qj5m",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "mcpost",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-g25w-q9c7-j7x6",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "mcpep",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-x3j7-c7p2-q6m7",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "mcp-pdftool-plus",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-fh2f-vcxw-gm22",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "mcp-runcommand-server",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-22rf-pqm4-vwxw",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "mcp-runcommand-server2",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-2cvc-xrh7-32gg",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "mcp-transport-proto",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-q37q-c4qv-gr6h",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "libramcpuhacked",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-995p-r3gh-pw5c",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "libmcpingstudy",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-hr7x-4646-hr32",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "libmcpipver",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-56gv-w36g-p92g",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "libmcpongvm",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-mj2g-7vxx-x9p9",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "libmcpywcontrol",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-m46c-qp7j-x3x2",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "libmcpep",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-475f-fhrv-6m7w",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "libencoderandomcpu",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-vp5v-v237-jcg8",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "libedmcpong",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-5h97-vgh2-wqr9",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "latinum-wallet-mcp",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-7fjp-p82r-q2c2",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "langchain-core-mcp",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-f6f5-m9qw-v738",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "instructor-mcp",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-vp83-46ch-mpvw",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "groq-mcp",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-2544-8267-j7f9",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "esqpymcpy",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-v5v2-xrvc-5mqg",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "esqmcpypaypal",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-p984-mxw9-86pm",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "esqmcpepgrand",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-hc7q-54jj-wpvc",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "esqmcpaypallgtb",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-ccq8-3gfx-r64q",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "esqmcpullram",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-h336-2qhc-r4f2",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "docontrol-mcp",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-9h3c-vrq8-7p3c",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "claude-lite",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-2x8m-pc3r-f9wx",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "anthropickit",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-2q9v-5rq6-rmwf",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "ant-mcp-proxy-for-test",
+        "ecosystem": "pip",
+        "ghsa": "GHSA-jcv2-j354-7j53",
+        "published": "2026-07-21"
+      },
+      {
+        "package": "anthropic-claude-latest",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-j588-p757-86r9",
+        "published": "2026-07-17"
+      },
+      {
+        "package": "claude-token-tracker-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-w56m-5ch4-5xjw",
+        "published": "2026-07-16"
+      },
+      {
+        "package": "@redhat-cloud-services/hcc-kessel-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-xh7j-7gfw-g434",
+        "published": "2026-07-10"
+      },
+      {
+        "package": "@redhat-cloud-services/hcc-pf-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-gw27-332x-rf3r",
+        "published": "2026-07-10"
+      },
+      {
+        "package": "n8n-nodes-mcputils",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-rxc8-p2w2-g5jg",
+        "published": "2026-07-09"
+      },
+      {
+        "package": "myclaude-code",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-f5r3-gf4p-pf67",
+        "published": "2026-07-09"
+      },
+      {
+        "package": "mcp-server-pg",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-cfv7-74pc-vmff",
+        "published": "2026-07-07"
+      },
+      {
+        "package": "anthropic-toolkit",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-c7v6-f7mc-9crv",
+        "published": "2026-07-07"
+      },
+      {
+        "package": "autotel-mcp-instrumentation",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-7cv4-gfx4-2c3v",
+        "published": "2026-06-30"
+      },
+      {
+        "package": "autotel-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-3wmg-66hp-xhv9",
+        "published": "2026-06-30"
+      },
+      {
+        "package": "cursorai-agent",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-xq66-q5q9-992p",
+        "published": "2026-06-23"
+      },
+      {
+        "package": "free-claude",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-7qpf-5pm7-57rh",
+        "published": "2026-06-22"
+      },
+      {
+        "package": "free-anthropic-claude",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-3h58-8ch3-mgp3",
+        "published": "2026-06-22"
+      },
+      {
+        "package": "@mastra/mcp-registry-registry",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-5w62-p653-57mf",
+        "published": "2026-06-17"
+      },
+      {
+        "package": "@mastra/cursor",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-cp3h-358p-m8h2",
+        "published": "2026-06-17"
+      },
+      {
+        "package": "@mastra/claude",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-jp56-69xj-c3rq",
+        "published": "2026-06-17"
+      },
+      {
+        "package": "@mastra/mcp-docs-server",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-wxp6-9hmr-928g",
+        "published": "2026-06-17"
+      },
+      {
+        "package": "@mastra/mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-wfr8-6x4q-hpr3",
+        "published": "2026-06-17"
+      },
+      {
+        "package": "sp-api-dev-assistant-mcp-server",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-hgm9-w4fm-65m9",
+        "published": "2026-06-16"
+      },
+      {
+        "package": "@redhat-cloud-services/hcc-feo-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-vgm5-jmvr-cjgf",
+        "published": "2026-06-01"
+      },
+      {
+        "package": "claude-channel-imessage",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-6v88-cxrw-54h7",
+        "published": "2026-05-27"
+      },
+      {
+        "package": "explorhub-mcp-server",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-2qjx-pmc9-2jrj",
+        "published": "2026-05-25"
+      },
+      {
+        "package": "explorhub-claude-bridge",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-hgw4-f8mg-vgwf",
+        "published": "2026-05-25"
+      },
+      {
+        "package": "mcp-dashboards-shared",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-h2q9-x96j-55m7",
+        "published": "2026-05-25"
+      },
+      {
+        "package": "@antv/mcp-server-chart",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-qgmj-c898-99rq",
+        "published": "2026-05-19"
+      },
+      {
+        "package": "nextmove-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-fhg4-3pg2-pvgx",
+        "published": "2026-05-12"
+      },
+      {
+        "package": "cmux-agent-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-gx6p-62rj-cg4m",
+        "published": "2026-05-12"
+      },
+      {
+        "package": "@squawk/mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-vcpv-j6jh-qcc2",
+        "published": "2026-05-12"
+      },
+      {
+        "package": "pi-exa-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-fpc5-w8c8-3mhv",
+        "published": "2026-05-04"
+      },
+      {
+        "package": "claudcode-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-5v3x-g9r5-vvhg",
+        "published": "2026-04-22"
+      },
+      {
+        "package": "mcp-server-todo",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-hppm-xxp9-54h7",
+        "published": "2026-04-01"
+      },
+      {
+        "package": "@iflow-mcp/watercrawl-watercrawl-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-rg84-r52h-2rgw",
+        "published": "2026-03-19"
+      },
+      {
+        "package": "hiagentevilmcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-9264-q4hp-q57g",
+        "published": "2026-03-03"
+      },
+      {
+        "package": "anthropic-sdk",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-j8wc-8p9m-6fm6",
+        "published": "2026-01-21"
+      },
+      {
+        "package": "dreame-claude",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-9vmw-qh86-x859",
+        "published": "2026-01-20"
+      },
+      {
+        "package": "vscode-azure-mcp-server",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-g3xg-r65r-rjp9",
+        "published": "2025-12-30"
+      },
+      {
+        "package": "excluder-mcp-package",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-h43q-7r78-rf73",
+        "published": "2025-12-23"
+      },
+      {
+        "package": "excluder-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-gg9p-qcrr-r7fv",
+        "published": "2025-12-23"
+      },
+      {
+        "package": "cursorparserfruit",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-qqjh-v9h4-2q9f",
+        "published": "2025-12-19"
+      },
+      {
+        "package": "mcp-polymarket",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-f8cg-j5h4-4v2j",
+        "published": "2025-11-25"
+      },
+      {
+        "package": "@browserbasehq/mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-j9hg-hmwf-9qx7",
+        "published": "2025-11-25"
+      },
+      {
+        "package": "ts-relay-cursor-paging",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-r9rr-c7vq-r642",
+        "published": "2025-11-24"
+      },
+      {
+        "package": "@seezo/sdr-mcp-server",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-3c5g-45xx-w65c",
+        "published": "2025-11-24"
+      },
+      {
+        "package": "@relyt/mcp-server-relytone",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-9jcv-5hcv-f23r",
+        "published": "2025-11-24"
+      },
+      {
+        "package": "@relyt/claude-context-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-r4xp-273q-hmxr",
+        "published": "2025-11-24"
+      },
+      {
+        "package": "ids-enterprise-mcp-server",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-jj4q-9hf2-5rfx",
+        "published": "2025-11-24"
+      },
+      {
+        "package": "@relyt/claude-context-core",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-g2qf-c39v-8ph8",
+        "published": "2025-11-24"
+      },
+      {
+        "package": "web-scraper-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-92qg-p459-45jx",
+        "published": "2025-11-24"
+      },
+      {
+        "package": "lite-serper-mcp-server",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-w7vj-jqhx-2jr7",
+        "published": "2025-11-24"
+      },
+      {
+        "package": "claude-token-updater",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-pxr9-c6pq-g38g",
+        "published": "2025-11-24"
+      },
+      {
+        "package": "cursor-bypass",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-924q-8r54-3h6w",
+        "published": "2025-11-10"
+      },
+      {
+        "package": "rce-poc-test-honor-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-9c65-qg9h-c3gr",
+        "published": "2025-11-07"
+      },
+      {
+        "package": "@chatclub/claude-code",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-w7jq-xv2w-v96w",
+        "published": "2025-11-07"
+      },
+      {
+        "package": "cursor-ai-fork",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-wrwh-678j-xg4q",
+        "published": "2025-10-31"
+      },
+      {
+        "package": "shiprocket-mcp",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-qq2g-4w88-354g",
+        "published": "2025-10-30"
+      },
+      {
+        "package": "@chatgptclaude_club/claude-code",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-gp5h-wrq3-xgv7",
+        "published": "2025-10-27"
+      },
+      {
+        "package": "bad-santa-claude",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-jfm5-h6cv-4jq3",
+        "published": "2025-10-27"
+      },
+      {
+        "package": "mcp-server-fixthis",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-p45p-rjrm-xmh3",
+        "published": "2025-10-07"
+      },
+      {
+        "package": "@lanyer640/mcp-runcommand-server",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-xmqc-rm22-fxq6",
+        "published": "2025-10-02"
+      },
+      {
+        "package": "mcp-knowledge-graph",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-qq74-6323-3h57",
+        "published": "2025-09-16"
+      },
+      {
+        "package": "mcp-knowledge-base",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-f8qw-968c-jxpq",
+        "published": "2025-09-16"
+      },
+      {
+        "package": "mcp-server-everything",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-6j44-frpv-rvv9",
+        "published": "2025-09-12"
+      },
+      {
+        "package": "mcp-chat-client",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-r7jv-6f7p-rr8q",
+        "published": "2025-09-12"
+      },
+      {
+        "package": "mcp-lumin",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-h4r4-cm9c-4mcc",
+        "published": "2025-09-11"
+      },
+      {
+        "package": "@jaswanthlanka/mcp-proxy",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-cm3w-fxm2-349q",
+        "published": "2025-07-22"
+      },
+      {
+        "package": "glean-mcp-server",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-94vh-73p7-p3wc",
+        "published": "2025-07-17"
+      },
+      {
+        "package": "rush-mcp-example-plugin",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-h53p-7hxf-2rjc",
+        "published": "2025-06-26"
+      },
+      {
+        "package": "claude-pr-action",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-jmg8-82j4-hrp6",
+        "published": "2025-06-18"
+      },
+      {
+        "package": "yaml-mcp-wrapper",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-pchh-j24j-3v4c",
+        "published": "2025-06-02"
+      },
+      {
+        "package": "hrdebjywvtkmcpga",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-vxm4-w459-68hm",
+        "published": "2022-07-11"
+      },
+      {
+        "package": "searchcursor",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-r222-28vq-mvf4",
+        "published": "2022-06-20"
+      }
+    ]
   }
 }
