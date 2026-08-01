@@ -141,9 +141,86 @@ async function sweepImpersonations(topPackages) {
   return { probed: candidates.length, hits };
 }
 
+/** Names that make a package part of the MCP / AI-agent surface. */
+const MCP_NAME = /mcp|model-?context|claude|anthropic|cursor|windsurf/i;
+
+/**
+ * Every published malware advisory for an MCP-shaped package name.
+ *
+ * These are GitHub Advisory Database entries — a registry security team
+ * examined each package and concluded it was malicious. Naming them is not an
+ * accusation on my part; the advisories are already public. Collecting them in
+ * one place is the useful part, because nobody installing an MCP server thinks
+ * to search 28,000 advisories first.
+ */
+async function fetchMcpMalware(token) {
+  const headers = { accept: 'application/vnd.github+json' };
+  if (token) headers.authorization = `Bearer ${token}`;
+
+  // This endpoint paginates by CURSOR, not page number. Passing `page=N` is
+  // silently ignored and returns the first page every time — which looked like
+  // a successful scan of 64,000 advisories while actually re-reading the same
+  // hundred, and produced 14 results where the true count is an order of
+  // magnitude higher. Follow the `Link: rel="next"` cursor instead. That makes
+  // it sequential, which is the cost of getting the right answer.
+  const MAX_REQUESTS = 400;
+  const found = [];
+  let scanned = 0;
+  let capped = false;
+
+  for (const ecosystem of ['npm', 'pip']) {
+    let url = `https://api.github.com/advisories?ecosystem=${ecosystem}&type=malware&per_page=100&sort=published&direction=desc`;
+    let requests = 0;
+
+    while (url && requests < MAX_REQUESTS) {
+      let res;
+      try {
+        res = await fetch(url, { headers });
+      } catch { break; }
+      if (!res.ok) break;
+      requests++;
+
+      const batch = await res.json();
+      if (!Array.isArray(batch) || batch.length === 0) break;
+      scanned += batch.length;
+
+      for (const a of batch) {
+        const names = [...new Set((a.vulnerabilities || []).map((v) => v?.package?.name).filter(Boolean))];
+        const hit = names.filter((n) => MCP_NAME.test(n));
+        if (!hit.length) continue;
+        found.push({
+          ghsa: a.ghsa_id,
+          ecosystem,
+          packages: hit,
+          published: (a.published_at || '').slice(0, 10),
+          summary: a.summary || '',
+        });
+      }
+
+      const next = /<([^>]+)>;\s*rel="next"/.exec(res.headers.get('link') || '');
+      url = next ? next[1] : null;
+    }
+    if (url && requests >= MAX_REQUESTS) capped = true;
+  }
+
+  // Deduplicate: the same package can appear under several advisories.
+  const byPackage = new Map();
+  for (const f of found) {
+    for (const p of f.packages) {
+      if (!byPackage.has(p) || f.published > byPackage.get(p).published) {
+        byPackage.set(p, { package: p, ecosystem: f.ecosystem, ghsa: f.ghsa, published: f.published });
+      }
+    }
+  }
+
+  const list = [...byPackage.values()].sort((a, b) => (b.published || '').localeCompare(a.published || ''));
+  if (capped) console.log(`  NOTE: advisory scan hit the ${MAX_PAGES}-page cap; the list may be incomplete`);
+  return { scanned, capped, list };
+}
+
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-function render({ generated, npm, pypi, sweep }) {
+function render({ generated, npm, pypi, sweep, malware }) {
   const risky = npm.filter((p) => p.findings.length).length;
   const row = (p) => {
     const worst = p.findings[0]?.severity;
@@ -189,6 +266,17 @@ pre{background:var(--code);border:1px solid var(--line);border-radius:9px;paddin
 ${sweep.hits.length
       ? `<p><strong>${sweep.hits.length} package(s) found impersonating an official scope:</strong></p><div class="scroll"><table><tr><th>Package</th><th>Impersonates</th><th>First published</th><th>Maintainer</th><th>Declared author</th></tr>${sweep.hits.map((h) => `<tr><td><code>${esc(h.name)}</code></td><td><code>${esc(h.impersonates)}</code></td><td>${esc(h.created)}</td><td>${esc(h.maintainers)}</td><td>${esc(h.author)}</td></tr>`).join('')}</table></div><p>A package under a lookalike scope may be byte-identical to the real one today and hostile tomorrow. Do not install these.</p>`
       : '<p>No impersonation packages detected in this run.</p>'}
+</div>
+
+<div class="card${malware.list.length ? ' alert' : ''}">
+<h2 style="margin-top:0">Confirmed-malicious MCP packages</h2>
+<p><strong>${malware.list.length}</strong> package name(s) on the MCP / AI-agent surface carry a published malware advisory. Each was examined by a registry security team and removed &mdash; these are not heuristics, and the advisories are public.</p>
+<p class="sub">Scanned ${malware.scanned.toLocaleString()} malware advisories across npm and PyPI in the GitHub Advisory Database.${malware.capped ? ' <strong>Result truncated by a page cap &mdash; treat as a lower bound.</strong>' : ''}</p>
+<div class="scroll"><table>
+<tr><th>Package</th><th>Ecosystem</th><th>Advisory</th><th>Published</th></tr>
+${malware.list.map((m) => `<tr><td><code>${esc(m.package)}</code></td><td>${esc(m.ecosystem)}</td><td><a href="https://github.com/advisories/${esc(m.ghsa)}">${esc(m.ghsa)}</a></td><td>${esc(m.published)}</td></tr>`).join('\n')}
+</table></div>
+<p>If any of these appears in one of your MCP configs, treat it as a compromise rather than a warning: remove it, then rotate every credential it could reach.</p>
 </div>
 
 <h2>npm packages</h2>
@@ -238,12 +326,16 @@ async function main() {
   console.log('sweeping for impersonations…');
   const sweep = await sweepImpersonations(top);
 
+  console.log('collecting published malware advisories…');
+  const malware = await fetchMcpMalware(process.env.GITHUB_TOKEN);
+  console.log(`  ${malware.list.length} malicious MCP-named packages from ${malware.scanned.toLocaleString()} advisories`);
+
   await mkdir(OUT, { recursive: true });
-  const data = { generated, npm, pypi, sweep };
+  const data = { generated, npm, pypi, sweep, malware };
   await writeFile(`${OUT}/data.json`, JSON.stringify(data, null, 2));
   await writeFile(`${OUT}/index.html`, render(data));
 
-  console.log(`\nnpm: ${npm.length} · pypi: ${pypi.length} · sweep: ${sweep.probed} probed, ${sweep.hits.length} hit(s)`);
+  console.log(`\nnpm: ${npm.length} · pypi: ${pypi.length} · sweep: ${sweep.probed} probed, ${sweep.hits.length} hit(s) · malware: ${malware.list.length}`);
   for (const h of sweep.hits) console.log(`  IMPERSONATION: ${h.name} (mimics ${h.impersonates})`);
 
   // Surfaced for the workflow so it can raise an alert issue.
