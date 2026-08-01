@@ -190,7 +190,7 @@ export async function refuteBackwardsImpersonation(findings, created, resolveCre
   const out = [];
 
   for (const f of findings) {
-    if (!f.impersonates || !['MCP-SUP-002', 'MCP-SUP-006'].includes(f.id)) {
+    if (!f.impersonates || !['MCP-SUP-002', 'MCP-SUP-006', 'MCP-PY-001'].includes(f.id)) {
       out.push(f);
       continue;
     }

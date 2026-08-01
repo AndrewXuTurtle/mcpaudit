@@ -159,3 +159,46 @@ earlier.
 An edit distance is not evidence of intent. A scanner that treats it as such will eventually
 accuse a maintainer who did nothing, and being loudly wrong about a person is worse than
 being quietly wrong about a string.
+
+---
+
+## Update, 2026-08-02 (later): PyPI, and a negative result worth publishing
+
+Half the MCP ecosystem is Python, launched through `uvx`. mcpaudit skipped all of it — it
+returned early on any `pypi:` package, so Anthropic's own `mcp-server-fetch` and
+`mcp-server-git` received no supply-chain analysis at all. That gap is now closed.
+
+One detail decided the design. PyPI applies [PEP 503](https://peps.python.org/pep-0503/)
+normalisation: runs of `-`, `_` and `.` are equivalent and case is ignored, so
+`mcp_server_fetch` and `mcp-server-fetch` are not similar names — they are *the same
+project*. A scanner comparing raw strings would report a package as a typosquat of itself.
+
+I then swept **278 candidate names** across the six most-used Python MCP packages.
+Seventeen exist. **None is an impersonation.**
+
+Most are ordinary packages that predate the Model Context Protocol entirely: `mc` is a
+memcached client, `mpc` a differentiable solver for PyTorch, `mkp` a Check_MK archive tool
+from 2015. They collide with MCP names by coincidence, not design.
+
+The closest call was `mcp-server-fetch2`, whose author field reads
+`"Anthropic, PBC., J Muzhen"` and whose summary is copied verbatim from the official
+package. I downloaded and read it. It is a **legitimate fork** — real source, added
+dependencies (`markitdown`, `cachetools`), Anthropic's own security caution preserved in the
+README, and no suspicious behaviour anywhere in it.
+
+So it is not an advisory. What it *is* is a provenance problem: it retains a first-party
+author string while being unaffiliated, and publishes no repository or homepage URL, so a
+user cannot trace where its code came from. mcpaudit reports that as `HIGH` —
+*verify this before trusting it* — not `CRITICAL`. Getting that severity right matters more
+than the finding does. A fork with untidy metadata is not a supply-chain attack, and
+publishing it as one would be unfair to someone who wrote real software.
+
+### The result
+
+The npm homoglyph attack has **no PyPI counterpart in this ecosystem**. One live
+impersonation on npm; zero on PyPI across 278 probes.
+
+A negative result is still a result. "We looked and found nothing" is only worth reading
+when you can say precisely how hard you looked — 278 names, six targets, four variant
+classes — and when the tool doing the looking has had its false positives published rather
+than buried.

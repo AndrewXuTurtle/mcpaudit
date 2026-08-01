@@ -1,6 +1,7 @@
 import { discoverServers } from './discover.js';
 import { auditServer, packageFromServer, POSSIBLE } from './checks.js';
 import { auditPackage, refuteBackwardsImpersonation } from './registry.js';
+import { auditPypiPackage, pypiCreated } from './pypi.js';
 
 export const SEVERITY_ORDER = ['critical', 'high', 'medium', 'low', 'info'];
 const rank = (s) => SEVERITY_ORDER.indexOf(s);
@@ -32,7 +33,12 @@ export async function runAudit({ path, deep = false, paranoid = false, onProgres
 
     const spec = packageFromServer(server);
     let pkgMeta = null;
-    if (spec) {
+    if (spec?.startsWith('pypi:')) {
+      const { findings: pyFindings, meta } = await auditPypiPackage(spec);
+      findings = findings.concat(pyFindings);
+      pkgMeta = meta;
+      findings = await refuteBackwardsImpersonation(findings, meta?.created, pypiCreated);
+    } else if (spec) {
       const { findings: pkgFindings, meta } = await auditPackage(spec, { deep });
       findings = findings.concat(pkgFindings);
       pkgMeta = meta;
@@ -64,4 +70,4 @@ export async function runAudit({ path, deep = false, paranoid = false, onProgres
   };
 }
 
-export { discoverServers, auditServer, auditPackage };
+export { discoverServers, auditServer, auditPackage, auditPypiPackage };
