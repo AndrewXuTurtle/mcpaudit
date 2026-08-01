@@ -1,5 +1,6 @@
 import { gunzipSync } from 'node:zlib';
 import { scanText, splitSpec, CERTAIN, LIKELY, POSSIBLE } from './checks.js';
+import { auditAdvisories } from './osv.js';
 
 const REGISTRY = 'https://registry.npmjs.org';
 const DOWNLOADS = 'https://api.npmjs.org/downloads/point/last-month';
@@ -284,6 +285,9 @@ export async function auditPackage(spec, { deep = false } = {}) {
       }));
     }
   }
+
+  // Published advisories, matched against the exact version resolved above.
+  findings.push(...await auditAdvisories(name, resolved, 'npm'));
 
   if (!deep) return { findings, meta: { name, resolved, ageDays, downloads, published, created } };
 

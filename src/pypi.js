@@ -1,4 +1,5 @@
 import { CERTAIN, LIKELY } from './checks.js';
+import { auditAdvisories } from './osv.js';
 
 const PYPI = 'https://pypi.org/pypi';
 const STATS = 'https://pypistats.org/api/packages';
@@ -172,6 +173,8 @@ export async function auditPypiPackage(spec, {
       fix: 'Move to a current release.',
     }));
   }
+
+  findings.push(...await auditAdvisories(name, info.version, 'PyPI'));
 
   return { findings, meta: { name, resolved: info.version, ageDays, downloads, created } };
 }

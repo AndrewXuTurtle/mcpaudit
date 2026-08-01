@@ -66,6 +66,7 @@ Independent testing put YARA-style MCP scanners at roughly a **78% false-positiv
 | **Credential exposure** | Live API keys stored in plaintext config; blast radius when one process holds several credential families at once |
 | **Privilege** | Servers granted `/` or your entire home directory; shells in the launch path |
 | **Supply chain** | Packages npm removed for malware, homoglyph scopes, typosquats, unpinned versions, install hooks, young-and-unpopular packages |
+| **Known advisories** | Published malware advisories and CVEs from OSV.dev/GitHub Advisory DB, matched against the exact version in use — not the package name |
 | **Transport** | Remote servers over plaintext HTTP; missing auth; tokens hardcoded into headers |
 | **Source** *(`--deep`)* | Environment sweeps, references to `~/.ssh` and `~/.aws`, runtime-fetched code execution, obfuscated blobs |
 
