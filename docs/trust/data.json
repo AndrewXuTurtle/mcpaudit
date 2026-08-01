@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-01 18:38 UTC",
+  "generated": "2026-08-01 18:40 UTC",
   "npm": [
     {
       "name": "chrome-devtools-mcp",
@@ -246,9 +246,9 @@
       "findings": []
     },
     {
-      "name": "@browserstack/mcp-server",
-      "downloads": 41044,
-      "ageDays": 466,
+      "name": "@benborla29/mcp-server-mysql",
+      "downloads": 48880,
+      "ageDays": 600,
       "findings": []
     }
   ],
