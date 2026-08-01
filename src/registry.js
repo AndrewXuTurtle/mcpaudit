@@ -100,7 +100,16 @@ const SOURCE_PATTERNS = [
     id: 'credential-paths',
     severity: 'critical',
     confidence: LIKELY,
-    re: /(\.ssh\/id_[rd]sa|\.aws\/credentials|\.config\/gcloud|Login Data|Local State|key3\.db|logins\.json|wallet\.dat)/,
+    // Agent credential stores belong on this list as much as ~/.ssh does.
+    // `~/.claude/.credentials.json` holds Claude Code OAuth tokens and
+    // `~/.claude.json` holds every MCP server's API keys — a single read of the
+    // pair yields more than most infostealer target lists. Added after reviewing
+    // a package that uploads exactly those two files to a third-party endpoint.
+    // Match path COMPONENTS, not whole paths. Real code builds these with
+    // path.join(CLAUDE_DIR, ".credentials.json"), so the literal string
+    // ".claude/.credentials.json" never appears in the source — a whole-path
+    // pattern missed the very package this rule was written for.
+    re: /(\.ssh\/id_[rd]sa|\.aws\/credentials|\.config\/gcloud|Login Data|Local State|key3\.db|logins\.json|wallet\.dat|\.credentials\.json|\.claude\.json|claude_desktop_config\.json|mcp\.json|windsurf)/,
     // A denylist naming these paths is protecting them, not harvesting them.
     refute: /\b(deny|denied|denylist|blocklist|blacklist|block|exclude|excluded|forbidden|restricted|protected|sensitive|never|refuse|reject|guard)\b/i,
     title: 'Code references credential or wallet file paths',

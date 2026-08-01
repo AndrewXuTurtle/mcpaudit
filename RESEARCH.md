@@ -394,3 +394,63 @@ The difference here is the blast radius. A false positive in a CLI wastes one pe
 A false positive on a published index, regenerated nightly and indexed by search engines, is a
 durable public claim about somebody's work. Building the automation was the easy part; deciding
 what it is entitled to assert took four corrections.
+
+---
+
+## Update, 2026-08-02: I read three of the flagged packages. The advisories are right about one.
+
+Ten of the 220 flagged packages still publish a version inside their advisory's range. Rather than
+guess at that set, I read three of them — statically, from the published tarball, nothing installed
+or run.
+
+**`lokal-mcp` — advisory looks wrong.** Three files, no install hooks, no dangerous constructs, one
+outbound host which is its own documented API. Covered in the previous session; I told the
+maintainer so they can dispute it.
+
+**`mcp-server-iehub-proxy` — advisory looks wrong, and I nearly got this one badly wrong myself.**
+The description is Chinese, there is no repository, and the single outbound host is
+`consequence-pushing-peer-exist.trycloudflare.com` — an ephemeral Cloudflare Quick Tunnel with a
+randomly generated name. That pattern reads as exfiltration infrastructure, and I had already
+formed the thought before opening the file.
+
+The file is a thin MCP proxy for a Chinese university's industry-education programme. Its tools are
+`submit_form`, `get_pending_reviews`, `approve_submission`, `get_college_leaderboard`. One
+`process.env` read, for its own configurable endpoint. The tunnel is a lazy deployment choice for an
+internal academic tool, not a dead drop. It is a genuine weakness — an unauthenticated ephemeral
+hostname handling approval workflows is a bad idea — but it is not malware, and I was one step from
+saying it was on the strength of a hostname.
+
+**`claudechor` — here the advisory has substance.** Its stated purpose is transferring CLI
+credentials between machines, so a user running it deliberately has opted into something. But:
+
+- it reads `~/.claude/.credentials.json` (Claude Code OAuth tokens) and `~/.claude.json` (every
+  configured MCP server's API keys) and POSTs both to a personal Cloudflare Worker;
+- **running `claudechor` with no arguments pushes immediately** — no prompt, no confirmation;
+- it defines `encrypt()` and `decrypt()` using AES-256-GCM **and never calls either**. The upload is
+  plaintext JSON, while the presence of crypto code implies otherwise;
+- the README is one line: `# tfer`.
+
+I am not calling the author malicious — this may be a real utility built carelessly. But `npx`-ing
+it to see what it does uploads your agent credentials to someone else's server, and that is worth a
+flag whatever the intent.
+
+So the honest scoreline on advisories is not "mostly false positives". It is: **of three read
+closely, two look unjustified and one looks justified.** Small sample, stated as such.
+
+### The check this produced, and why the first attempt failed
+
+`claudechor` exposed a gap: `~/.claude/.credentials.json` and `~/.claude.json` were not in the
+credential-path target list, though between them they hold agent OAuth tokens and every MCP API key
+on the machine — a richer haul than most classic infostealer targets.
+
+Adding them was straightforward. Making the rule *work* was not. My first version matched the whole
+path, `.claude/.credentials.json` — and failed against the real package, because the real package
+builds it:
+
+```js
+readFile(path.join(CLAUDE_DIR, ".credentials.json"))
+```
+
+The literal path never appears in the source. A rule written from how a path *looks* rather than
+how code *constructs* it misses the exact sample that motivated it. It now matches components, and
+is verified against the real tarball rather than against my idea of what the code would say.
