@@ -11,8 +11,14 @@ const pkg = (over = {}) => ({
   urls: over.urls ?? [{ packagetype: 'bdist_wheel' }],
 });
 
+const noAdvisories = async () => [];
+
 const audit = (name, meta) =>
-  auditPypiPackage(`pypi:${name}`, { resolveMeta: async () => meta, resolveStats: noStats });
+  auditPypiPackage(`pypi:${name}`, {
+    resolveMeta: async () => meta,
+    resolveStats: noStats,
+    resolveAdvisories: noAdvisories,
+  });
 
 test('PEP 503: separators are equivalent, so a package is not a typosquat of itself', async () => {
   assert.equal(normalize('mcp_server_fetch'), normalize('mcp-server-fetch'));
@@ -50,7 +56,7 @@ test('a yanked version is reported', async () => {
 
 test('an unreachable package yields no findings rather than throwing', async () => {
   const { findings, unreachable } = await auditPypiPackage('pypi:nope', {
-    resolveMeta: async () => null, resolveStats: noStats,
+    resolveMeta: async () => null, resolveStats: noStats, resolveAdvisories: noAdvisories,
   });
   assert.deepEqual(findings, []);
   assert.ok(unreachable);

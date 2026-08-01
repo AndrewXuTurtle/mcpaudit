@@ -81,6 +81,9 @@ export function firstRelease(meta) {
 export async function auditPypiPackage(spec, {
   resolveMeta = (n) => getJSON(`${PYPI}/${n}/json`),
   resolveStats = (n) => getJSON(`${STATS}/${normalize(n)}/recent`),
+  // Injectable so tests stay offline; a live lookup makes assertions depend on
+  // whatever advisories happen to be published today.
+  resolveAdvisories = (n, v) => auditAdvisories(n, v, 'PyPI'),
 } = {}) {
   const name = spec.replace(/^pypi:/, '').split(/[=<>~!\[]/)[0].trim();
   if (!name) return { findings: [], meta: null };
@@ -174,7 +177,7 @@ export async function auditPypiPackage(spec, {
     }));
   }
 
-  findings.push(...await auditAdvisories(name, info.version, 'PyPI'));
+  findings.push(...await resolveAdvisories(name, info.version));
 
   return { findings, meta: { name, resolved: info.version, ageDays, downloads, created } };
 }
