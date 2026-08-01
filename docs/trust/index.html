@@ -26,18 +26,19 @@ pre{background:var(--code);border:1px solid var(--line);border-radius:9px;paddin
 </style></head><body><div class="wrap">
 
 <h1>MCP Package Trust Index</h1>
-<p class="sub">Provenance and supply-chain signals for the 40 most-installed Model Context Protocol packages, plus the Python ecosystem. Regenerated automatically — last run 2026-08-01 20:44 UTC.</p>
+<p class="sub">Provenance and supply-chain signals for the 40 most-installed Model Context Protocol packages, plus the Python ecosystem. Regenerated automatically — last run 2026-08-01 20:57 UTC.</p>
 <p>Built by <a href="https://github.com/AndrewXuTurtle/mcpaudit">mcpaudit</a>. Registry metadata only; nothing is installed or executed. <a href="./data.json">Raw JSON</a>.</p>
 
 <div class="card alert">
 <h2 style="margin-top:0">Impersonation sweep</h2>
-<p>Probed <strong>316</strong> homoglyph variants of publisher scopes that npm reserves for official packages.</p>
+<p>Probed <strong>322</strong> homoglyph variants of publisher scopes that npm reserves for official packages.</p>
 <p><strong>1 package(s) found impersonating an official scope:</strong></p><div class="scroll"><table><tr><th>Package</th><th>Impersonates</th><th>First published</th><th>Maintainer</th><th>Declared author</th></tr><tr><td><code>@modelcontextprotoco1/server-filesystem</code></td><td><code>@modelcontextprotocol/server-filesystem</code></td><td>2026-04-13</td><td>eliav.livneh</td><td>Anthropic, PBC</td></tr></table></div><p>A package under a lookalike scope may be byte-identical to the real one today and hostile tomorrow. Do not install these.</p>
 </div>
 
 <div class="card alert">
-<h2 style="margin-top:0">Confirmed-malicious MCP packages</h2>
-<p><strong>220</strong> package name(s) on the MCP / AI-agent surface carry a published malware advisory. Each was examined by a registry security team and removed &mdash; these are not heuristics, and the advisories are public.</p>
+<h2 style="margin-top:0">MCP packages with published malware advisories</h2>
+<p><strong>220</strong> package name(s) on the MCP / AI-agent surface have an open, non-withdrawn malware advisory in the GitHub Advisory Database.</p>
+<p><strong>Read this as "check before you install", not as a verdict.</strong> These advisories are largely automated, and automation produces false positives. I inspected one entry on this list &mdash; <code>lokal-mcp</code>, flagged critical &mdash; and found an 18&nbsp;KB single-file server with no install hooks, no <code>child_process</code>, no obfuscation, and one outbound host that is its own documented API. It looks entirely legitimate. Its advisory is still open. Treat every row here as a prompt to look, and follow the advisory link before drawing a conclusion about anyone's package.</p>
 <p class="sub">Scanned 39,488 malware advisories across npm and PyPI in the GitHub Advisory Database.</p>
 <div class="scroll"><table>
 <tr><th>Package</th><th>Ecosystem</th><th>Advisory</th><th>Published</th></tr>
@@ -262,11 +263,11 @@ pre{background:var(--code);border:1px solid var(--line);border-radius:9px;paddin
 <tr><td><code>hrdebjywvtkmcpga</code></td><td>npm</td><td><a href="https://github.com/advisories/GHSA-vxm4-w459-68hm">GHSA-vxm4-w459-68hm</a></td><td>2022-07-11</td></tr>
 <tr><td><code>searchcursor</code></td><td>npm</td><td><a href="https://github.com/advisories/GHSA-r222-28vq-mvf4">GHSA-r222-28vq-mvf4</a></td><td>2022-06-20</td></tr>
 </table></div>
-<p>If any of these appears in one of your MCP configs, treat it as a compromise rather than a warning: remove it, then rotate every credential it could reach.</p>
+<p>If one of these appears in your MCP config, read its advisory first. Where the advisory holds up &mdash; and especially where npm has replaced the package with a security placeholder &mdash; treat it as a compromise rather than a warning: remove it, then rotate every credential it could reach.</p>
 </div>
 
 <h2>npm packages</h2>
-<p class="sub">0 of 40 carry at least one finding. An unpinned official package is low risk; an unpinned unknown one is not.</p>
+<p class="sub">1 of 40 carry at least one finding. An unpinned official package is low risk; an unpinned unknown one is not.</p>
 <div class="scroll"><table>
 <tr><th>Package</th><th>Downloads/mo</th><th>Age (days)</th><th>Worst</th><th>Findings</th></tr>
 <tr><td><code>chrome-devtools-mcp</code></td><td class="n">9,118,179</td><td class="n">445</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
@@ -278,6 +279,7 @@ pre{background:var(--code);border:1px solid var(--line);border-radius:9px;paddin
 <tr><td><code>@azure-devops/mcp</code></td><td class="n">535,755</td><td class="n">415</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
 <tr><td><code>@sap-ux/fiori-mcp-server</code></td><td class="n">506,392</td><td class="n">333</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
 <tr><td><code>@ui5/mcp-server</code></td><td class="n">494,079</td><td class="n">332</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@azure/mcp</code></td><td class="n">470,773</td><td class="n">471</td><td><span class="s high">high</span></td><td class="w">Package runs a postinstall script</td></tr>
 <tr><td><code>@sentry/mcp-server</code></td><td class="n">444,981</td><td class="n">464</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
 <tr><td><code>@supabase/mcp-server-supabase</code></td><td class="n">426,948</td><td class="n">490</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
 <tr><td><code>hostinger-api-mcp</code></td><td class="n">311,725</td><td class="n">477</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
@@ -308,7 +310,6 @@ pre{background:var(--code);border:1px solid var(--line);border-radius:9px;paddin
 <tr><td><code>@hubspot/mcp-server</code></td><td class="n">64,671</td><td class="n">462</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
 <tr><td><code>@shortcut/mcp</code></td><td class="n">55,340</td><td class="n">501</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
 <tr><td><code>@browserstack/mcp-server</code></td><td class="n">41,044</td><td class="n">466</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@heroku/mcp-server</code></td><td class="n">29,848</td><td class="n">481</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
 </table></div>
 
 <h2>PyPI packages</h2>
@@ -319,7 +320,7 @@ pre{background:var(--code);border:1px solid var(--line);border-radius:9px;paddin
 <tr><td><code>mcp-server-fetch</code></td><td class="n">1,057,869</td><td class="n">617</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
 <tr><td><code>mcp-server-git</code></td><td class="n">738,977</td><td class="n">617</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
 <tr><td><code>mcp-server-time</code></td><td class="n">443,378</td><td class="n">610</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>mcp-server-sqlite</code></td><td class="n">50,673</td><td class="n">617</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>mcp-server-sqlite</code></td><td class="n">0</td><td class="n">617</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
 </table></div>
 
 <h2>Check your own machine</h2>

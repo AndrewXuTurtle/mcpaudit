@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-01 20:44 UTC",
+  "generated": "2026-08-01 20:57 UTC",
   "npm": [
     {
       "name": "chrome-devtools-mcp",
@@ -54,6 +54,22 @@
       "downloads": 494079,
       "ageDays": 332,
       "findings": []
+    },
+    {
+      "name": "@azure/mcp",
+      "downloads": 470773,
+      "ageDays": 471,
+      "findings": [
+        {
+          "confidence": "certain",
+          "id": "MCP-SUP-005",
+          "severity": "high",
+          "title": "Package runs a postinstall script",
+          "evidence": "\"postinstall\": node ./scripts/post-install-script.js",
+          "why": "Install hooks execute the moment the package is fetched — before the server is ever started and before any tool description is reviewed. With npx and an unpinned version, this runs on every launch.",
+          "fix": "Read the script. To install without running it, use `npm install --ignore-scripts`."
+        }
+      ]
     },
     {
       "name": "@sentry/mcp-server",
@@ -234,12 +250,6 @@
       "downloads": 41044,
       "ageDays": 466,
       "findings": []
-    },
-    {
-      "name": "@heroku/mcp-server",
-      "downloads": 29848,
-      "ageDays": 481,
-      "findings": []
     }
   ],
   "pypi": [
@@ -275,13 +285,13 @@
     },
     {
       "name": "mcp-server-sqlite",
-      "downloads": 50673,
+      "downloads": null,
       "ageDays": 617,
       "findings": []
     }
   ],
   "sweep": {
-    "probed": 316,
+    "probed": 322,
     "hits": [
       {
         "name": "@modelcontextprotoco1/server-filesystem",
