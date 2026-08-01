@@ -104,7 +104,7 @@
     {
       "name": "@transcend-io/mcp-server-dsr",
       "downloads": 222772,
-      "ageDays": 100,
+      "ageDays": 101,
       "findings": []
     },
     {
@@ -246,9 +246,9 @@
       "findings": []
     },
     {
-      "name": "@benborla29/mcp-server-mysql",
-      "downloads": 48880,
-      "ageDays": 600,
+      "name": "@browserstack/mcp-server",
+      "downloads": 41044,
+      "ageDays": 466,
       "findings": []
     }
   ],
@@ -261,13 +261,13 @@
     },
     {
       "name": "fastmcp",
-      "downloads": 85198061,
+      "downloads": null,
       "ageDays": 609,
       "findings": []
     },
     {
       "name": "mcp-server-fetch",
-      "downloads": null,
+      "downloads": 1057869,
       "ageDays": 617,
       "findings": []
     },
@@ -279,7 +279,7 @@
     },
     {
       "name": "mcp-server-time",
-      "downloads": null,
+      "downloads": 443378,
       "ageDays": 610,
       "findings": []
     },
