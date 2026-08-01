@@ -76,9 +76,33 @@ Configs are found automatically for Claude Desktop, Claude Code, Cursor, Windsur
 
 ### In CI
 
+As a GitHub Action:
+
+```yaml
+- uses: AndrewXuTurtle/mcpaudit@main
+  with:
+    fail-on: critical
+    deep: true
+```
+
+It writes a Markdown report into the job summary, so findings appear on the run page rather
+than buried in log output. Or call it directly:
+
 ```yaml
 - run: npx github:AndrewXuTurtle/mcpaudit .mcp.json --fail-on critical
 ```
+
+## The MCP Package Trust Index
+
+**[andrewxuturtle.github.io/mcpaudit/trust/](https://andrewxuturtle.github.io/mcpaudit/trust/)**
+
+A continuously-updated public record of provenance signals for the 40 most-installed MCP
+packages plus the Python ecosystem — age, adoption, install hooks, and whether anything is
+impersonating an official publisher scope.
+
+It rebuilds itself daily in GitHub Actions and opens an issue the moment an impersonation
+package appears on npm. Nobody has to be watching for it to keep working. Raw data is at
+[`docs/trust/data.json`](docs/trust/data.json) if you would rather consume it as JSON.
 
 ## Design notes
 

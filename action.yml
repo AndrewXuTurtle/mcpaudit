@@ -1,0 +1,58 @@
+name: 'mcpaudit'
+description: 'Audit MCP server configs for tool poisoning, credential exposure, and supply-chain impersonation. Zero dependencies, nothing executed.'
+author: 'AndrewXuTurtle'
+branding:
+  icon: 'shield'
+  color: 'red'
+
+inputs:
+  config:
+    description: 'Path to an MCP config file. Defaults to auto-discovery in the workspace (.mcp.json, .vscode/mcp.json, .cursor/mcp.json).'
+    required: false
+    default: ''
+  fail-on:
+    description: 'Fail the job at or above this severity: critical, high, medium, low, none.'
+    required: false
+    default: 'high'
+  deep:
+    description: 'Download and statically read each package source. Nothing is installed or executed.'
+    required: false
+    default: 'false'
+  paranoid:
+    description: 'Include lower-confidence findings.'
+    required: false
+    default: 'false'
+  report:
+    description: 'Write a Markdown report to this path, and append it to the job summary.'
+    required: false
+    default: ''
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Run mcpaudit
+      shell: bash
+      run: |
+        set -euo pipefail
+        args=()
+        [ -n "${{ inputs.config }}" ] && args+=("${{ inputs.config }}")
+        [ "${{ inputs.deep }}" = "true" ] && args+=("--deep")
+        [ "${{ inputs.paranoid }}" = "true" ] && args+=("--paranoid")
+        args+=("--fail-on" "${{ inputs.fail-on }}")
+
+        # Always produce a Markdown summary, then re-run for the human-readable
+        # terminal output so the log is readable and the exit code is authoritative.
+        node "${{ github.action_path }}/bin/cli.js" "${args[@]}" --markdown --fail-on none \
+          > "${RUNNER_TEMP}/mcpaudit.md" || true
+
+        {
+          echo "## mcpaudit"
+          echo
+          cat "${RUNNER_TEMP}/mcpaudit.md"
+        } >> "${GITHUB_STEP_SUMMARY}"
+
+        if [ -n "${{ inputs.report }}" ]; then
+          cp "${RUNNER_TEMP}/mcpaudit.md" "${{ inputs.report }}"
+        fi
+
+        node "${{ github.action_path }}/bin/cli.js" "${args[@]}"

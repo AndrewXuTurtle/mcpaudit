@@ -1,0 +1,90 @@
+name: Trust Index
+
+# The autonomous half of this project. Rebuilds the public MCP Package Trust
+# Index on a schedule and raises an issue the moment a package appears
+# impersonating an official publisher scope. Runs whether or not anyone is
+# watching.
+
+on:
+  schedule:
+    - cron: '41 5 * * *'   # daily, off the hour so it does not pile onto GitHub's busiest minute
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build-index.mjs'
+      - 'src/**'
+      - '.github/workflows/trust-index.yml'
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: trust-index
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build the trust index
+        run: node scripts/build-index.mjs
+
+      - name: Commit the refreshed index
+        run: |
+          set -euo pipefail
+          git config user.name  'mcpaudit-bot'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add docs/trust
+          if git diff --staged --quiet; then
+            echo "index unchanged"
+          else
+            git commit -m "Trust index: automated refresh"
+            git push
+          fi
+
+      - name: Raise an issue if an impersonation appeared
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          count=$(cat .impersonations 2>/dev/null || echo 0)
+          if [ "$count" = "0" ]; then
+            echo "no impersonations detected"
+            exit 0
+          fi
+
+          # One open alert at a time; the issue body always carries the current list.
+          existing=$(gh issue list --state open --label impersonation --json number --jq '.[0].number' || true)
+          body=$(node -e "
+            const d=require('./docs/trust/data.json');
+            console.log('Automated sweep probed '+d.sweep.probed+' homoglyph variants of official publisher scopes and found '+d.sweep.hits.length+' package(s) impersonating one.\n');
+            for (const h of d.sweep.hits) {
+              console.log('### \`'+h.name+'\`\n');
+              console.log('- Impersonates: \`'+h.impersonates+'\`');
+              console.log('- First published: '+h.created);
+              console.log('- npm maintainer: '+h.maintainers);
+              console.log('- Declared author: '+h.author+'\n');
+            }
+            console.log('A lookalike package may be byte-identical to the official one today and hostile after its next release. Verify before installing, and pin versions.\n');
+            console.log('Generated '+d.generated+' by the Trust Index workflow.');
+          ")
+
+          if [ -n "$existing" ]; then
+            gh issue edit "$existing" --body "$body"
+            echo "updated issue #$existing"
+          else
+            gh issue create \
+              --title "Impersonation packages detected on npm" \
+              --label impersonation \
+              --body "$body"
+          fi
