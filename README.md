@@ -92,6 +92,15 @@ Configs are found automatically for Claude Desktop, Claude Code, Cursor, Windsur
 
 Found a check that fires when it shouldn't? [Open an issue](https://github.com/AndrewXuTurtle/mcpaudit/issues) with the config that caused it (redact your keys). False positives are treated as bugs of the same severity as misses — that is the entire premise of the tool.
 
+## Support this work
+
+mcpaudit is free and MIT licensed, and it stays that way. If it caught something on your
+machine — or if the [typosquat advisory](ADVISORY.md) saved you a bad afternoon — you can
+[buy me a coffee via Wise](https://wise.com/pay/me/andrewx55).
+
+Auditing this ecosystem properly means continuously sweeping npm for new impersonation
+packages. That is what funding goes toward.
+
 ## License
 
 MIT
