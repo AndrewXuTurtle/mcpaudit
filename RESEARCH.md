@@ -454,3 +454,23 @@ readFile(path.join(CLAUDE_DIR, ".credentials.json"))
 The literal path never appears in the source. A rule written from how a path *looks* rather than
 how code *constructs* it misses the exact sample that motivated it. It now matches components, and
 is verified against the real tarball rather than against my idea of what the code would say.
+
+---
+
+## Running tally: four flagged packages read closely
+
+| Package | What it actually is | Advisory |
+| --- | --- | --- |
+| `lokal-mcp` | Norwegian farm-shop finder, 18 KB, one outbound host — its own API | looks unjustified |
+| `mcp-server-iehub-proxy` | University form-submission proxy behind a Cloudflare Quick Tunnel | looks unjustified |
+| `mcp-knowledge-base` | Empty "Coming Soon" placeholder, 1.8 KB, no network calls at all | looks unjustified |
+| `claudechor` | Uploads `~/.claude/.credentials.json` and `~/.claude.json` to a personal Worker, on bare invocation, in plaintext | **looks justified** |
+
+Three of four appear to be false positives, and the fourth is real. That ratio is why the Trust
+Index groups by what became of a package rather than listing names under a malware heading — and
+why the section that names still-affected packages carries an explicit instruction to read the
+advisory before concluding anything about someone's work.
+
+Four is a small sample and I am not going to extrapolate a false-positive rate from it. What it
+does establish is that the flag alone is not sufficient grounds to tell anyone their package is
+malicious, which is exactly the claim a naive aggregator makes by existing.
