@@ -1,40 +1,40 @@
 {
-  "generated": "2026-08-23 06:00 UTC",
+  "generated": "2026-08-24 06:23 UTC",
   "npm": [
     {
       "name": "chrome-devtools-mcp",
-      "downloads": 8045928,
-      "ageDays": 466,
+      "downloads": 8036109,
+      "ageDays": 467,
       "findings": []
     },
     {
       "name": "@upstash/context7-mcp",
-      "downloads": 4252870,
-      "ageDays": 501,
+      "downloads": 4235871,
+      "ageDays": 502,
       "findings": []
     },
     {
       "name": "@modelcontextprotocol/server-filesystem",
-      "downloads": 2039280,
-      "ageDays": 639,
+      "downloads": 2038631,
+      "ageDays": 640,
       "findings": []
     },
     {
       "name": "@pandacss/mcp",
-      "downloads": 1049434,
-      "ageDays": 231,
+      "downloads": 1041436,
+      "ageDays": 232,
       "findings": []
     },
     {
       "name": "@notionhq/notion-mcp-server",
-      "downloads": 770982,
-      "ageDays": 506,
+      "downloads": 751590,
+      "ageDays": 507,
       "findings": []
     },
     {
       "name": "@azure/mcp",
-      "downloads": 503943,
-      "ageDays": 493,
+      "downloads": 486816,
+      "ageDays": 494,
       "findings": [
         {
           "confidence": "certain",
@@ -49,244 +49,244 @@
     },
     {
       "name": "@azure-devops/mcp",
-      "downloads": 458125,
-      "ageDays": 436,
+      "downloads": 448908,
+      "ageDays": 437,
       "findings": []
     },
     {
       "name": "@sentry/mcp-server",
-      "downloads": 446295,
-      "ageDays": 485,
+      "downloads": 436920,
+      "ageDays": 486,
       "findings": []
     },
     {
       "name": "hostinger-api-mcp",
-      "downloads": 443430,
-      "ageDays": 499,
+      "downloads": 426860,
+      "ageDays": 500,
       "findings": []
     },
     {
       "name": "@sap-ux/fiori-mcp-server",
-      "downloads": 438729,
-      "ageDays": 354,
-      "findings": []
-    },
-    {
-      "name": "@ui5/mcp-server",
-      "downloads": 427576,
-      "ageDays": 353,
+      "downloads": 425252,
+      "ageDays": 355,
       "findings": []
     },
     {
       "name": "@supabase/mcp-server-supabase",
-      "downloads": 420253,
-      "ageDays": 512,
+      "downloads": 419550,
+      "ageDays": 513,
+      "findings": []
+    },
+    {
+      "name": "@ui5/mcp-server",
+      "downloads": 413552,
+      "ageDays": 354,
       "findings": []
     },
     {
       "name": "@cap-js/mcp-server",
-      "downloads": 251839,
-      "ageDays": 353,
+      "downloads": 244169,
+      "ageDays": 354,
       "findings": []
     },
     {
       "name": "@ericthered926/duckduckgo-mcp-server",
-      "downloads": 152731,
-      "ageDays": 248,
+      "downloads": 152739,
+      "ageDays": 249,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-consent",
-      "downloads": 151303,
-      "ageDays": 122,
+      "downloads": 145146,
+      "ageDays": 123,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-assessment",
-      "downloads": 151273,
-      "ageDays": 122,
+      "downloads": 145107,
+      "ageDays": 123,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-discovery",
-      "downloads": 151175,
-      "ageDays": 122,
+      "downloads": 145006,
+      "ageDays": 123,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-dsr",
-      "downloads": 151062,
-      "ageDays": 122,
+      "downloads": 144868,
+      "ageDays": 123,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-inventory",
-      "downloads": 151028,
-      "ageDays": 122,
+      "downloads": 144855,
+      "ageDays": 123,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-workflows",
-      "downloads": 150961,
-      "ageDays": 122,
+      "downloads": 144785,
+      "ageDays": 123,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-preferences",
-      "downloads": 150919,
-      "ageDays": 122,
+      "downloads": 144746,
+      "ageDays": 123,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-admin",
-      "downloads": 147576,
-      "ageDays": 122,
+      "downloads": 141415,
+      "ageDays": 123,
       "findings": []
     },
     {
       "name": "@currents/mcp",
-      "downloads": 132168,
-      "ageDays": 506,
+      "downloads": 130061,
+      "ageDays": 507,
       "findings": []
     },
     {
       "name": "@apify/actors-mcp-server",
-      "downloads": 106876,
-      "ageDays": 583,
+      "downloads": 110729,
+      "ageDays": 584,
       "findings": []
     },
     {
       "name": "@eslint/mcp",
-      "downloads": 106676,
-      "ageDays": 465,
-      "findings": []
-    },
-    {
-      "name": "@transcend-io/mcp-server-base",
-      "downloads": 104865,
-      "ageDays": 122,
+      "downloads": 104038,
+      "ageDays": 466,
       "findings": []
     },
     {
       "name": "@winor30/mcp-server-datadog",
-      "downloads": 104653,
-      "ageDays": 544,
+      "downloads": 103381,
+      "ageDays": 545,
       "findings": []
     },
     {
       "name": "argocd-mcp",
-      "downloads": 102192,
-      "ageDays": 487,
+      "downloads": 102805,
+      "ageDays": 488,
+      "findings": []
+    },
+    {
+      "name": "@transcend-io/mcp-server-base",
+      "downloads": 99122,
+      "ageDays": 123,
       "findings": []
     },
     {
       "name": "@aikidosec/mcp",
-      "downloads": 93133,
-      "ageDays": 262,
+      "downloads": 90800,
+      "ageDays": 263,
       "findings": []
     },
     {
       "name": "@cloudflare/mcp-server-cloudflare",
-      "downloads": 88988,
-      "ageDays": 634,
+      "downloads": 81288,
+      "ageDays": 635,
       "findings": []
     },
     {
       "name": "@z_ai/mcp-server",
-      "downloads": 72004,
-      "ageDays": 349,
-      "findings": []
-    },
-    {
-      "name": "@transcend-io/mcp-server-docs",
-      "downloads": 68641,
-      "ageDays": 46,
+      "downloads": 72003,
+      "ageDays": 350,
       "findings": []
     },
     {
       "name": "@hubspot/mcp-server",
-      "downloads": 67540,
-      "ageDays": 484,
+      "downloads": 66349,
+      "ageDays": 485,
       "findings": []
     },
     {
       "name": "mcp-server-kubernetes",
-      "downloads": 67383,
-      "ageDays": 621,
+      "downloads": 64105,
+      "ageDays": 622,
+      "findings": []
+    },
+    {
+      "name": "@transcend-io/mcp-server-docs",
+      "downloads": 62944,
+      "ageDays": 47,
       "findings": []
     },
     {
       "name": "@shortcut/mcp",
-      "downloads": 61481,
-      "ageDays": 522,
-      "findings": []
-    },
-    {
-      "name": "@delorenj/mcp-server-trello",
-      "downloads": 61377,
-      "ageDays": 491,
+      "downloads": 60034,
+      "ageDays": 523,
       "findings": []
     },
     {
       "name": "@benborla29/mcp-server-mysql",
-      "downloads": 53353,
-      "ageDays": 621,
+      "downloads": 52465,
+      "ageDays": 622,
       "findings": []
     },
     {
       "name": "kubernetes-mcp-server",
-      "downloads": 47207,
-      "ageDays": 554,
+      "downloads": 46489,
+      "ageDays": 555,
       "findings": []
     },
     {
       "name": "@browserstack/mcp-server",
-      "downloads": 46211,
-      "ageDays": 487,
+      "downloads": 44688,
+      "ageDays": 488,
+      "findings": []
+    },
+    {
+      "name": "@delorenj/mcp-server-trello",
+      "downloads": 39110,
+      "ageDays": 492,
       "findings": []
     },
     {
       "name": "@heroku/mcp-server",
-      "downloads": 36196,
-      "ageDays": 502,
+      "downloads": 35816,
+      "ageDays": 503,
       "findings": []
     }
   ],
   "pypi": [
     {
       "name": "mcp",
-      "downloads": 358967692,
-      "ageDays": 640,
+      "downloads": 357182031,
+      "ageDays": 641,
       "findings": []
     },
     {
       "name": "fastmcp",
-      "downloads": 100235969,
-      "ageDays": 631,
+      "downloads": 99649495,
+      "ageDays": 632,
       "findings": []
     },
     {
       "name": "mcp-server-fetch",
-      "downloads": 1664741,
-      "ageDays": 638,
-      "findings": []
-    },
-    {
-      "name": "mcp-server-git",
-      "downloads": 347593,
+      "downloads": null,
       "ageDays": 639,
       "findings": []
     },
     {
+      "name": "mcp-server-git",
+      "downloads": null,
+      "ageDays": 640,
+      "findings": []
+    },
+    {
       "name": "mcp-server-time",
-      "downloads": 826415,
-      "ageDays": 631,
+      "downloads": null,
+      "ageDays": 632,
       "findings": []
     },
     {
       "name": "mcp-server-sqlite",
       "downloads": null,
-      "ageDays": 639,
+      "ageDays": 640,
       "findings": []
     }
   ],
@@ -304,7 +304,7 @@
     ]
   },
   "malware": {
-    "scanned": 46755,
+    "scanned": 46768,
     "capped": false,
     "failed": null,
     "list": [
@@ -943,7 +943,7 @@
         "ecosystem": "npm",
         "ghsa": "GHSA-c277-735f-mrmj",
         "published": "2026-07-27",
-        "current": "0.4.11",
+        "current": "0.4.13",
         "registryState": "live",
         "range": "= 0.3.3",
         "verdict": "remediated"
@@ -1913,7 +1913,7 @@
         "ecosystem": "npm",
         "ghsa": "GHSA-3wmg-66hp-xhv9",
         "published": "2026-06-30",
-        "current": "0.5.0",
+        "current": "0.5.2",
         "registryState": "live",
         "range": "= 0.1.14",
         "verdict": "remediated"
