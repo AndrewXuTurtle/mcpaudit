@@ -1,282 +1,282 @@
 {
-  "generated": "2026-09-10 10:01 UTC",
+  "generated": "2026-09-11 09:59 UTC",
   "npm": [
     {
       "name": "chrome-devtools-mcp",
-      "downloads": 9818796,
-      "ageDays": 484,
-      "findings": []
-    },
-    {
-      "name": "@upstash/context7-mcp",
-      "downloads": 3865239,
-      "ageDays": 519,
-      "findings": []
-    },
-    {
-      "name": "@modelcontextprotocol/server-filesystem",
-      "downloads": 2827451,
-      "ageDays": 657,
-      "findings": []
-    },
-    {
-      "name": "@pandacss/mcp",
-      "downloads": 1024993,
-      "ageDays": 249,
-      "findings": []
-    },
-    {
-      "name": "@notionhq/notion-mcp-server",
-      "downloads": 647967,
-      "ageDays": 524,
-      "findings": []
-    },
-    {
-      "name": "hostinger-api-mcp",
-      "downloads": 556519,
-      "ageDays": 517,
-      "findings": []
-    },
-    {
-      "name": "@supabase/mcp-server-supabase",
-      "downloads": 484999,
-      "ageDays": 530,
-      "findings": []
-    },
-    {
-      "name": "@sentry/mcp-server",
-      "downloads": 432282,
-      "ageDays": 503,
-      "findings": []
-    },
-    {
-      "name": "@sap-ux/fiori-mcp-server",
-      "downloads": 379322,
-      "ageDays": 372,
-      "findings": []
-    },
-    {
-      "name": "@ui5/mcp-server",
-      "downloads": 362768,
-      "ageDays": 372,
-      "findings": []
-    },
-    {
-      "name": "@azure-devops/mcp",
-      "downloads": 357632,
-      "ageDays": 454,
-      "findings": []
-    },
-    {
-      "name": "@cap-js/mcp-server",
-      "downloads": 225167,
-      "ageDays": 372,
-      "findings": []
-    },
-    {
-      "name": "@currents/mcp",
-      "downloads": 147424,
-      "ageDays": 524,
-      "findings": []
-    },
-    {
-      "name": "@apify/actors-mcp-server",
-      "downloads": 122148,
-      "ageDays": 601,
-      "findings": []
-    },
-    {
-      "name": "@ericthered926/duckduckgo-mcp-server",
-      "downloads": 114300,
-      "ageDays": 266,
-      "findings": []
-    },
-    {
-      "name": "@winor30/mcp-server-datadog",
-      "downloads": 112386,
-      "ageDays": 563,
-      "findings": []
-    },
-    {
-      "name": "argocd-mcp",
-      "downloads": 98955,
-      "ageDays": 505,
-      "findings": []
-    },
-    {
-      "name": "@aikidosec/mcp",
-      "downloads": 92918,
-      "ageDays": 280,
-      "findings": []
-    },
-    {
-      "name": "@z_ai/mcp-server",
-      "downloads": 86238,
-      "ageDays": 367,
-      "findings": []
-    },
-    {
-      "name": "@transcend-io/mcp-server-consent",
-      "downloads": 80461,
-      "ageDays": 140,
-      "findings": []
-    },
-    {
-      "name": "@transcend-io/mcp-server-inventory",
-      "downloads": 80074,
-      "ageDays": 140,
-      "findings": []
-    },
-    {
-      "name": "@transcend-io/mcp-server-preferences",
-      "downloads": 80035,
-      "ageDays": 140,
-      "findings": []
-    },
-    {
-      "name": "@transcend-io/mcp-server-workflows",
-      "downloads": 79977,
-      "ageDays": 140,
-      "findings": []
-    },
-    {
-      "name": "@transcend-io/mcp-server-base",
-      "downloads": 79221,
-      "ageDays": 140,
-      "findings": []
-    },
-    {
-      "name": "@hubspot/mcp-server",
-      "downloads": 79007,
-      "ageDays": 502,
-      "findings": []
-    },
-    {
-      "name": "@transcend-io/mcp-server-assessment",
-      "downloads": 78392,
-      "ageDays": 140,
-      "findings": []
-    },
-    {
-      "name": "@transcend-io/mcp-server-dsr",
-      "downloads": 78290,
-      "ageDays": 140,
-      "findings": []
-    },
-    {
-      "name": "@transcend-io/mcp-server-discovery",
-      "downloads": 78120,
-      "ageDays": 140,
-      "findings": []
-    },
-    {
-      "name": "@transcend-io/mcp-server-admin",
-      "downloads": 76663,
-      "ageDays": 140,
-      "findings": []
-    },
-    {
-      "name": "@transcend-io/mcp-server-docs",
-      "downloads": 73552,
-      "ageDays": 64,
-      "findings": []
-    },
-    {
-      "name": "dataforseo-mcp-server",
-      "downloads": 69392,
+      "downloads": 9180137,
       "ageDays": 485,
       "findings": []
     },
     {
-      "name": "@shortcut/mcp",
-      "downloads": 69352,
-      "ageDays": 540,
+      "name": "@storybook/mcp",
+      "downloads": 8561226,
+      "ageDays": 323,
       "findings": []
     },
     {
-      "name": "@benborla29/mcp-server-mysql",
-      "downloads": 54782,
-      "ageDays": 639,
-      "findings": []
-    },
-    {
-      "name": "mcp-server-kubernetes",
-      "downloads": 48568,
-      "ageDays": 639,
-      "findings": []
-    },
-    {
-      "name": "@browserstack/mcp-server",
-      "downloads": 43900,
-      "ageDays": 505,
-      "findings": []
-    },
-    {
-      "name": "kubernetes-mcp-server",
-      "downloads": 35703,
-      "ageDays": 572,
-      "findings": []
-    },
-    {
-      "name": "@heroku/mcp-server",
-      "downloads": 33796,
+      "name": "@upstash/context7-mcp",
+      "downloads": 3893285,
       "ageDays": 520,
       "findings": []
     },
     {
-      "name": "@qase/mcp-server",
-      "downloads": 28237,
-      "ageDays": 315,
+      "name": "@modelcontextprotocol/server-filesystem",
+      "downloads": 2767864,
+      "ageDays": 658,
       "findings": []
     },
     {
-      "name": "@coinbase/cds-mcp-server",
-      "downloads": 20271,
-      "ageDays": 344,
+      "name": "@pandacss/mcp",
+      "downloads": 999540,
+      "ageDays": 250,
+      "findings": []
+    },
+    {
+      "name": "@notionhq/notion-mcp-server",
+      "downloads": 621361,
+      "ageDays": 525,
+      "findings": []
+    },
+    {
+      "name": "hostinger-api-mcp",
+      "downloads": 572679,
+      "ageDays": 518,
+      "findings": []
+    },
+    {
+      "name": "@supabase/mcp-server-supabase",
+      "downloads": 456450,
+      "ageDays": 531,
+      "findings": []
+    },
+    {
+      "name": "@sentry/mcp-server",
+      "downloads": 422541,
+      "ageDays": 504,
+      "findings": []
+    },
+    {
+      "name": "@azure-devops/mcp",
+      "downloads": 389249,
+      "ageDays": 455,
+      "findings": []
+    },
+    {
+      "name": "@sap-ux/fiori-mcp-server",
+      "downloads": 374286,
+      "ageDays": 373,
+      "findings": []
+    },
+    {
+      "name": "@ui5/mcp-server",
+      "downloads": 360601,
+      "ageDays": 373,
+      "findings": []
+    },
+    {
+      "name": "@cap-js/mcp-server",
+      "downloads": 221812,
+      "ageDays": 373,
+      "findings": []
+    },
+    {
+      "name": "@currents/mcp",
+      "downloads": 143788,
+      "ageDays": 525,
+      "findings": []
+    },
+    {
+      "name": "@apify/actors-mcp-server",
+      "downloads": 125950,
+      "ageDays": 602,
+      "findings": []
+    },
+    {
+      "name": "@ericthered926/duckduckgo-mcp-server",
+      "downloads": 108104,
+      "ageDays": 267,
+      "findings": []
+    },
+    {
+      "name": "@winor30/mcp-server-datadog",
+      "downloads": 107694,
+      "ageDays": 564,
+      "findings": []
+    },
+    {
+      "name": "@transcend-io/mcp-server-consent",
+      "downloads": 100706,
+      "ageDays": 141,
+      "findings": []
+    },
+    {
+      "name": "@transcend-io/mcp-server-inventory",
+      "downloads": 100294,
+      "ageDays": 141,
+      "findings": []
+    },
+    {
+      "name": "@transcend-io/mcp-server-preferences",
+      "downloads": 100274,
+      "ageDays": 141,
+      "findings": []
+    },
+    {
+      "name": "@transcend-io/mcp-server-workflows",
+      "downloads": 100212,
+      "ageDays": 141,
+      "findings": []
+    },
+    {
+      "name": "@transcend-io/mcp-server-base",
+      "downloads": 99570,
+      "ageDays": 141,
+      "findings": []
+    },
+    {
+      "name": "@transcend-io/mcp-server-assessment",
+      "downloads": 98618,
+      "ageDays": 141,
+      "findings": []
+    },
+    {
+      "name": "@transcend-io/mcp-server-dsr",
+      "downloads": 98533,
+      "ageDays": 141,
+      "findings": []
+    },
+    {
+      "name": "@transcend-io/mcp-server-discovery",
+      "downloads": 98369,
+      "ageDays": 141,
+      "findings": []
+    },
+    {
+      "name": "@aikidosec/mcp",
+      "downloads": 97231,
+      "ageDays": 281,
+      "findings": []
+    },
+    {
+      "name": "@transcend-io/mcp-server-admin",
+      "downloads": 96893,
+      "ageDays": 141,
+      "findings": []
+    },
+    {
+      "name": "@transcend-io/mcp-server-docs",
+      "downloads": 96674,
+      "ageDays": 65,
+      "findings": []
+    },
+    {
+      "name": "argocd-mcp",
+      "downloads": 95491,
+      "ageDays": 506,
+      "findings": []
+    },
+    {
+      "name": "@hubspot/mcp-server",
+      "downloads": 81730,
+      "ageDays": 503,
+      "findings": []
+    },
+    {
+      "name": "@z_ai/mcp-server",
+      "downloads": 78174,
+      "ageDays": 368,
+      "findings": []
+    },
+    {
+      "name": "@shortcut/mcp",
+      "downloads": 71589,
+      "ageDays": 541,
+      "findings": []
+    },
+    {
+      "name": "dataforseo-mcp-server",
+      "downloads": 70716,
+      "ageDays": 486,
+      "findings": []
+    },
+    {
+      "name": "@benborla29/mcp-server-mysql",
+      "downloads": 52545,
+      "ageDays": 640,
+      "findings": []
+    },
+    {
+      "name": "@browserstack/mcp-server",
+      "downloads": 45232,
+      "ageDays": 506,
+      "findings": []
+    },
+    {
+      "name": "mcp-server-kubernetes",
+      "downloads": 40365,
+      "ageDays": 640,
+      "findings": []
+    },
+    {
+      "name": "kubernetes-mcp-server",
+      "downloads": 33106,
+      "ageDays": 573,
+      "findings": []
+    },
+    {
+      "name": "@heroku/mcp-server",
+      "downloads": 31961,
+      "ageDays": 521,
+      "findings": []
+    },
+    {
+      "name": "@qase/mcp-server",
+      "downloads": 27963,
+      "ageDays": 316,
       "findings": []
     },
     {
       "name": "@runpod/mcp-server",
-      "downloads": 20113,
-      "ageDays": 303,
+      "downloads": 20274,
+      "ageDays": 304,
       "findings": []
     }
   ],
   "pypi": [
     {
       "name": "mcp",
-      "downloads": null,
-      "ageDays": 658,
+      "downloads": 277441508,
+      "ageDays": 659,
       "findings": []
     },
     {
       "name": "fastmcp",
-      "downloads": null,
-      "ageDays": 649,
+      "downloads": 67626643,
+      "ageDays": 650,
       "findings": []
     },
     {
       "name": "mcp-server-fetch",
       "downloads": null,
-      "ageDays": 656,
+      "ageDays": 657,
       "findings": []
     },
     {
       "name": "mcp-server-git",
-      "downloads": 220922,
-      "ageDays": 657,
+      "downloads": 220628,
+      "ageDays": 658,
       "findings": []
     },
     {
       "name": "mcp-server-time",
-      "downloads": 577649,
-      "ageDays": 649,
+      "downloads": null,
+      "ageDays": 650,
       "findings": []
     },
     {
       "name": "mcp-server-sqlite",
-      "downloads": 53542,
-      "ageDays": 657,
+      "downloads": null,
+      "ageDays": 658,
       "findings": []
     }
   ],
@@ -294,29 +294,69 @@
     ]
   },
   "malware": {
-    "scanned": 51686,
+    "scanned": 51687,
     "capped": true,
     "failed": null,
     "list": [
       {
+        "package": "@yongot/canary-mcp-isolation",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-cr2f-c82j-mj6q",
+        "published": "2026-09-10",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
+      },
+      {
+        "package": "@yongot/canary-mcp-test-2",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-93xr-jvm3-jpch",
+        "published": "2026-09-10",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
+      },
+      {
         "package": "@yongot/canary-mcp-test",
         "ecosystem": "npm",
-        "ghsa": "GHSA-469r-xxvx-62x3",
-        "published": "2026-09-09",
-        "current": "4.0.0",
+        "ghsa": "GHSA-qjwm-vq22-4xx8",
+        "published": "2026-09-10",
+        "current": "0.0.1-security",
+        "registryState": "security-held",
+        "range": null,
+        "verdict": "security-held"
+      },
+      {
+        "package": "fa-mcp-sdk",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-h524-rpj8-rm5j",
+        "published": "2026-09-10",
+        "current": "0.12.96",
         "registryState": "live",
-        "range": "= 3.0.0",
+        "range": "= 0.12.72",
         "verdict": "remediated"
       },
       {
-        "package": "@yongot/canary-mcp-isolation",
+        "package": "extension-gapcursor",
         "ecosystem": "npm",
-        "ghsa": "GHSA-7gq6-vvhp-97f4",
-        "published": "2026-09-09",
-        "current": "1.0.2",
+        "ghsa": "GHSA-q24q-cjrv-vv7x",
+        "published": "2026-09-10",
+        "current": null,
         "registryState": "live",
-        "range": "= 1.0.1",
-        "verdict": "remediated"
+        "range": "= 213.21.24",
+        "verdict": "unknown"
+      },
+      {
+        "package": "extension-dropcursor",
+        "ecosystem": "npm",
+        "ghsa": "GHSA-jghr-9287-664g",
+        "published": "2026-09-10",
+        "current": null,
+        "registryState": "live",
+        "range": "= 213.21.24",
+        "verdict": "unknown"
       },
       {
         "package": "feishu-docx-mcp",
@@ -467,336 +507,6 @@
         "registryState": "live",
         "range": ">= 10.0.1",
         "verdict": "unknown"
-      },
-      {
-        "package": "claude-channel-telegram",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-26q2-fgwq-hw4p",
-        "published": "2026-08-31",
-        "current": null,
-        "registryState": "live",
-        "range": "= 9.9.9",
-        "verdict": "unknown"
-      },
-      {
-        "package": "@pipi596888/ccursor",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-46qc-q49r-c3q4",
-        "published": "2026-08-31",
-        "current": "0.0.1-security",
-        "registryState": "security-held",
-        "range": null,
-        "verdict": "security-held"
-      },
-      {
-        "package": "secure-test-browser-mcpdx7d2",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-qh5v-mcr9-3294",
-        "published": "2026-08-28",
-        "current": "0.0.1-security",
-        "registryState": "security-held",
-        "range": null,
-        "verdict": "security-held"
-      },
-      {
-        "package": "sidecar-mcp",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-6fg7-6wv2-gx3j",
-        "published": "2026-08-24",
-        "current": "0.0.1-security",
-        "registryState": "security-held",
-        "range": null,
-        "verdict": "security-held"
-      },
-      {
-        "package": "livemcp",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-rxwc-v5gg-9hhw",
-        "published": "2026-08-24",
-        "current": "0.0.1-security",
-        "registryState": "security-held",
-        "range": null,
-        "verdict": "security-held"
-      },
-      {
-        "package": "mcp-real-chrome",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-vqm6-238c-g856",
-        "published": "2026-08-24",
-        "current": "0.0.1-security",
-        "registryState": "security-held",
-        "range": null,
-        "verdict": "security-held"
-      },
-      {
-        "package": "polymarket-claude-code",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-hqrj-3257-4cwr",
-        "published": "2026-08-21",
-        "current": "0.0.1-security",
-        "registryState": "security-held",
-        "range": null,
-        "verdict": "security-held"
-      },
-      {
-        "package": "mcp-server-figma",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-8j33-qh42-vjc6",
-        "published": "2026-08-20",
-        "current": "0.0.1-security",
-        "registryState": "security-held",
-        "range": null,
-        "verdict": "security-held"
-      },
-      {
-        "package": "mcp-server-supabase",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-m633-5vq7-98qx",
-        "published": "2026-08-20",
-        "current": "0.0.1-security",
-        "registryState": "security-held",
-        "range": null,
-        "verdict": "security-held"
-      },
-      {
-        "package": "mcp-server-sentry",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-m5mm-f722-7vcq",
-        "published": "2026-08-20",
-        "current": "0.0.1-security",
-        "registryState": "security-held",
-        "range": null,
-        "verdict": "security-held"
-      },
-      {
-        "package": "mcp-server-redis",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-wrqr-prmr-6x32",
-        "published": "2026-08-20",
-        "current": "0.0.1-security",
-        "registryState": "security-held",
-        "range": null,
-        "verdict": "security-held"
-      },
-      {
-        "package": "mcp-server-notion",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-56wr-9mvj-77pf",
-        "published": "2026-08-20",
-        "current": "0.0.1-security",
-        "registryState": "security-held",
-        "range": null,
-        "verdict": "security-held"
-      },
-      {
-        "package": "mcp-server-sequential-thinking",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-hrmj-jj6j-m2m2",
-        "published": "2026-08-20",
-        "current": "0.0.1-security",
-        "registryState": "security-held",
-        "range": null,
-        "verdict": "security-held"
-      },
-      {
-        "package": "mcp-server-git",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-prf3-6rx4-9h5f",
-        "published": "2026-08-20",
-        "current": "0.0.1-security",
-        "registryState": "security-held",
-        "range": null,
-        "verdict": "security-held"
-      },
-      {
-        "package": "mcp-server-fetch",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-rh9p-4pg3-8628",
-        "published": "2026-08-20",
-        "current": "0.0.1-security",
-        "registryState": "security-held",
-        "range": null,
-        "verdict": "security-held"
-      },
-      {
-        "package": "mcp-server-github",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-95pj-hrh5-27gq",
-        "published": "2026-08-20",
-        "current": "0.0.1-security",
-        "registryState": "security-held",
-        "range": null,
-        "verdict": "security-held"
-      },
-      {
-        "package": "mcp-server-postgres",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-vm2g-qj5x-x234",
-        "published": "2026-08-20",
-        "current": "0.0.1-security",
-        "registryState": "security-held",
-        "range": null,
-        "verdict": "security-held"
-      },
-      {
-        "package": "@httttt/mcp-demo",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-gxrv-g7xx-29x2",
-        "published": "2026-08-20",
-        "current": "1.1.0",
-        "registryState": "live",
-        "range": "= 1.0.0",
-        "verdict": "remediated"
-      },
-      {
-        "package": "mcp-dev-toolkit",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-rpcr-qj6g-5gw3",
-        "published": "2026-08-19",
-        "current": null,
-        "registryState": "live",
-        "range": "= 1.5.0",
-        "verdict": "unknown"
-      },
-      {
-        "package": "homekit-mcp",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-5pqv-wjpw-j4jr",
-        "published": "2026-08-19",
-        "current": "0.0.1-security",
-        "registryState": "security-held",
-        "range": null,
-        "verdict": "security-held"
-      },
-      {
-        "package": "chrome-enterprise-premium-mcp",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-w6h5-6v7q-884j",
-        "published": "2026-08-19",
-        "current": null,
-        "registryState": "live",
-        "range": "= 1.0.0",
-        "verdict": "unknown"
-      },
-      {
-        "package": "code-assist-mcp",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-79vg-qvmh-c7h2",
-        "published": "2026-08-19",
-        "current": null,
-        "registryState": "live",
-        "range": "= 1.0.0",
-        "verdict": "unknown"
-      },
-      {
-        "package": "broadcast-graphics-mcp",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-rh95-w86h-pprv",
-        "published": "2026-08-19",
-        "current": null,
-        "registryState": "live",
-        "range": "= 1.0.0",
-        "verdict": "unknown"
-      },
-      {
-        "package": "claudechor",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-w7p9-gpj5-p2pw",
-        "published": "2026-08-18",
-        "current": "0.0.1-security",
-        "registryState": "security-held",
-        "range": null,
-        "verdict": "security-held"
-      },
-      {
-        "package": "anthropic-setup",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-6mwf-mqp4-2f69",
-        "published": "2026-08-17",
-        "current": "0.0.1-security",
-        "registryState": "security-held",
-        "range": null,
-        "verdict": "security-held"
-      },
-      {
-        "package": "@zapier/mcp-integration",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-659m-mwq2-jh49",
-        "published": "2026-08-14",
-        "current": "3.0.0",
-        "registryState": "live",
-        "range": "= 3.0.1",
-        "verdict": "remediated"
-      },
-      {
-        "package": "xrblocks-mcp",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-pwwg-f86j-hmv7",
-        "published": "2026-08-13",
-        "current": null,
-        "registryState": "live",
-        "range": "= 6.3.1",
-        "verdict": "unknown"
-      },
-      {
-        "package": "@kolbo/mcp",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-pm5r-9rq7-j86p",
-        "published": "2026-08-13",
-        "current": "1.87.14",
-        "registryState": "live",
-        "range": "= 1.57.1",
-        "verdict": "remediated"
-      },
-      {
-        "package": "mcp-util-helpers",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-76x8-h996-qvxr",
-        "published": "2026-08-12",
-        "current": null,
-        "registryState": "live",
-        "range": "= 1.0.0",
-        "verdict": "unknown"
-      },
-      {
-        "package": "devplatform-react-mcp",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-mcm8-ccm7-f469",
-        "published": "2026-08-07",
-        "current": null,
-        "registryState": "live",
-        "range": "= 35.5.6",
-        "verdict": "unknown"
-      },
-      {
-        "package": "remote-claude-daemon",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-4qch-7gcj-fhvm",
-        "published": "2026-08-07",
-        "current": "0.7.5",
-        "registryState": "live",
-        "range": "= 0.3.9",
-        "verdict": "remediated"
-      },
-      {
-        "package": "agenthub-multiagent-mcp",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-gr2g-rx6h-9jh5",
-        "published": "2026-08-06",
-        "current": "1.61.0",
-        "registryState": "live",
-        "range": "= 1.57.0",
-        "verdict": "remediated"
-      },
-      {
-        "package": "claude-remote-agent",
-        "ecosystem": "npm",
-        "ghsa": "GHSA-vmfr-7cqr-9wc8",
-        "published": "2026-08-06",
-        "current": "0.7.1",
-        "registryState": "live",
-        "range": "= 0.1.2",
-        "verdict": "remediated"
       },
       {
         "package": "mcp-search-server",

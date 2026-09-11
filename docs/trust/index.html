@@ -26,7 +26,7 @@ pre{background:var(--code);border:1px solid var(--line);border-radius:9px;paddin
 </style></head><body><div class="wrap">
 
 <h1>MCP Package Trust Index</h1>
-<p class="sub">Provenance and supply-chain signals for the 40 most-installed Model Context Protocol packages, plus the Python ecosystem. Regenerated automatically — last run 2026-09-10 10:01 UTC.</p>
+<p class="sub">Provenance and supply-chain signals for the 40 most-installed Model Context Protocol packages, plus the Python ecosystem. Regenerated automatically — last run 2026-09-11 09:59 UTC.</p>
 <p>Built by <a href="https://github.com/AndrewXuTurtle/mcpaudit">mcpaudit</a>. Registry metadata only; nothing is installed or executed. <a href="./data.json">Raw JSON</a>.</p>
 
 <div class="card alert">
@@ -37,11 +37,11 @@ pre{background:var(--code);border:1px solid var(--line);border-radius:9px;paddin
 
 <div class="card alert">
 <h2 style="margin-top:0">MCP packages with published malware advisories</h2>
-<p><strong>125</strong> package name(s) on the MCP / AI-agent surface have an open, non-withdrawn malware advisory in the GitHub Advisory Database.</p>
+<p><strong>96</strong> package name(s) on the MCP / AI-agent surface have an open, non-withdrawn malware advisory in the GitHub Advisory Database.</p>
 <p>Grouped by what actually became of each package, because a flat list of names conflates three very different situations. <strong>Read this as "check before you install", not as a verdict.</strong> These advisories are largely automated, and automation produces false positives. I inspected one entry on this list &mdash; <code>lokal-mcp</code>, flagged critical &mdash; and found an 18&nbsp;KB single-file server with no install hooks, no <code>child_process</code>, no obfuscation, and one outbound host that is its own documented API. It looks entirely legitimate. Its advisory is still open. Treat every row here as a prompt to look, and follow the advisory link before drawing a conclusion about anyone's package.</p>
-<p class="sub">Scanned 51,686 malware advisories across npm and PyPI in the GitHub Advisory Database. <strong>Result truncated by a request cap &mdash; treat as a lower bound.</strong></p>
+<p class="sub">Scanned 51,687 malware advisories across npm and PyPI in the GitHub Advisory Database. <strong>Result truncated by a request cap &mdash; treat as a lower bound.</strong></p>
 
-<h3>Registry has acted &mdash; 95</h3>
+<h3>Registry has acted &mdash; 79</h3>
 <p class="sub">Removed from the registry, or replaced by npm with a security-holding placeholder. The registry took action; this is not an inference.</p>
 <div class="scroll"><table>
 <tr><th>Package</th><th>Published now</th><th>Advisory</th></tr>
@@ -117,29 +117,13 @@ pre{background:var(--code);border:1px solid var(--line);border-radius:9px;paddin
 <tr><td><code>claude-lite</code> <span class="sub">(pip)</span></td><td>—</td><td><a href="https://github.com/advisories/GHSA-2x8m-pc3r-f9wx">GHSA-2x8m-pc3r-f9wx</a></td></tr>
 <tr><td><code>anthropickit</code> <span class="sub">(pip)</span></td><td>—</td><td><a href="https://github.com/advisories/GHSA-2q9v-5rq6-rmwf">GHSA-2q9v-5rq6-rmwf</a></td></tr>
 <tr><td><code>ant-mcp-proxy-for-test</code> <span class="sub">(pip)</span></td><td>—</td><td><a href="https://github.com/advisories/GHSA-jcv2-j354-7j53">GHSA-jcv2-j354-7j53</a></td></tr>
+<tr><td><code>@yongot/canary-mcp-isolation</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-cr2f-c82j-mj6q">GHSA-cr2f-c82j-mj6q</a></td></tr>
+<tr><td><code>@yongot/canary-mcp-test-2</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-93xr-jvm3-jpch">GHSA-93xr-jvm3-jpch</a></td></tr>
+<tr><td><code>@yongot/canary-mcp-test</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-qjwm-vq22-4xx8">GHSA-qjwm-vq22-4xx8</a></td></tr>
 <tr><td><code>feishu-docx-mcp</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-q5c6-p5q5-g3px">GHSA-q5c6-p5q5-g3px</a></td></tr>
 <tr><td><code>dawn-mcpqz-l4gbq-aurora-project</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-4w77-wvpw-mqgv">GHSA-4w77-wvpw-mqgv</a></td></tr>
 <tr><td><code>cursorapp</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-xg9p-4r5c-g63w">GHSA-xg9p-4r5c-g63w</a></td></tr>
 <tr><td><code>auth0-mcp-server</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-hfw5-55r9-cx88">GHSA-hfw5-55r9-cx88</a></td></tr>
-<tr><td><code>@pipi596888/ccursor</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-46qc-q49r-c3q4">GHSA-46qc-q49r-c3q4</a></td></tr>
-<tr><td><code>secure-test-browser-mcpdx7d2</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-qh5v-mcr9-3294">GHSA-qh5v-mcr9-3294</a></td></tr>
-<tr><td><code>sidecar-mcp</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-6fg7-6wv2-gx3j">GHSA-6fg7-6wv2-gx3j</a></td></tr>
-<tr><td><code>livemcp</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-rxwc-v5gg-9hhw">GHSA-rxwc-v5gg-9hhw</a></td></tr>
-<tr><td><code>mcp-real-chrome</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-vqm6-238c-g856">GHSA-vqm6-238c-g856</a></td></tr>
-<tr><td><code>polymarket-claude-code</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-hqrj-3257-4cwr">GHSA-hqrj-3257-4cwr</a></td></tr>
-<tr><td><code>mcp-server-figma</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-8j33-qh42-vjc6">GHSA-8j33-qh42-vjc6</a></td></tr>
-<tr><td><code>mcp-server-supabase</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-m633-5vq7-98qx">GHSA-m633-5vq7-98qx</a></td></tr>
-<tr><td><code>mcp-server-sentry</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-m5mm-f722-7vcq">GHSA-m5mm-f722-7vcq</a></td></tr>
-<tr><td><code>mcp-server-redis</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-wrqr-prmr-6x32">GHSA-wrqr-prmr-6x32</a></td></tr>
-<tr><td><code>mcp-server-notion</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-56wr-9mvj-77pf">GHSA-56wr-9mvj-77pf</a></td></tr>
-<tr><td><code>mcp-server-sequential-thinking</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-hrmj-jj6j-m2m2">GHSA-hrmj-jj6j-m2m2</a></td></tr>
-<tr><td><code>mcp-server-git</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-prf3-6rx4-9h5f">GHSA-prf3-6rx4-9h5f</a></td></tr>
-<tr><td><code>mcp-server-fetch</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-rh9p-4pg3-8628">GHSA-rh9p-4pg3-8628</a></td></tr>
-<tr><td><code>mcp-server-github</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-95pj-hrh5-27gq">GHSA-95pj-hrh5-27gq</a></td></tr>
-<tr><td><code>mcp-server-postgres</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-vm2g-qj5x-x234">GHSA-vm2g-qj5x-x234</a></td></tr>
-<tr><td><code>homekit-mcp</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-5pqv-wjpw-j4jr">GHSA-5pqv-wjpw-j4jr</a></td></tr>
-<tr><td><code>claudechor</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-w7p9-gpj5-p2pw">GHSA-w7p9-gpj5-p2pw</a></td></tr>
-<tr><td><code>anthropic-setup</code> <span class="sub">(npm)</span></td><td>0.0.1-security</td><td><a href="https://github.com/advisories/GHSA-6mwf-mqp4-2f69">GHSA-6mwf-mqp4-2f69</a></td></tr>
 </table></div>
 
 <h3>Affected version is still published &mdash; 1</h3>
@@ -149,24 +133,19 @@ pre{background:var(--code);border:1px solid var(--line);border-radius:9px;paddin
 <tr><td><code>vulndify-mcp-server</code> <span class="sub">(pip)</span></td><td>0.3.0</td><td>= 0.3.0</td><td><a href="https://github.com/advisories/GHSA-v3x5-574x-8776">GHSA-v3x5-574x-8776</a></td></tr>
 </table></div>
 
-<h3>Already remediated &mdash; 11</h3>
+<h3>Already remediated &mdash; 4</h3>
 <p class="sub">Listed for completeness only. The maintainer has published a version outside the advisory's range, so the package on the registry today is <em>not</em> the one the advisory describes. Several are well-known projects that were compromised and cleaned up. Do not read this section as a warning about these packages.</p>
 <div class="scroll"><table>
 <tr><th>Package</th><th>Published now</th><th>Advisory covers</th><th>Advisory</th></tr>
-<tr><td><code>@yongot/canary-mcp-test</code> <span class="sub">(npm)</span></td><td>4.0.0</td><td>= 3.0.0</td><td><a href="https://github.com/advisories/GHSA-469r-xxvx-62x3">GHSA-469r-xxvx-62x3</a></td></tr>
-<tr><td><code>@yongot/canary-mcp-isolation</code> <span class="sub">(npm)</span></td><td>1.0.2</td><td>= 1.0.1</td><td><a href="https://github.com/advisories/GHSA-7gq6-vvhp-97f4">GHSA-7gq6-vvhp-97f4</a></td></tr>
+<tr><td><code>fa-mcp-sdk</code> <span class="sub">(npm)</span></td><td>0.12.96</td><td>= 0.12.72</td><td><a href="https://github.com/advisories/GHSA-h524-rpj8-rm5j">GHSA-h524-rpj8-rm5j</a></td></tr>
 <tr><td><code>create-mcp-use-app</code> <span class="sub">(npm)</span></td><td>2.0.6</td><td>= 0.5.3</td><td><a href="https://github.com/advisories/GHSA-5m22-mf99-fvwv">GHSA-5m22-mf99-fvwv</a></td></tr>
-<tr><td><code>@httttt/mcp-demo</code> <span class="sub">(npm)</span></td><td>1.1.0</td><td>= 1.0.0</td><td><a href="https://github.com/advisories/GHSA-gxrv-g7xx-29x2">GHSA-gxrv-g7xx-29x2</a></td></tr>
-<tr><td><code>@zapier/mcp-integration</code> <span class="sub">(npm)</span></td><td>3.0.0</td><td>= 3.0.1</td><td><a href="https://github.com/advisories/GHSA-659m-mwq2-jh49">GHSA-659m-mwq2-jh49</a></td></tr>
-<tr><td><code>@kolbo/mcp</code> <span class="sub">(npm)</span></td><td>1.87.14</td><td>= 1.57.1</td><td><a href="https://github.com/advisories/GHSA-pm5r-9rq7-j86p">GHSA-pm5r-9rq7-j86p</a></td></tr>
-<tr><td><code>remote-claude-daemon</code> <span class="sub">(npm)</span></td><td>0.7.5</td><td>= 0.3.9</td><td><a href="https://github.com/advisories/GHSA-4qch-7gcj-fhvm">GHSA-4qch-7gcj-fhvm</a></td></tr>
-<tr><td><code>agenthub-multiagent-mcp</code> <span class="sub">(npm)</span></td><td>1.61.0</td><td>= 1.57.0</td><td><a href="https://github.com/advisories/GHSA-gr2g-rx6h-9jh5">GHSA-gr2g-rx6h-9jh5</a></td></tr>
-<tr><td><code>claude-remote-agent</code> <span class="sub">(npm)</span></td><td>0.7.1</td><td>= 0.1.2</td><td><a href="https://github.com/advisories/GHSA-vmfr-7cqr-9wc8">GHSA-vmfr-7cqr-9wc8</a></td></tr>
 <tr><td><code>wdt-erpmcp</code> <span class="sub">(pip)</span></td><td>0.2.15</td><td>= 0.1.7</td><td><a href="https://github.com/advisories/GHSA-mfjc-6893-4m4j">GHSA-mfjc-6893-4m4j</a></td></tr>
 <tr><td><code>ray-mcp-server</code> <span class="sub">(pip)</span></td><td>0.2.0</td><td>= 0.2.1</td><td><a href="https://github.com/advisories/GHSA-xpj9-c6mx-gfqf">GHSA-xpj9-c6mx-gfqf</a></td></tr>
 </table></div>
-<h3>Undetermined &mdash; 18</h3><p class="sub">The advisory range could not be parsed or the registry did not answer. No conclusion drawn.</p><div class="scroll"><table>
+<h3>Undetermined &mdash; 12</h3><p class="sub">The advisory range could not be parsed or the registry did not answer. No conclusion drawn.</p><div class="scroll"><table>
 <tr><th>Package</th><th>Published now</th><th>Advisory covers</th><th>Advisory</th></tr>
+<tr><td><code>extension-gapcursor</code> <span class="sub">(npm)</span></td><td>—</td><td>= 213.21.24</td><td><a href="https://github.com/advisories/GHSA-q24q-cjrv-vv7x">GHSA-q24q-cjrv-vv7x</a></td></tr>
+<tr><td><code>extension-dropcursor</code> <span class="sub">(npm)</span></td><td>—</td><td>= 213.21.24</td><td><a href="https://github.com/advisories/GHSA-jghr-9287-664g">GHSA-jghr-9287-664g</a></td></tr>
 <tr><td><code>down_load_ebook_jefferson_by_jean_claude_mourlevat_3k9y4</code> <span class="sub">(npm)</span></td><td>—</td><td>= 1.0.0</td><td><a href="https://github.com/advisories/GHSA-vhh3-7p77-qpq2">GHSA-vhh3-7p77-qpq2</a></td></tr>
 <tr><td><code>demo-mercadopago-mcp-server</code> <span class="sub">(npm)</span></td><td>—</td><td>= 99.0.2</td><td><a href="https://github.com/advisories/GHSA-mrwq-x6qw-6284">GHSA-mrwq-x6qw-6284</a></td></tr>
 <tr><td><code>claude-channel-discord</code> <span class="sub">(npm)</span></td><td>—</td><td>= 9.9.9</td><td><a href="https://github.com/advisories/GHSA-787m-xjf4-8gx6">GHSA-787m-xjf4-8gx6</a></td></tr>
@@ -177,14 +156,6 @@ pre{background:var(--code);border:1px solid var(--line);border-radius:9px;paddin
 <tr><td><code>mcp-consultasdeveiculos-client</code> <span class="sub">(npm)</span></td><td>—</td><td>= 0.1.1</td><td><a href="https://github.com/advisories/GHSA-fp7g-2255-xxrp">GHSA-fp7g-2255-xxrp</a></td></tr>
 <tr><td><code>amazon-vendor-analytics-mcp-server</code> <span class="sub">(npm)</span></td><td>—</td><td>&gt;= 10.0.1</td><td><a href="https://github.com/advisories/GHSA-824j-c2fv-f6hp">GHSA-824j-c2fv-f6hp</a></td></tr>
 <tr><td><code>amazon-seller-analytics-mcp-server</code> <span class="sub">(npm)</span></td><td>—</td><td>&gt;= 10.0.1</td><td><a href="https://github.com/advisories/GHSA-xfvw-p4gh-68r5">GHSA-xfvw-p4gh-68r5</a></td></tr>
-<tr><td><code>claude-channel-telegram</code> <span class="sub">(npm)</span></td><td>—</td><td>= 9.9.9</td><td><a href="https://github.com/advisories/GHSA-26q2-fgwq-hw4p">GHSA-26q2-fgwq-hw4p</a></td></tr>
-<tr><td><code>mcp-dev-toolkit</code> <span class="sub">(npm)</span></td><td>—</td><td>= 1.5.0</td><td><a href="https://github.com/advisories/GHSA-rpcr-qj6g-5gw3">GHSA-rpcr-qj6g-5gw3</a></td></tr>
-<tr><td><code>chrome-enterprise-premium-mcp</code> <span class="sub">(npm)</span></td><td>—</td><td>= 1.0.0</td><td><a href="https://github.com/advisories/GHSA-w6h5-6v7q-884j">GHSA-w6h5-6v7q-884j</a></td></tr>
-<tr><td><code>code-assist-mcp</code> <span class="sub">(npm)</span></td><td>—</td><td>= 1.0.0</td><td><a href="https://github.com/advisories/GHSA-79vg-qvmh-c7h2">GHSA-79vg-qvmh-c7h2</a></td></tr>
-<tr><td><code>broadcast-graphics-mcp</code> <span class="sub">(npm)</span></td><td>—</td><td>= 1.0.0</td><td><a href="https://github.com/advisories/GHSA-rh95-w86h-pprv">GHSA-rh95-w86h-pprv</a></td></tr>
-<tr><td><code>xrblocks-mcp</code> <span class="sub">(npm)</span></td><td>—</td><td>= 6.3.1</td><td><a href="https://github.com/advisories/GHSA-pwwg-f86j-hmv7">GHSA-pwwg-f86j-hmv7</a></td></tr>
-<tr><td><code>mcp-util-helpers</code> <span class="sub">(npm)</span></td><td>—</td><td>= 1.0.0</td><td><a href="https://github.com/advisories/GHSA-76x8-h996-qvxr">GHSA-76x8-h996-qvxr</a></td></tr>
-<tr><td><code>devplatform-react-mcp</code> <span class="sub">(npm)</span></td><td>—</td><td>= 35.5.6</td><td><a href="https://github.com/advisories/GHSA-mcm8-ccm7-f469">GHSA-mcm8-ccm7-f469</a></td></tr>
 </table></div>
 <p>If one of these appears in your MCP config, read its advisory first. Where the advisory holds up &mdash; and especially where npm has replaced the package with a security placeholder &mdash; treat it as a compromise rather than a warning: remove it, then rotate every credential it could reach.</p>
 </div>
@@ -193,57 +164,57 @@ pre{background:var(--code);border:1px solid var(--line);border-radius:9px;paddin
 <p class="sub">0 of 40 carry at least one finding. An unpinned official package is low risk; an unpinned unknown one is not.</p>
 <div class="scroll"><table>
 <tr><th>Package</th><th>Downloads/mo</th><th>Age (days)</th><th>Worst</th><th>Findings</th></tr>
-<tr><td><code>chrome-devtools-mcp</code></td><td class="n">9,818,796</td><td class="n">484</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@upstash/context7-mcp</code></td><td class="n">3,865,239</td><td class="n">519</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@modelcontextprotocol/server-filesystem</code></td><td class="n">2,827,451</td><td class="n">657</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@pandacss/mcp</code></td><td class="n">1,024,993</td><td class="n">249</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@notionhq/notion-mcp-server</code></td><td class="n">647,967</td><td class="n">524</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>hostinger-api-mcp</code></td><td class="n">556,519</td><td class="n">517</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@supabase/mcp-server-supabase</code></td><td class="n">484,999</td><td class="n">530</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@sentry/mcp-server</code></td><td class="n">432,282</td><td class="n">503</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@sap-ux/fiori-mcp-server</code></td><td class="n">379,322</td><td class="n">372</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@ui5/mcp-server</code></td><td class="n">362,768</td><td class="n">372</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@azure-devops/mcp</code></td><td class="n">357,632</td><td class="n">454</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@cap-js/mcp-server</code></td><td class="n">225,167</td><td class="n">372</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@currents/mcp</code></td><td class="n">147,424</td><td class="n">524</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@apify/actors-mcp-server</code></td><td class="n">122,148</td><td class="n">601</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@ericthered926/duckduckgo-mcp-server</code></td><td class="n">114,300</td><td class="n">266</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@winor30/mcp-server-datadog</code></td><td class="n">112,386</td><td class="n">563</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>argocd-mcp</code></td><td class="n">98,955</td><td class="n">505</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@aikidosec/mcp</code></td><td class="n">92,918</td><td class="n">280</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@z_ai/mcp-server</code></td><td class="n">86,238</td><td class="n">367</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@transcend-io/mcp-server-consent</code></td><td class="n">80,461</td><td class="n">140</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@transcend-io/mcp-server-inventory</code></td><td class="n">80,074</td><td class="n">140</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@transcend-io/mcp-server-preferences</code></td><td class="n">80,035</td><td class="n">140</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@transcend-io/mcp-server-workflows</code></td><td class="n">79,977</td><td class="n">140</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@transcend-io/mcp-server-base</code></td><td class="n">79,221</td><td class="n">140</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@hubspot/mcp-server</code></td><td class="n">79,007</td><td class="n">502</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@transcend-io/mcp-server-assessment</code></td><td class="n">78,392</td><td class="n">140</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@transcend-io/mcp-server-dsr</code></td><td class="n">78,290</td><td class="n">140</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@transcend-io/mcp-server-discovery</code></td><td class="n">78,120</td><td class="n">140</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@transcend-io/mcp-server-admin</code></td><td class="n">76,663</td><td class="n">140</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@transcend-io/mcp-server-docs</code></td><td class="n">73,552</td><td class="n">64</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>dataforseo-mcp-server</code></td><td class="n">69,392</td><td class="n">485</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@shortcut/mcp</code></td><td class="n">69,352</td><td class="n">540</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@benborla29/mcp-server-mysql</code></td><td class="n">54,782</td><td class="n">639</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>mcp-server-kubernetes</code></td><td class="n">48,568</td><td class="n">639</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@browserstack/mcp-server</code></td><td class="n">43,900</td><td class="n">505</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>kubernetes-mcp-server</code></td><td class="n">35,703</td><td class="n">572</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@heroku/mcp-server</code></td><td class="n">33,796</td><td class="n">520</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@qase/mcp-server</code></td><td class="n">28,237</td><td class="n">315</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@coinbase/cds-mcp-server</code></td><td class="n">20,271</td><td class="n">344</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>@runpod/mcp-server</code></td><td class="n">20,113</td><td class="n">303</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>chrome-devtools-mcp</code></td><td class="n">9,180,137</td><td class="n">485</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@storybook/mcp</code></td><td class="n">8,561,226</td><td class="n">323</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@upstash/context7-mcp</code></td><td class="n">3,893,285</td><td class="n">520</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@modelcontextprotocol/server-filesystem</code></td><td class="n">2,767,864</td><td class="n">658</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@pandacss/mcp</code></td><td class="n">999,540</td><td class="n">250</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@notionhq/notion-mcp-server</code></td><td class="n">621,361</td><td class="n">525</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>hostinger-api-mcp</code></td><td class="n">572,679</td><td class="n">518</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@supabase/mcp-server-supabase</code></td><td class="n">456,450</td><td class="n">531</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@sentry/mcp-server</code></td><td class="n">422,541</td><td class="n">504</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@azure-devops/mcp</code></td><td class="n">389,249</td><td class="n">455</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@sap-ux/fiori-mcp-server</code></td><td class="n">374,286</td><td class="n">373</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@ui5/mcp-server</code></td><td class="n">360,601</td><td class="n">373</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@cap-js/mcp-server</code></td><td class="n">221,812</td><td class="n">373</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@currents/mcp</code></td><td class="n">143,788</td><td class="n">525</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@apify/actors-mcp-server</code></td><td class="n">125,950</td><td class="n">602</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@ericthered926/duckduckgo-mcp-server</code></td><td class="n">108,104</td><td class="n">267</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@winor30/mcp-server-datadog</code></td><td class="n">107,694</td><td class="n">564</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@transcend-io/mcp-server-consent</code></td><td class="n">100,706</td><td class="n">141</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@transcend-io/mcp-server-inventory</code></td><td class="n">100,294</td><td class="n">141</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@transcend-io/mcp-server-preferences</code></td><td class="n">100,274</td><td class="n">141</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@transcend-io/mcp-server-workflows</code></td><td class="n">100,212</td><td class="n">141</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@transcend-io/mcp-server-base</code></td><td class="n">99,570</td><td class="n">141</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@transcend-io/mcp-server-assessment</code></td><td class="n">98,618</td><td class="n">141</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@transcend-io/mcp-server-dsr</code></td><td class="n">98,533</td><td class="n">141</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@transcend-io/mcp-server-discovery</code></td><td class="n">98,369</td><td class="n">141</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@aikidosec/mcp</code></td><td class="n">97,231</td><td class="n">281</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@transcend-io/mcp-server-admin</code></td><td class="n">96,893</td><td class="n">141</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@transcend-io/mcp-server-docs</code></td><td class="n">96,674</td><td class="n">65</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>argocd-mcp</code></td><td class="n">95,491</td><td class="n">506</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@hubspot/mcp-server</code></td><td class="n">81,730</td><td class="n">503</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@z_ai/mcp-server</code></td><td class="n">78,174</td><td class="n">368</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@shortcut/mcp</code></td><td class="n">71,589</td><td class="n">541</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>dataforseo-mcp-server</code></td><td class="n">70,716</td><td class="n">486</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@benborla29/mcp-server-mysql</code></td><td class="n">52,545</td><td class="n">640</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@browserstack/mcp-server</code></td><td class="n">45,232</td><td class="n">506</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>mcp-server-kubernetes</code></td><td class="n">40,365</td><td class="n">640</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>kubernetes-mcp-server</code></td><td class="n">33,106</td><td class="n">573</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@heroku/mcp-server</code></td><td class="n">31,961</td><td class="n">521</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@qase/mcp-server</code></td><td class="n">27,963</td><td class="n">316</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>@runpod/mcp-server</code></td><td class="n">20,274</td><td class="n">304</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
 </table></div>
 
 <h2>PyPI packages</h2>
 <div class="scroll"><table>
 <tr><th>Package</th><th>Downloads/mo</th><th>Age (days)</th><th>Worst</th><th>Findings</th></tr>
-<tr><td><code>mcp</code></td><td class="n">0</td><td class="n">658</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>fastmcp</code></td><td class="n">0</td><td class="n">649</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>mcp-server-fetch</code></td><td class="n">0</td><td class="n">656</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>mcp-server-git</code></td><td class="n">220,922</td><td class="n">657</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>mcp-server-time</code></td><td class="n">577,649</td><td class="n">649</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
-<tr><td><code>mcp-server-sqlite</code></td><td class="n">53,542</td><td class="n">657</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>mcp</code></td><td class="n">277,441,508</td><td class="n">659</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>fastmcp</code></td><td class="n">67,626,643</td><td class="n">650</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>mcp-server-fetch</code></td><td class="n">0</td><td class="n">657</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>mcp-server-git</code></td><td class="n">220,628</td><td class="n">658</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>mcp-server-time</code></td><td class="n">0</td><td class="n">650</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
+<tr><td><code>mcp-server-sqlite</code></td><td class="n">0</td><td class="n">658</td><td><span class="s ok">clean</span></td><td class="w">—</td></tr>
 </table></div>
 
 <h2>Check your own machine</h2>
