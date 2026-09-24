@@ -1,297 +1,287 @@
 {
-  "generated": "2026-09-23 10:16 UTC",
+  "generated": "2026-09-24 10:29 UTC",
   "npm": [
     {
       "name": "@storybook/mcp",
       "downloads": 7954958,
-      "ageDays": 335,
+      "ageDays": 336,
       "findings": []
     },
     {
       "name": "chrome-devtools-mcp",
       "downloads": 7881886,
-      "ageDays": 497,
+      "ageDays": 498,
       "findings": []
     },
     {
       "name": "@upstash/context7-mcp",
       "downloads": 3451044,
-      "ageDays": 532,
+      "ageDays": 533,
       "findings": []
     },
     {
       "name": "@modelcontextprotocol/server-filesystem",
       "downloads": 2923355,
-      "ageDays": 670,
+      "ageDays": 671,
       "findings": []
     },
     {
       "name": "@pandacss/mcp",
       "downloads": 814841,
-      "ageDays": 262,
+      "ageDays": 263,
       "findings": []
     },
     {
       "name": "@notionhq/notion-mcp-server",
       "downloads": 634404,
-      "ageDays": 537,
+      "ageDays": 538,
       "findings": []
     },
     {
       "name": "hostinger-api-mcp",
       "downloads": 588482,
-      "ageDays": 530,
-      "findings": []
-    },
-    {
-      "name": "@azure/mcp",
-      "downloads": 537523,
-      "ageDays": 524,
-      "findings": [
-        {
-          "confidence": "certain",
-          "id": "MCP-SUP-005",
-          "severity": "high",
-          "title": "Package runs a postinstall script",
-          "evidence": "\"postinstall\": node ./scripts/post-install-script.js",
-          "why": "Install hooks execute the moment the package is fetched — before the server is ever started and before any tool description is reviewed. With npx and an unpinned version, this runs on every launch.",
-          "fix": "Read the script. To install without running it, use `npm install --ignore-scripts`."
-        }
-      ]
-    },
-    {
-      "name": "@modelcontextprotocol/server-sequential-thinking",
-      "downloads": 487276,
-      "ageDays": 658,
+      "ageDays": 531,
       "findings": []
     },
     {
       "name": "@azure-devops/mcp",
       "downloads": 469594,
-      "ageDays": 467,
+      "ageDays": 468,
       "findings": []
     },
     {
       "name": "@sentry/mcp-server",
       "downloads": 417238,
-      "ageDays": 516,
+      "ageDays": 517,
       "findings": []
     },
     {
       "name": "@supabase/mcp-server-supabase",
       "downloads": 406869,
-      "ageDays": 543,
-      "findings": []
-    },
-    {
-      "name": "next-devtools-mcp",
-      "downloads": 354149,
-      "ageDays": 342,
+      "ageDays": 544,
       "findings": []
     },
     {
       "name": "@sap-ux/fiori-mcp-server",
       "downloads": 332290,
-      "ageDays": 385,
+      "ageDays": 386,
       "findings": []
     },
     {
       "name": "@ui5/mcp-server",
       "downloads": 328581,
-      "ageDays": 385,
+      "ageDays": 386,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-consent",
       "downloads": 230579,
-      "ageDays": 153,
+      "ageDays": 154,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-admin",
       "downloads": 230469,
-      "ageDays": 153,
+      "ageDays": 154,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-preferences",
       "downloads": 230284,
-      "ageDays": 153,
+      "ageDays": 154,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-inventory",
       "downloads": 230168,
-      "ageDays": 153,
+      "ageDays": 154,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-workflows",
       "downloads": 230049,
-      "ageDays": 153,
+      "ageDays": 154,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-assessment",
       "downloads": 228400,
-      "ageDays": 153,
+      "ageDays": 154,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-dsr",
       "downloads": 228311,
-      "ageDays": 153,
+      "ageDays": 154,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-discovery",
       "downloads": 228099,
-      "ageDays": 153,
+      "ageDays": 154,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-base",
       "downloads": 217958,
-      "ageDays": 153,
+      "ageDays": 154,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-docs",
       "downloads": 215871,
-      "ageDays": 77,
+      "ageDays": 78,
       "findings": []
     },
     {
       "name": "@cap-js/mcp-server",
       "downloads": 211123,
-      "ageDays": 385,
-      "findings": []
-    },
-    {
-      "name": "@turbopuffer/turbopuffer-mcp",
-      "downloads": 192915,
-      "ageDays": 237,
-      "findings": []
-    },
-    {
-      "name": "mcp-hello-world",
-      "downloads": 167242,
-      "ageDays": 520,
-      "findings": []
-    },
-    {
-      "name": "@softeria/ms-365-mcp-server",
-      "downloads": 155340,
-      "ageDays": 537,
+      "ageDays": 386,
       "findings": []
     },
     {
       "name": "@currents/mcp",
       "downloads": 143267,
-      "ageDays": 537,
+      "ageDays": 538,
       "findings": []
     },
     {
       "name": "scryfall-mcp-server",
       "downloads": 124887,
-      "ageDays": 587,
+      "ageDays": 588,
       "findings": []
     },
     {
       "name": "@ericthered926/duckduckgo-mcp-server",
       "downloads": 114004,
-      "ageDays": 279,
+      "ageDays": 280,
       "findings": []
     },
     {
       "name": "@aikidosec/mcp",
       "downloads": 107304,
-      "ageDays": 293,
+      "ageDays": 294,
       "findings": []
     },
     {
       "name": "@apify/actors-mcp-server",
       "downloads": 103470,
-      "ageDays": 614,
+      "ageDays": 615,
       "findings": []
     },
     {
       "name": "@winor30/mcp-server-datadog",
       "downloads": 95249,
-      "ageDays": 576,
+      "ageDays": 577,
       "findings": []
     },
     {
       "name": "@hubspot/mcp-server",
       "downloads": 82773,
-      "ageDays": 515,
-      "findings": []
-    },
-    {
-      "name": "@taazkareem/clickup-mcp-server",
-      "downloads": 82633,
-      "ageDays": 595,
+      "ageDays": 516,
       "findings": []
     },
     {
       "name": "@shortcut/mcp",
       "downloads": 75030,
-      "ageDays": 553,
+      "ageDays": 554,
       "findings": []
     },
     {
-      "name": "@eslint/mcp",
-      "downloads": 71762,
-      "ageDays": 496,
+      "name": "@z_ai/mcp-server",
+      "downloads": 64884,
+      "ageDays": 382,
       "findings": []
     },
     {
-      "name": "argocd-mcp",
-      "downloads": 70400,
-      "ageDays": 518,
+      "name": "@browserstack/mcp-server",
+      "downloads": 61452,
+      "ageDays": 519,
+      "findings": []
+    },
+    {
+      "name": "@zencoderai/slack-mcp-server",
+      "downloads": 55914,
+      "ageDays": 434,
+      "findings": []
+    },
+    {
+      "name": "@transcend-io/mcp-server-custom-functions",
+      "downloads": 47425,
+      "ageDays": 8,
+      "findings": []
+    },
+    {
+      "name": "@transcend-io/mcp-server-policy",
+      "downloads": 39159,
+      "ageDays": 8,
+      "findings": []
+    },
+    {
+      "name": "mcp-server-kubernetes",
+      "downloads": 37870,
+      "ageDays": 653,
+      "findings": []
+    },
+    {
+      "name": "kubernetes-mcp-server",
+      "downloads": 37809,
+      "ageDays": 586,
+      "findings": []
+    },
+    {
+      "name": "@heroku/mcp-server",
+      "downloads": 31247,
+      "ageDays": 534,
+      "findings": []
+    },
+    {
+      "name": "@xeroapi/xero-mcp-server",
+      "downloads": 29901,
+      "ageDays": 552,
       "findings": []
     }
   ],
   "pypi": [
     {
       "name": "mcp",
-      "downloads": null,
-      "ageDays": 671,
+      "downloads": 216961146,
+      "ageDays": 672,
       "findings": []
     },
     {
       "name": "fastmcp",
-      "downloads": 49844419,
-      "ageDays": 662,
+      "downloads": 49434073,
+      "ageDays": 663,
       "findings": []
     },
     {
       "name": "mcp-server-fetch",
-      "downloads": 480880,
-      "ageDays": 669,
+      "downloads": 470144,
+      "ageDays": 670,
       "findings": []
     },
     {
       "name": "mcp-server-git",
-      "downloads": null,
-      "ageDays": 670,
+      "downloads": 144063,
+      "ageDays": 671,
       "findings": []
     },
     {
       "name": "mcp-server-time",
-      "downloads": 467284,
-      "ageDays": 662,
+      "downloads": 473790,
+      "ageDays": 663,
       "findings": []
     },
     {
       "name": "mcp-server-sqlite",
-      "downloads": 40700,
-      "ageDays": 670,
+      "downloads": 39441,
+      "ageDays": 671,
       "findings": []
     }
   ],
   "sweep": {
-    "probed": 301,
+    "probed": 236,
     "hits": [
       {
         "name": "@modelcontextprotoco1/server-filesystem",
@@ -304,7 +294,7 @@
     ]
   },
   "malware": {
-    "scanned": 51723,
+    "scanned": 51724,
     "capped": true,
     "failed": null,
     "list": [
@@ -354,9 +344,9 @@
         "ghsa": "GHSA-7m86-6729-5w7h",
         "published": "2026-09-17",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "@yongot/canary-mcp-isolation",
@@ -474,9 +464,9 @@
         "ghsa": "GHSA-65cx-x459-79g7",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "wayspiritmcp-enconly",
@@ -564,9 +554,9 @@
         "ghsa": "GHSA-q5cc-6j33-596w",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "timemcp-py",
@@ -594,9 +584,9 @@
         "ghsa": "GHSA-g8xr-2qm9-4rvc",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "timemcplib",
@@ -614,9 +604,9 @@
         "ghsa": "GHSA-p38x-hh3f-8m97",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "timermcplib",
@@ -634,9 +624,9 @@
         "ghsa": "GHSA-rwxf-w5g7-7v4x",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "timemcp190825790125120985125",
@@ -764,9 +754,9 @@
         "ghsa": "GHSA-qpgc-89qw-jqr9",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "py-ultramcpyw",
@@ -854,9 +844,9 @@
         "ghsa": "GHSA-6wf3-7v76-j8g7",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "mcpyw",
@@ -1074,9 +1064,9 @@
         "ghsa": "GHSA-vp83-46ch-mpvw",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "groq-mcp",
@@ -1104,9 +1094,9 @@
         "ghsa": "GHSA-p984-mxw9-86pm",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "esqmcpepgrand",
