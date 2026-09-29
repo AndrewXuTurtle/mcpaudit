@@ -1,10 +1,10 @@
 {
-  "generated": "2026-09-28 11:58 UTC",
+  "generated": "2026-09-29 11:33 UTC",
   "npm": [
     {
       "name": "@storybook/mcp",
-      "downloads": 7859121,
-      "ageDays": 340,
+      "downloads": 8344519,
+      "ageDays": 341,
       "findings": []
     },
     {
@@ -16,37 +16,37 @@
     {
       "name": "@upstash/context7-mcp",
       "downloads": 3053336,
-      "ageDays": 538,
+      "ageDays": 539,
       "findings": []
     },
     {
       "name": "@modelcontextprotocol/server-filesystem",
       "downloads": 2870588,
-      "ageDays": 675,
+      "ageDays": 676,
       "findings": []
     },
     {
       "name": "@pandacss/mcp",
       "downloads": 756262,
-      "ageDays": 267,
+      "ageDays": 268,
       "findings": []
     },
     {
       "name": "@notionhq/notion-mcp-server",
       "downloads": 641781,
-      "ageDays": 542,
+      "ageDays": 543,
       "findings": []
     },
     {
       "name": "hostinger-api-mcp",
       "downloads": 560588,
-      "ageDays": 535,
+      "ageDays": 536,
       "findings": []
     },
     {
       "name": "@azure/mcp",
       "downloads": 542628,
-      "ageDays": 529,
+      "ageDays": 530,
       "findings": [
         {
           "confidence": "certain",
@@ -60,195 +60,195 @@
       ]
     },
     {
-      "name": "@azure-devops/mcp",
-      "downloads": 495963,
-      "ageDays": 472,
-      "findings": []
-    },
-    {
       "name": "@sentry/mcp-server",
-      "downloads": 420548,
-      "ageDays": 521,
+      "downloads": 442170,
+      "ageDays": 522,
       "findings": []
     },
     {
       "name": "@supabase/mcp-server-supabase",
       "downloads": 393210,
-      "ageDays": 548,
+      "ageDays": 549,
       "findings": []
     },
     {
       "name": "@ui5/mcp-server",
-      "downloads": 311751,
-      "ageDays": 390,
+      "downloads": 330338,
+      "ageDays": 391,
       "findings": []
     },
     {
       "name": "@sap-ux/fiori-mcp-server",
-      "downloads": 304302,
-      "ageDays": 390,
+      "downloads": 324189,
+      "ageDays": 391,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-admin",
       "downloads": 235595,
-      "ageDays": 158,
+      "ageDays": 159,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-consent",
       "downloads": 235502,
-      "ageDays": 158,
+      "ageDays": 159,
+      "findings": []
+    },
+    {
+      "name": "@transcend-io/mcp-server-assessment",
+      "downloads": 235412,
+      "ageDays": 159,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-preferences",
       "downloads": 235389,
-      "ageDays": 158,
+      "ageDays": 159,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-inventory",
       "downloads": 235295,
-      "ageDays": 158,
+      "ageDays": 159,
+      "findings": []
+    },
+    {
+      "name": "@transcend-io/mcp-server-dsr",
+      "downloads": 235229,
+      "ageDays": 159,
+      "findings": []
+    },
+    {
+      "name": "@transcend-io/mcp-server-discovery",
+      "downloads": 235199,
+      "ageDays": 159,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-workflows",
       "downloads": 235135,
-      "ageDays": 158,
-      "findings": []
-    },
-    {
-      "name": "@transcend-io/mcp-server-assessment",
-      "downloads": 233422,
-      "ageDays": 158,
-      "findings": []
-    },
-    {
-      "name": "@transcend-io/mcp-server-dsr",
-      "downloads": 233257,
-      "ageDays": 158,
-      "findings": []
-    },
-    {
-      "name": "@transcend-io/mcp-server-discovery",
-      "downloads": 233222,
-      "ageDays": 158,
+      "ageDays": 159,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-base",
-      "downloads": 216912,
-      "ageDays": 158,
+      "downloads": 218851,
+      "ageDays": 159,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-docs",
-      "downloads": 215650,
-      "ageDays": 82,
+      "downloads": 217474,
+      "ageDays": 83,
       "findings": []
     },
     {
       "name": "@cap-js/mcp-server",
       "downloads": 194799,
-      "ageDays": 390,
+      "ageDays": 391,
       "findings": []
     },
     {
       "name": "scryfall-mcp-server",
-      "downloads": 188345,
-      "ageDays": 592,
+      "downloads": 188353,
+      "ageDays": 593,
       "findings": []
     },
     {
       "name": "@currents/mcp",
       "downloads": 142867,
-      "ageDays": 542,
+      "ageDays": 543,
       "findings": []
     },
     {
       "name": "@ericthered926/duckduckgo-mcp-server",
       "downloads": 130263,
-      "ageDays": 284,
+      "ageDays": 285,
       "findings": []
     },
     {
       "name": "@aikidosec/mcp",
-      "downloads": 114140,
-      "ageDays": 298,
+      "downloads": 126437,
+      "ageDays": 299,
       "findings": []
     },
     {
       "name": "@winor30/mcp-server-datadog",
       "downloads": 92330,
-      "ageDays": 581,
+      "ageDays": 582,
       "findings": []
     },
     {
       "name": "@hubspot/mcp-server",
       "downloads": 90386,
-      "ageDays": 520,
+      "ageDays": 521,
       "findings": []
     },
     {
       "name": "@apify/actors-mcp-server",
       "downloads": 89404,
-      "ageDays": 619,
+      "ageDays": 620,
       "findings": []
     },
     {
       "name": "argocd-mcp",
-      "downloads": 80501,
-      "ageDays": 523,
+      "downloads": 88295,
+      "ageDays": 524,
       "findings": []
     },
     {
       "name": "@zencoderai/slack-mcp-server",
       "downloads": 78956,
-      "ageDays": 438,
+      "ageDays": 439,
       "findings": []
     },
     {
       "name": "@shortcut/mcp",
       "downloads": 77922,
-      "ageDays": 558,
+      "ageDays": 559,
+      "findings": []
+    },
+    {
+      "name": "@eslint/mcp",
+      "downloads": 75817,
+      "ageDays": 502,
       "findings": []
     },
     {
       "name": "@browserstack/mcp-server",
-      "downloads": 70911,
-      "ageDays": 523,
+      "downloads": 73355,
+      "ageDays": 524,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-custom-functions",
       "downloads": 54783,
-      "ageDays": 12,
+      "ageDays": 13,
       "findings": []
     },
     {
       "name": "@transcend-io/mcp-server-policy",
       "downloads": 46512,
-      "ageDays": 12,
+      "ageDays": 13,
       "findings": []
     },
     {
       "name": "kubernetes-mcp-server",
       "downloads": 43122,
-      "ageDays": 590,
+      "ageDays": 591,
       "findings": []
     },
     {
       "name": "mcp-server-kubernetes",
       "downloads": 37663,
-      "ageDays": 657,
+      "ageDays": 658,
       "findings": []
     },
     {
       "name": "@xeroapi/xero-mcp-server",
       "downloads": 37435,
-      "ageDays": 556,
+      "ageDays": 557,
       "findings": []
     }
   ],
@@ -261,37 +261,37 @@
     },
     {
       "name": "fastmcp",
-      "downloads": 50128296,
-      "ageDays": 667,
+      "downloads": null,
+      "ageDays": 668,
       "findings": []
     },
     {
       "name": "mcp-server-fetch",
       "downloads": 464660,
-      "ageDays": 674,
+      "ageDays": 675,
       "findings": []
     },
     {
       "name": "mcp-server-git",
       "downloads": 148200,
-      "ageDays": 675,
+      "ageDays": 676,
       "findings": []
     },
     {
       "name": "mcp-server-time",
-      "downloads": 491123,
-      "ageDays": 668,
+      "downloads": null,
+      "ageDays": 669,
       "findings": []
     },
     {
       "name": "mcp-server-sqlite",
       "downloads": 39191,
-      "ageDays": 675,
+      "ageDays": 676,
       "findings": []
     }
   ],
   "sweep": {
-    "probed": 242,
+    "probed": 254,
     "hits": [
       {
         "name": "@modelcontextprotoco1/server-filesystem",
@@ -304,7 +304,7 @@
     ]
   },
   "malware": {
-    "scanned": 51741,
+    "scanned": 51742,
     "capped": true,
     "failed": null,
     "list": [
@@ -364,9 +364,9 @@
         "ghsa": "GHSA-7m86-6729-5w7h",
         "published": "2026-09-17",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "@yongot/canary-mcp-isolation",
@@ -454,9 +454,9 @@
         "ghsa": "GHSA-6h3x-xwcv-w9f9",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "wdt-erpmcp",
@@ -474,9 +474,9 @@
         "ghsa": "GHSA-wc92-rjp7-g2h3",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "wayspiritmcp-ppa",
@@ -494,9 +494,9 @@
         "ghsa": "GHSA-rjcm-fv9f-f2rg",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "vulndify-mcp-server",
@@ -634,9 +634,9 @@
         "ghsa": "GHSA-jm7c-w9pg-m3r9",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "timesmcplib",
@@ -674,9 +674,9 @@
         "ghsa": "GHSA-wj5q-fgqm-2wv6",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "testpackage1mcpe",
@@ -714,9 +714,9 @@
         "ghsa": "GHSA-j824-jwch-j836",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "selfmcproofvisa",
@@ -794,9 +794,9 @@
         "ghsa": "GHSA-3jwf-g5qm-2q74",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "py-pepmcpaypal",
@@ -854,9 +854,9 @@
         "ghsa": "GHSA-h7rx-63j6-3w83",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "mcpsever",
@@ -884,9 +884,9 @@
         "ghsa": "GHSA-23g4-jfwp-rv64",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "mcp-xyz",
@@ -984,9 +984,9 @@
         "ghsa": "GHSA-995p-r3gh-pw5c",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "libmcpingstudy",
@@ -994,9 +994,9 @@
         "ghsa": "GHSA-hr7x-4646-hr32",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "libmcpipver",
@@ -1004,9 +1004,9 @@
         "ghsa": "GHSA-56gv-w36g-p92g",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "libmcpongvm",
@@ -1054,9 +1054,9 @@
         "ghsa": "GHSA-5h97-vgh2-wqr9",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "latinum-wallet-mcp",
@@ -1064,9 +1064,9 @@
         "ghsa": "GHSA-7fjp-p82r-q2c2",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "langchain-core-mcp",
@@ -1074,9 +1074,9 @@
         "ghsa": "GHSA-f6f5-m9qw-v738",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "instructor-mcp",
@@ -1094,9 +1094,9 @@
         "ghsa": "GHSA-2544-8267-j7f9",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "esqpymcpy",
@@ -1154,9 +1154,9 @@
         "ghsa": "GHSA-9h3c-vrq8-7p3c",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       },
       {
         "package": "claude-lite",
@@ -1184,9 +1184,9 @@
         "ghsa": "GHSA-jcv2-j354-7j53",
         "published": "2026-07-21",
         "current": null,
-        "registryState": "unknown",
+        "registryState": "removed",
         "range": null,
-        "verdict": "unknown"
+        "verdict": "removed"
       }
     ]
   }
